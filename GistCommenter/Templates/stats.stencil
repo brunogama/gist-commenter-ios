@@ -1,0 +1,14 @@
+/*
+This project contains:
+
+- {{types.enums.count}} enums
+- {{types.structs.count}} structs
+- {{types.classes.count}} classes
+- {{types.protocols.count}} protocols
+
+Here are the classes found:
+
+{% for cls in types.classes %}
+ - {{cls.name}}
+{% endfor %}
+*/

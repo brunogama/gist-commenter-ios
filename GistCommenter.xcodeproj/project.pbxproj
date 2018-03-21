@@ -19,22 +19,13 @@
 		79414F0C2061CD8400927472 /* XcodeWarnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 79414F022061CD8400927472 /* XcodeWarnings.xcconfig */; };
 		79414F112061CD8400927472 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79414F062061CD8400927472 /* Info.plist */; };
 		79414F122061CD8400927472 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79414F062061CD8400927472 /* Info.plist */; };
-		79414F1D2061DD1100927472 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 79414F192061DD1000927472 /* .swiftlint.yml */; };
-		79414F1E2061DD1100927472 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 79414F192061DD1000927472 /* .swiftlint.yml */; };
-		79414F202061DD1100927472 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 79414F1A2061DD1100927472 /* swiftgen.yml */; };
-		79414F212061DD1100927472 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 79414F1A2061DD1100927472 /* swiftgen.yml */; };
-		79414F232061DD1100927472 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 79414F1B2061DD1100927472 /* .gitignore */; };
-		79414F242061DD1100927472 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 79414F1B2061DD1100927472 /* .gitignore */; };
 		79414F2C2061DF0000927472 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79414F292061DEFF00927472 /* Localizable.strings */; };
 		79414F2D2061DF0000927472 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79414F292061DEFF00927472 /* Localizable.strings */; };
 		79414F3C2061E4C600927472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79414ED92061CCA000927472 /* LaunchScreen.storyboard */; };
 		79414F3D2061E4C800927472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79414ED12061CC9E00927472 /* Main.storyboard */; };
-		79414F412061EF7D00927472 /* Cartfile.private in Resources */ = {isa = PBXBuildFile; fileRef = 79414F402061EF7D00927472 /* Cartfile.private */; };
-		79414F432061F41B00927472 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 79414F422061F41B00927472 /* Cartfile */; };
 		79E729C72062B7FF00EF27E9 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E729C42062B7FF00EF27E9 /* Assets.swift */; };
 		79E729C82062B7FF00EF27E9 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E729C52062B7FF00EF27E9 /* Storyboards.swift */; };
 		79E729C92062B7FF00EF27E9 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E729C62062B7FF00EF27E9 /* Strings.swift */; };
-		79E729CB2062C06000EF27E9 /* .sourcery.yml in Resources */ = {isa = PBXBuildFile; fileRef = 79E729CA2062C06000EF27E9 /* .sourcery.yml */; };
 		79E72A0B2062CF6A00EF27E9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729EE2062CD3E00EF27E9 /* Alamofire.framework */; };
 		79E72A0C2062CF6A00EF27E9 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729D32062CD3E00EF27E9 /* Moya.framework */; };
 		79E72A0D2062CF6A00EF27E9 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729DE2062CD3E00EF27E9 /* Nimble.framework */; };
@@ -53,11 +44,17 @@
 		79E72A1A2062CF8600EF27E9 /* ReactiveMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729F12062CD3E00EF27E9 /* ReactiveMoya.framework */; };
 		79E72A1B2062CF8600EF27E9 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729DA2062CD3E00EF27E9 /* ReactiveSwift.framework */; };
 		79E72A1C2062CF8600EF27E9 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729D62062CD3E00EF27E9 /* Result.framework */; };
-		79E72A1D2062CF8600EF27E9 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729FC2062CD3E00EF27E9 /* RxBlocking.framework */; };
 		79E72A1E2062CF8600EF27E9 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729F62062CD3E00EF27E9 /* RxCocoa.framework */; };
 		79E72A1F2062CF8600EF27E9 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729DC2062CD3E00EF27E9 /* RxMoya.framework */; };
 		79E72A202062CF8600EF27E9 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729F82062CD3E00EF27E9 /* RxSwift.framework */; };
-		79E72A212062CF8600EF27E9 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729E32062CD3E00EF27E9 /* RxTest.framework */; };
+		79E72A412062E05C00EF27E9 /* QRCodeReaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E72A3B2062E05C00EF27E9 /* QRCodeReaderPresenter.swift */; };
+		79E72A422062E05C00EF27E9 /* QRCodeReaderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E72A3C2062E05C00EF27E9 /* QRCodeReaderRouter.swift */; };
+		79E72A432062E05C00EF27E9 /* QRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E72A3D2062E05C00EF27E9 /* QRCodeReaderViewController.swift */; };
+		79E72A442062E05C00EF27E9 /* QRCodeReaderProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E72A3E2062E05C00EF27E9 /* QRCodeReaderProtocols.swift */; };
+		79E72A452062E05C00EF27E9 /* QRCodeReaderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E72A3F2062E05C00EF27E9 /* QRCodeReaderInteractor.swift */; };
+		79E72A4D2062EC3500EF27E9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E72A4C2062EC3500EF27E9 /* Logger.swift */; };
+		79E72A4F2062F7C300EF27E9 /* stats.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E72A4E2062F7C300EF27E9 /* stats.generated.swift */; };
+		79E72A522062F7D400EF27E9 /* stats.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 79E72A512062F7D400EF27E9 /* stats.stencil */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,16 +93,10 @@
 		79414F132061CE5300927472 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		79414F142061CE6100927472 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		79414F152061D0F500927472 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
-		79414F192061DD1000927472 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
-		79414F1A2061DD1100927472 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swiftgen.yml; sourceTree = "<group>"; };
-		79414F1B2061DD1100927472 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		79414F2A2061DEFF00927472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		79414F402061EF7D00927472 /* Cartfile.private */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
-		79414F422061F41B00927472 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		79E729C42062B7FF00EF27E9 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		79E729C52062B7FF00EF27E9 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		79E729C62062B7FF00EF27E9 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
-		79E729CA2062C06000EF27E9 /* .sourcery.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .sourcery.yml; sourceTree = "<group>"; };
 		79E729D32062CD3E00EF27E9 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Moya.framework; sourceTree = "<group>"; };
 		79E729D62062CD3E00EF27E9 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Result.framework; sourceTree = "<group>"; };
 		79E729D72062CD3E00EF27E9 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
@@ -119,6 +110,14 @@
 		79E729F62062CD3E00EF27E9 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = "<group>"; };
 		79E729F82062CD3E00EF27E9 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxSwift.framework; sourceTree = "<group>"; };
 		79E729FC2062CD3E00EF27E9 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxBlocking.framework; sourceTree = "<group>"; };
+		79E72A3B2062E05C00EF27E9 /* QRCodeReaderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderPresenter.swift; sourceTree = "<group>"; };
+		79E72A3C2062E05C00EF27E9 /* QRCodeReaderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderRouter.swift; sourceTree = "<group>"; };
+		79E72A3D2062E05C00EF27E9 /* QRCodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewController.swift; sourceTree = "<group>"; };
+		79E72A3E2062E05C00EF27E9 /* QRCodeReaderProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderProtocols.swift; sourceTree = "<group>"; };
+		79E72A3F2062E05C00EF27E9 /* QRCodeReaderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderInteractor.swift; sourceTree = "<group>"; };
+		79E72A4C2062EC3500EF27E9 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		79E72A4E2062F7C300EF27E9 /* stats.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stats.generated.swift; sourceTree = "<group>"; };
+		79E72A512062F7D400EF27E9 /* stats.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stats.stencil; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,11 +130,9 @@
 				79E72A1A2062CF8600EF27E9 /* ReactiveMoya.framework in Frameworks */,
 				79E72A1B2062CF8600EF27E9 /* ReactiveSwift.framework in Frameworks */,
 				79E72A1C2062CF8600EF27E9 /* Result.framework in Frameworks */,
-				79E72A1D2062CF8600EF27E9 /* RxBlocking.framework in Frameworks */,
 				79E72A1E2062CF8600EF27E9 /* RxCocoa.framework in Frameworks */,
 				79E72A1F2062CF8600EF27E9 /* RxMoya.framework in Frameworks */,
 				79E72A202062CF8600EF27E9 /* RxSwift.framework in Frameworks */,
-				79E72A212062CF8600EF27E9 /* RxTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,16 +169,10 @@
 		79414EC12061CC9E00927472 = {
 			isa = PBXGroup;
 			children = (
-				79414F1B2061DD1100927472 /* .gitignore */,
-				79E729CA2062C06000EF27E9 /* .sourcery.yml */,
-				79414F192061DD1000927472 /* .swiftlint.yml */,
-				79414F422061F41B00927472 /* Cartfile */,
-				79414F402061EF7D00927472 /* Cartfile.private */,
 				79414ECC2061CC9E00927472 /* GistCommenter */,
 				79414EE42061CCA100927472 /* GistCommenterTests */,
 				79414EEF2061CCA100927472 /* GistCommenterUITests */,
 				79414ECB2061CC9E00927472 /* Products */,
-				79414F1A2061DD1100927472 /* swiftgen.yml */,
 				79E729CD2062CD3E00EF27E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -199,10 +190,13 @@
 		79414ECC2061CC9E00927472 /* GistCommenter */ = {
 			isa = PBXGroup;
 			children = (
-				79414F332061E3F700927472 /* Generated */,
-				79414EFE2061CD8400927472 /* Resources */,
 				79414ECD2061CC9E00927472 /* AppDelegate.swift */,
-				79414ED42061CC9E00927472 /* GistCommenter.xcdatamodeld */,
+				79E72A4B2062EC2800EF27E9 /* Debug */,
+				79E72A4A2062E18600EF27E9 /* Entities */,
+				79414F332061E3F700927472 /* Generated */,
+				79E72A492062E0AF00EF27E9 /* QRCodeReader */,
+				79414EFE2061CD8400927472 /* Resources */,
+				79E72A502062F7D400EF27E9 /* Templates */,
 			);
 			path = GistCommenter;
 			sourceTree = "<group>";
@@ -233,7 +227,6 @@
 				79414EFF2061CD8400927472 /* Storyboards */,
 				79414F002061CD8400927472 /* Settings.bundle */,
 				79414F012061CD8400927472 /* Config */,
-				79414F032061CD8400927472 /* Nibs */,
 				79414F052061CD8400927472 /* Other-Sources */,
 			);
 			path = Resources;
@@ -259,13 +252,6 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
-		79414F032061CD8400927472 /* Nibs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Nibs;
-			sourceTree = "<group>";
-		};
 		79414F052061CD8400927472 /* Other-Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +263,7 @@
 		79414F332061E3F700927472 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				79E72A4E2062F7C300EF27E9 /* stats.generated.swift */,
 				79E729C320629A3F00EF27E9 /* Constants */,
 			);
 			path = Generated;
@@ -321,6 +308,42 @@
 			path = Carthage/Build/iOS;
 			sourceTree = "<group>";
 		};
+		79E72A492062E0AF00EF27E9 /* QRCodeReader */ = {
+			isa = PBXGroup;
+			children = (
+				79E72A3B2062E05C00EF27E9 /* QRCodeReaderPresenter.swift */,
+				79E72A3C2062E05C00EF27E9 /* QRCodeReaderRouter.swift */,
+				79E72A3D2062E05C00EF27E9 /* QRCodeReaderViewController.swift */,
+				79E72A3E2062E05C00EF27E9 /* QRCodeReaderProtocols.swift */,
+				79E72A3F2062E05C00EF27E9 /* QRCodeReaderInteractor.swift */,
+			);
+			path = QRCodeReader;
+			sourceTree = "<group>";
+		};
+		79E72A4A2062E18600EF27E9 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				79414ED42061CC9E00927472 /* GistCommenter.xcdatamodeld */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		79E72A4B2062EC2800EF27E9 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				79E72A4C2062EC3500EF27E9 /* Logger.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		79E72A502062F7D400EF27E9 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				79E72A512062F7D400EF27E9 /* stats.stencil */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -328,13 +351,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 79414EF52061CCA100927472 /* Build configuration list for PBXNativeTarget "GistCommenter" */;
 			buildPhases = (
-				79E72A222062D25E00EF27E9 /* Carthage: Copy frameworks */,
 				79414F182061DCD200927472 /* SwiftGen */,
 				79414EC62061CC9E00927472 /* Sources */,
 				79414EC72061CC9E00927472 /* Frameworks */,
 				79414EC82061CC9E00927472 /* Resources */,
 				79414F162061DBBA00927472 /* SwiftLint */,
 				79E72A242062D76600EF27E9 /* Script: Git version */,
+				79E72A222062D25E00EF27E9 /* Carthage: Copy frameworks */,
 			);
 			buildRules = (
 			);
@@ -349,11 +372,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 79414EF82061CCA100927472 /* Build configuration list for PBXNativeTarget "GistCommenterTests" */;
 			buildPhases = (
-				79E72A232062D4C600EF27E9 /* Carthage: Copy frameworks */,
 				79414EDD2061CCA100927472 /* Sources */,
 				79414EDE2061CCA100927472 /* Frameworks */,
 				79414EDF2061CCA100927472 /* Resources */,
 				79414F172061DBD800927472 /* SwiftLint */,
+				79E72A232062D4C600EF27E9 /* Carthage: Copy frameworks */,
 			);
 			buildRules = (
 			);
@@ -436,13 +459,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79414F432061F41B00927472 /* Cartfile in Resources */,
 				79414F072061CD8400927472 /* Settings.bundle in Resources */,
 				79414F3D2061E4C800927472 /* Main.storyboard in Resources */,
-				79414F412061EF7D00927472 /* Cartfile.private in Resources */,
+				79E72A522062F7D400EF27E9 /* stats.stencil in Resources */,
 				79414F3C2061E4C600927472 /* LaunchScreen.storyboard in Resources */,
 				79414ED82061CCA000927472 /* Images.xcassets in Resources */,
-				79E729CB2062C06000EF27E9 /* .sourcery.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,12 +471,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79414F1D2061DD1100927472 /* .swiftlint.yml in Resources */,
-				79414F202061DD1100927472 /* swiftgen.yml in Resources */,
 				79414F112061CD8400927472 /* Info.plist in Resources */,
 				79414F2C2061DF0000927472 /* Localizable.strings in Resources */,
 				79414F082061CD8400927472 /* Settings.bundle in Resources */,
-				79414F232061DD1100927472 /* .gitignore in Resources */,
 				79414F0B2061CD8400927472 /* XcodeWarnings.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,12 +482,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79414F1E2061DD1100927472 /* .swiftlint.yml in Resources */,
-				79414F212061DD1100927472 /* swiftgen.yml in Resources */,
 				79414F122061CD8400927472 /* Info.plist in Resources */,
 				79414F2D2061DF0000927472 /* Localizable.strings in Resources */,
 				79414F092061CD8400927472 /* Settings.bundle in Resources */,
-				79414F242061DD1100927472 /* .gitignore in Resources */,
 				79414F0C2061CD8400927472 /* XcodeWarnings.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,12 +544,10 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveMoya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
 			);
 			name = "Carthage: Copy frameworks";
 			outputPaths = (
@@ -592,10 +605,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				79E729C82062B7FF00EF27E9 /* Storyboards.swift in Sources */,
+				79E72A4D2062EC3500EF27E9 /* Logger.swift in Sources */,
+				79E72A452062E05C00EF27E9 /* QRCodeReaderInteractor.swift in Sources */,
 				79414ED62061CC9E00927472 /* GistCommenter.xcdatamodeld in Sources */,
+				79E72A4F2062F7C300EF27E9 /* stats.generated.swift in Sources */,
 				79E729C92062B7FF00EF27E9 /* Strings.swift in Sources */,
+				79E72A442062E05C00EF27E9 /* QRCodeReaderProtocols.swift in Sources */,
+				79E72A412062E05C00EF27E9 /* QRCodeReaderPresenter.swift in Sources */,
 				79414ECE2061CC9E00927472 /* AppDelegate.swift in Sources */,
 				79E729C72062B7FF00EF27E9 /* Assets.swift in Sources */,
+				79E72A432062E05C00EF27E9 /* QRCodeReaderViewController.swift in Sources */,
+				79E72A422062E05C00EF27E9 /* QRCodeReaderRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

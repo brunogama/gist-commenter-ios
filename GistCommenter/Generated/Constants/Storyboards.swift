@@ -61,7 +61,9 @@ internal enum StoryboardScene {
   internal enum Main: StoryboardType {
     internal static let storyboardName = "Main"
 
-    internal static let initialScene = InitialSceneType<UINavigationController>(storyboard: Main.self)
+    internal static let initialScene = InitialSceneType<GistCommenter.QRCodeReaderViewController>(storyboard: Main.self)
+
+    internal static let qrReaderViewController = SceneType<GistCommenter.QRCodeReaderViewController>(storyboard: Main.self, identifier: "QRReaderViewController")
   }
 }
 

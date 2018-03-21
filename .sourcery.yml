@@ -1,0 +1,5 @@
+sources:
+  - GistCommenter
+templates:
+  - GistCommenter/Templates
+output: GistCommenter/Generated

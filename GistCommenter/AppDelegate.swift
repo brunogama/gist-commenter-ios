@@ -17,6 +17,12 @@ internal class AppDelegate: UIResponder, UIApplicationDelegate {
     public func application(_ application: UIApplication,
                             didFinishLaunchingWithOptions
         launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+        let qrCodeReader = QRCodeReaderRouter.createModule()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = qrCodeReader
+        window?.makeKeyAndVisible()
+
         return true
     }
 
