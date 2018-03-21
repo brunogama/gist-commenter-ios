@@ -1,0 +1,19 @@
+//
+//  Shared.xcconfig
+//  GistCommenter
+//
+//  Created by Bruno Gama on 20/03/2018.
+//  Copyright © 2018 Bruno Gama. All rights reserved.
+//
+
+#include "XcodeWarnings.xcconfig"
+
+BUNDLE_IDENTIFIER = com.gamaorama.GistCommenter
+//BUNDLE_IDENTIFIER_SUFFIX=
+BUNDLE_DISPLAYNAME = GistCommenter
+BUNDLE_DISPLAYNAME_SUFFIX=
+BUNDLE_DISPLAYNAME_PREFIX=
+
+API_BASEPROTOCOL = @"https"
+API_HOST = @"api.example.com"
+API_VERSION = @"v1"

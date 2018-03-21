@@ -1,0 +1,13 @@
+//
+//  Debug.xcconfig
+//  GistCommenter
+//
+//  Created by Bruno Gama on 20/03/2018.
+//  Copyright © 2018 Bruno Gama. All rights reserved.
+//
+
+#include "Shared.xcconfig"
+
+BUNDLE_IDENTIFIER_SUFFIX=Debug
+BUNDLE_DISPLAYNAME_SUFFIX=
+BUNDLE_DISPLAYNAME_PREFIX=Debug

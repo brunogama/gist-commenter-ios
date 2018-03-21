@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+requirement_warning() {
+    local appName="${1}"; shift
+    # shellcheck disable=SC2059
+    printf "\\n⚠️  Warning: ${appName} not installed, download from ${1} \\n"
+}
+
+check_requirement() {
+    local app="${1}"; shift
+    local appName="${1}"; shift
+    local downloadLink="${1}"; shift
+    # shellcheck disable=SC2059
+    [[ -x $(which ${app}) ]] && requirement_warning "${appName}" "${downloadLink}"; exit 1
+}
+
+dcheck_requirement() {
+    local app="${1}"; shift
+    local appName="${1}"; shift
+    local downloadLink="${1}"; shift
+    # shellcheck disable=SC2059
+    [[ -x $(which ${app}) ]] || requirement_warning "${appName}" "${downloadLink}"; exit 1
+}
+
+echo "Checking requirements 🤞"
+
+check_requirement swiflint "SwiftLint" "https://github.com/realm/SwiftLint"
+dcheck_requirement swiftgen "SwiftGen" "https://github.com/SwiftGen/SwiftGen"
+check_requirement sourcery "Sourcert" "https://github.com/krzysztofzablocki/Sourcery"
+
+echo "Downloading and compiling frameworks used in the project"
+echo "This can take a few minutes 😰"
+carthage update --platform iOS

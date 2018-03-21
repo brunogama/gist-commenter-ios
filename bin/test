@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -o pipefail
+
+# xcodebuild test -scheme GistCommenter \
+# 			    -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.2' \
+# 			    -sdk iphonesimulator BUILD_ACTIVE_ARCH=NO | xcpretty -t -c
