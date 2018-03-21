@@ -77,18 +77,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		79E729CC2062CD0C00EF27E9 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 7;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		79414ECA2061CC9E00927472 /* GistCommenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GistCommenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79414ECD2061CC9E00927472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -346,6 +334,7 @@
 				79414EC72061CC9E00927472 /* Frameworks */,
 				79414EC82061CC9E00927472 /* Resources */,
 				79414F162061DBBA00927472 /* SwiftLint */,
+				79E72A242062D76600EF27E9 /* Script: Git version */,
 			);
 			buildRules = (
 			);
@@ -360,12 +349,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 79414EF82061CCA100927472 /* Build configuration list for PBXNativeTarget "GistCommenterTests" */;
 			buildPhases = (
+				79E72A232062D4C600EF27E9 /* Carthage: Copy frameworks */,
 				79414EDD2061CCA100927472 /* Sources */,
 				79414EDE2061CCA100927472 /* Frameworks */,
 				79414EDF2061CCA100927472 /* Resources */,
 				79414F172061DBD800927472 /* SwiftLint */,
-				79E729CC2062CD0C00EF27E9 /* CopyFiles */,
-				79E72A232062D4C600EF27E9 /* Carthage: Copy frameworks */,
 			);
 			buildRules = (
 			);
@@ -581,6 +569,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which carthage >/dev/null; then\ncarthage copy-frameworks\nelse\necho \"Warning: Carthage not installed, download from https://github.com/Carthage/Carthage\"\nfi\n";
+		};
+		79E72A242062D76600EF27E9 /* Script: Git version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Script: Git version";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=$(sh /etc/profile; which git)\ngit_release_version=$(\"$git\" describe --tags --always --abbrev=0)\nnumber_of_commits=$(\"$git\" rev-list master --count)\ntarget_plist=\"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\ndsym_plist=\"$DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME/Contents/Info.plist\"\n\nfor plist in \"$target_plist\" \"$dsym_plist\"; do\nif [ -f \"$plist\" ]; then\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $number_of_commits\" \"$plist\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString ${git_release_version#*v}\" \"$plist\"\nfi\ndone\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
