@@ -17,6 +17,7 @@ internal class QRCodeReaderRouter: QRCodeReaderWireframeProtocol {
     static func createModule(bundle: Bundle? = nil) -> QRCodeReaderViewController {
         let view = QRCodeReaderViewController(nibName: "QRCodeReaderViewController",
                                               bundle: bundle)
+        view.codeReader = QRCodeReder()
         let interactor = QRCodeReaderInteractor()
         let router = QRCodeReaderRouter()
         let presenter = QRCodeReaderPresenter(interface: view, interactor: interactor, router: router)

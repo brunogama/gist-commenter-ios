@@ -27,7 +27,7 @@ internal class QRCodeReaderPresenter: QRCodeReaderPresenterProtocol, QRCodeReade
 
     // MARK: - QRCodeReaderInteractorOutputProtocol
     func received(metadata: AVMetadataMachineReadableCodeObject?) {
-        view?.received(metadata: metadata)
+//        view?.received(metadata: metadata)
     }
 
 }

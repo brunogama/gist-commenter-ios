@@ -24,6 +24,7 @@
 		79414F2D2061DF0000927472 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79414F292061DEFF00927472 /* Localizable.strings */; };
 		797F446C20642A160078CA4A /* QRCodeReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */; };
 		798BA32620644DAD00D7F6D1 /* QRCodeReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */; };
+		798BA32A2064611D00D7F6D1 /* QRCodeReder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BA3292064611D00D7F6D1 /* QRCodeReder.swift */; };
 		79E729C72062B7FF00EF27E9 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E729C42062B7FF00EF27E9 /* Assets.swift */; };
 		79E729C92062B7FF00EF27E9 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E729C62062B7FF00EF27E9 /* Strings.swift */; };
 		79E72A0B2062CF6A00EF27E9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729EE2062CD3E00EF27E9 /* Alamofire.framework */; };
@@ -105,6 +106,7 @@
 		79414F152061D0F500927472 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		79414F2A2061DEFF00927472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeReaderViewController.xib; sourceTree = "<group>"; };
+		798BA3292064611D00D7F6D1 /* QRCodeReder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReder.swift; sourceTree = "<group>"; };
 		79E729C42062B7FF00EF27E9 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		79E729C62062B7FF00EF27E9 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		79E729D32062CD3E00EF27E9 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Moya.framework; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				79E72A3C2062E05C00EF27E9 /* QRCodeReaderRouter.swift */,
 				79E72A3D2062E05C00EF27E9 /* QRCodeReaderViewController.swift */,
 				797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */,
+				798BA3292064611D00D7F6D1 /* QRCodeReder.swift */,
 			);
 			path = QRCodeReader;
 			sourceTree = "<group>";
@@ -445,7 +448,6 @@
 					79414EE02061CCA100927472 = {
 						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 79414EC92061CC9E00927472;
 					};
 					79414EEB2061CCA100927472 = {
 						CreatedOnToolsVersion = 9.3;
@@ -625,6 +627,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				798BA32A2064611D00D7F6D1 /* QRCodeReder.swift in Sources */,
 				79E72A4D2062EC3500EF27E9 /* Logger.swift in Sources */,
 				79E72A452062E05C00EF27E9 /* QRCodeReaderInteractor.swift in Sources */,
 				79414ED62061CC9E00927472 /* GistCommenter.xcdatamodeld in Sources */,
@@ -814,7 +817,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GistCommenter.app/GistCommenter";
 			};
 			name = Debug;
 		};
@@ -834,7 +836,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GistCommenter.app/GistCommenter";
 			};
 			name = Release;
 		};
