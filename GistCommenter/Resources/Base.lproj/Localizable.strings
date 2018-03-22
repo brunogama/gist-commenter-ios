@@ -7,3 +7,10 @@
 */
 
 GistCommenter="Gist Commenter - L10 Test";
+
+alertTitleCameraPermission="Atention";
+alertMessageCameraPermission="Please enable Camera access for the App";
+settings="Settings";
+ok="OK";
+detecting="Detecting ...";
+cameraNotAvailable="Camera not available";

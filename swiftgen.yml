@@ -9,9 +9,9 @@ xcassets:
       - Images.xcassets
     templateName: swift4
     output: Assets.swift
-storyboards:
-  - paths:
-      - Storyboards/Base.lproj/Main.storyboard
-      - Storyboards/Base.lproj/LaunchScreen.storyboard
-    templateName: swift4
-    output: Storyboards.swift
+# storyboards:
+#   - paths:
+#       - Storyboards/Base.lproj/Main.storyboard
+#       - Storyboards/Base.lproj/LaunchScreen.storyboard
+#     templateName: swift4
+#     output: Storyboards.swift

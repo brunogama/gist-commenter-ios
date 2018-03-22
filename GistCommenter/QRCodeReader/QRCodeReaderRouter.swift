@@ -14,9 +14,9 @@ internal class QRCodeReaderRouter: QRCodeReaderWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
-        // Change to get view from storyboard if not using progammatic UI
-        let view = StoryboardScene.Main.qrReaderViewController.instantiate()
+    static func createModule() -> QRCodeReaderViewController {
+        let view = QRCodeReaderViewController(nibName: "QRCodeReaderViewController",
+                                              bundle: nil)
         let interactor = QRCodeReaderInteractor()
         let router = QRCodeReaderRouter()
         let presenter = QRCodeReaderPresenter(interface: view, interactor: interactor, router: router)
@@ -24,7 +24,6 @@ internal class QRCodeReaderRouter: QRCodeReaderWireframeProtocol {
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
-
         return view
     }
 }
