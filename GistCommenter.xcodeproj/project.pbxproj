@@ -23,6 +23,7 @@
 		79414F2C2061DF0000927472 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79414F292061DEFF00927472 /* Localizable.strings */; };
 		79414F2D2061DF0000927472 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79414F292061DEFF00927472 /* Localizable.strings */; };
 		797F446C20642A160078CA4A /* QRCodeReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */; };
+		798BA32620644DAD00D7F6D1 /* QRCodeReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */; };
 		79E729C72062B7FF00EF27E9 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E729C42062B7FF00EF27E9 /* Assets.swift */; };
 		79E729C92062B7FF00EF27E9 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E729C62062B7FF00EF27E9 /* Strings.swift */; };
 		79E72A0B2062CF6A00EF27E9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729EE2062CD3E00EF27E9 /* Alamofire.framework */; };
@@ -490,6 +491,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				798BA32620644DAD00D7F6D1 /* QRCodeReaderViewController.xib in Resources */,
 				79414F112061CD8400927472 /* Info.plist in Resources */,
 				79414F2C2061DF0000927472 /* Localizable.strings in Resources */,
 				79414F082061CD8400927472 /* Settings.bundle in Resources */,
@@ -800,7 +802,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K496M4V69T;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -821,7 +822,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K496M4V69T;
 				FRAMEWORK_SEARCH_PATHS = (

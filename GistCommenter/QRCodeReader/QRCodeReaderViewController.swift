@@ -21,7 +21,7 @@ internal final class QRCodeReaderViewController: UIViewController,
         return AVCaptureDevice.authorizationStatus(for: .video) == .authorized
     }
 
-    @IBOutlet private weak var statusLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
 
     var qrCodeViewFinder: UIView?
 
@@ -52,18 +52,18 @@ internal final class QRCodeReaderViewController: UIViewController,
 
     // MARK: - Private methods
 
-    private func setupVideoSession() {
-        setupCaptureSession()
+    fileprivate func setupVideoSession() {
+        let deviceTypes = [AVCaptureDevice.DeviceType.builtInWideAngleCamera, .builtInDualCamera]
+        let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: deviceTypes,
+                                                                mediaType: .video,
+                                                                position: .back)
+
+        setupCaptureSession(discoverySession: discoverySession)
         setupPreviewLayer()
     }
 
-    fileprivate func setupCaptureSession() {
-        let deviceTypes = [AVCaptureDevice.DeviceType.builtInWideAngleCamera, .builtInDualCamera]
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: deviceTypes,
-                                                                      mediaType: .video,
-                                                                      position: .back)
-
-        guard let captureDevice = deviceDiscoverySession.devices.first else {
+    fileprivate func setupCaptureSession(discoverySession: AVCaptureDevice.DiscoverySession) {
+        guard let captureDevice = discoverySession.devices.first else {
             fatalError("Failed to get the camera device")
         }
 
@@ -104,7 +104,7 @@ internal final class QRCodeReaderViewController: UIViewController,
         }
     }
 
-    fileprivate func updateStatusLabelAndTitle(_ title: String) {
+    internal func updateStatusLabelAndTitle(_ title: String) {
         statusLabel.text = title
         self.title = statusLabel.text
     }

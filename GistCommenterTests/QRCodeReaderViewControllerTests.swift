@@ -7,7 +7,7 @@ internal class QRCodeReaderViewControllerTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        viewController = QRCodeReaderRouter.createModule()
+        viewController = QRCodeReaderRouter.createModule(bundle: Bundle(for: QRCodeReaderRouter.self))
         UIApplication.shared.keyWindow?.rootViewController = viewController
         _ = viewController?.view
         viewController?.viewWillAppear(false)
@@ -22,5 +22,19 @@ internal class QRCodeReaderViewControllerTests: XCTestCase {
     func test_checkTitleOnLaunch() {
         let sut = viewController?.title
         XCTAssertEqual(sut, "Detecting ...")
+    }
+
+    func test_checkTitle_onUpdateStatusLabelAndTitle() {
+        let text = "Check"
+        viewController?.updateStatusLabelAndTitle(text)
+        let sut = viewController?.title
+        XCTAssertEqual(sut, text)
+    }
+
+    func test_checkStatusLabelText_onUpdateStatusLabelAndTitle() {
+        let text = "Camera not available"
+        viewController?.updateStatusLabelAndTitle(text)
+        let sut = viewController?.statusLabel.text
+        XCTAssertEqual(sut, text)
     }
 }
