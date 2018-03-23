@@ -57,6 +57,19 @@ internal class QRCodeReaderViewControllerTests: XCTestCase {
         XCTAssertEqual(stringValue, "https://foo.bar")
         XCTAssertEqual(area, CGRect(origin: CGPoint.zero, size: CGSize(width: 1, height: 1)))
     }
+
+    func test_title_onForceQRCoderCallback() {
+        guard let reader = viewController?.codeReader as? MockQRCodeReader else {
+            XCTFail("Couldnt cast to MockQRCodeReader")
+            return
+        }
+
+        reader.didRead?(reader.callbackData)
+
+        let sut = viewController?.title
+
+        XCTAssertEqual(sut, "https://foo.bar")
+    }
 }
 
 // MARK: - Utils
