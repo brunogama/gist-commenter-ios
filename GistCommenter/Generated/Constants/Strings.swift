@@ -13,14 +13,22 @@ internal enum L10n {
   internal static let alertTitleCameraPermission = L10n.tr("Localizable", "alertTitleCameraPermission")
   /// Camera not available
   internal static let cameraNotAvailable = L10n.tr("Localizable", "cameraNotAvailable")
+  /// Detected QR Code
+  internal static let detectedQRCode = L10n.tr("Localizable", "detectedQRCode")
   /// Detecting ...
   internal static let detecting = L10n.tr("Localizable", "detecting")
   /// Gist Commenter - L10 Test
   internal static let gistCommenter = L10n.tr("Localizable", "GistCommenter")
+  /// Invalid QR Code
+  internal static let invalidQrCodeMessage = L10n.tr("Localizable", "invalidQrCodeMessage")
   /// OK
   internal static let ok = L10n.tr("Localizable", "ok")
+  /// Open Gist
+  internal static let openGist = L10n.tr("Localizable", "openGist")
   /// Settings
   internal static let settings = L10n.tr("Localizable", "settings")
+  /// It turns out that the scanned QR Code is a Gist Url. Do you want to check-it outt?
+  internal static let validQrCodeMessage = L10n.tr("Localizable", "validQrCodeMessage")
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length nesting type_body_length type_name
 

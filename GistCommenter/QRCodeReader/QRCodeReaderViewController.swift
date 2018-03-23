@@ -93,11 +93,9 @@ internal final class QRCodeReaderViewController: UIViewController,
     }
 
     func showGistAlert() {
-        let alerMessage = "It turns out that the scanned QR Code is a Gist Url. Do you want to check-it outt?"
+        let alert = alerController(L10n.detectedQRCode, L10n.validQrCodeMessage)
 
-        let alert = alerController("Detected QR Code", alerMessage)
-
-        let action = UIAlertAction(title: "Open Gist", style: .default) { _ in
+        let action = UIAlertAction(title: L10n.openGist, style: .default) { _ in
             Logger.d("Open next screen")
         }
 
@@ -112,9 +110,7 @@ internal final class QRCodeReaderViewController: UIViewController,
     }
 
     func showInvalidCodeAlert() {
-        let alerMessage = "Invalid QR Code"
-
-        let alert = alerController("Detected QR Code", alerMessage)
+        let alert = alerController(L10n.detectedQRCode, L10n.invalidQrCodeMessage)
 
         let cancel = UIAlertAction(title: L10n.ok, style: .cancel) { _ in
             self.presenter?.newReading()
