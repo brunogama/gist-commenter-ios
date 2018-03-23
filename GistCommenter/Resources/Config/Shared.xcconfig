@@ -14,4 +14,4 @@ BUNDLE_DISPLAYNAME = GistCommenter
 BUNDLE_DISPLAYNAME_SUFFIX=
 BUNDLE_DISPLAYNAME_PREFIX=
 
-API_URL="https://api.github.com"
+API_URL=api.github.com

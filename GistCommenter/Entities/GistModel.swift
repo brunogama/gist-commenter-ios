@@ -13,15 +13,15 @@ internal struct GistModel: Codable, CodableExtension {
     let url, forksURL, commitsURL, id: String
     let description: String
     let purplePublic: Bool
-    let owner: User
+    let owner: UserModel
     let user: JSONNull?
-    let files: Files
+    let files: [String: FileModel]
     let truncated: Bool
     let comments: Int
     let commentsURL, htmlURL, gitPullURL, gitPushURL: String
     let createdAt, updatedAt: String
-    let forks: [Fork]
-    let history: [History]
+    let forks: [ForkModel]
+    let history: [HistoryModel]
 
     enum CodingKeys: String, CodingKey {
         case url
@@ -40,17 +40,8 @@ internal struct GistModel: Codable, CodableExtension {
     }
 }
 
-// MARK: - Files
-internal struct Files: Codable, CodableExtension {
-    let ringErl: RingErl
-
-    enum CodingKeys: String, CodingKey {
-        case ringErl = "ring.erl"
-    }
-}
-
-// MARK: - RingErl
-internal struct RingErl: Codable, CodableExtension {
+// MARK: - FileModel
+internal struct FileModel: Codable, CodableExtension {
     let size: Int
     let rawURL, type, language: String
     let truncated: Bool
@@ -64,8 +55,8 @@ internal struct RingErl: Codable, CodableExtension {
 }
 
 // MARK: - Fork
-internal struct Fork: Codable, CodableExtension {
-    let user: User
+internal struct ForkModel: Codable, CodableExtension {
+    let user: UserModel
     let url, id, createdAt, updatedAt: String
 
     enum CodingKeys: String, CodingKey {
@@ -76,7 +67,7 @@ internal struct Fork: Codable, CodableExtension {
 }
 
 // MARK: - User
-internal struct User: Codable, CodableExtension {
+internal struct UserModel: Codable, CodableExtension {
     let login: String
     let id: Int
     let avatarURL, gravatarID, url, htmlURL: String
@@ -106,9 +97,9 @@ internal struct User: Codable, CodableExtension {
 }
 
 // MARK: - History
-internal struct History: Codable, CodableExtension {
+internal struct HistoryModel: Codable, CodableExtension {
     let url, version: String
-    let user: User
+    let user: UserModel
     let changeStatus: ChangeStatus
     let committedAt: String
 

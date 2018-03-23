@@ -13,13 +13,21 @@ import UIKit
 internal class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private let navigationController: UINavigationController = {
+        let navigationController = UINavigationController()
+        if #available(iOS 11.0, *) {
+            navigationController.navigationBar.isTranslucent = false
+            navigationController.navigationBar.prefersLargeTitles = true
+        }
+        return navigationController
+    }()
 
     public func application(_ application: UIApplication,
                             didFinishLaunchingWithOptions
         launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let rootViewController = UINavigationController(rootViewController: GistDetailRouter.createModule())
+        navigationController.pushViewController(GistDetailRouter.createModule(), animated: false)
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = rootViewController
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
 
         return true

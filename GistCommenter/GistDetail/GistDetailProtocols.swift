@@ -9,6 +9,7 @@
 //
 
 import Foundation
+import Moya
 
 // MARK: Wireframe -
 internal protocol GistDetailWireframeProtocol: class {
@@ -30,6 +31,9 @@ internal protocol GistDetailInteractorOutputProtocol: class {
 internal protocol GistDetailInteractorInputProtocol: class {
 
     var presenter: GistDetailInteractorOutputProtocol? { get set }
+    var remoteDataManager: MoyaProvider<GistService>? { get set }
+    
+    func requestGistModel(url: URL)
 
     /* Presenter -> Interactor */
 }

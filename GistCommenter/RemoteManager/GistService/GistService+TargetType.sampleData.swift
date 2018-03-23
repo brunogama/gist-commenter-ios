@@ -20,7 +20,7 @@ extension GistService {
     }
 }
 
-fileprivate func stubData(_ resource: String) -> Data {
+private func stubData(_ resource: String) -> Data {
     guard let url = Bundle.main.url(forResource: resource, withExtension: "json"),
         let data = try? Data(contentsOf: url) else {
             return Data()

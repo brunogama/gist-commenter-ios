@@ -13,7 +13,7 @@ extension GistService {
     var baseURL: URL {
         let bundleData = Bundle.main.object(forInfoDictionaryKey: "API_URL")
         guard let apiUrl = bundleData as? String,
-            let url = URL(string: apiUrl) else {
+            let url = URL(string: "https://\(apiUrl)") else {
                 fatalError("baseURL no created API_URL returned by the Info.plist <\(String(describing: bundleData))>")
         }
         return url

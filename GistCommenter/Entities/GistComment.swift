@@ -11,7 +11,7 @@ import Foundation
 internal struct GistComment: Codable, CodableExtension {
     let id: Int
     let url, body: String
-    let user: User
+    let user: UserModel
     let createdAt, updatedAt: String
 
     enum CodingKeys: String, CodingKey {
