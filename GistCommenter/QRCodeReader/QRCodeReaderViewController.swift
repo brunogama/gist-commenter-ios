@@ -15,20 +15,17 @@ internal final class QRCodeReaderViewController: UIViewController,
                                                QRCodeReaderViewProtocol {
 
 	var presenter: QRCodeReaderPresenterProtocol?
-    var captureSession: AVCaptureSession = AVCaptureSession()
-    var videoPreviewLayer: AVCaptureVideoPreviewLayer?
-    private var hasCameraPermissions: Bool {
-        return AVCaptureDevice.authorizationStatus(for: .video) == .authorized
-    }
 
-    @IBOutlet private weak var statusLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
 
     var qrCodeViewFinder: UIView?
 
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-        setupVideoSession()
+        presenter?.viewDidLoad()
+
         setupViews()
+        updateStatusLabelAndTitle(L10n.detecting)
         self.navigationController?.isNavigationBarHidden = true
     }
 
@@ -37,61 +34,7 @@ internal final class QRCodeReaderViewController: UIViewController,
         self.navigationController?.isNavigationBarHidden = false
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        updateStatusLabelAndTitle(L10n.detecting)
-        if !hasCameraPermissions {
-            AVCaptureDevice.requestAccess(for: .video) { granted in
-                if !granted {
-                    Logger.w("Denied camera permissions")
-                    self.presentCameraPermissionWarning()
-                }
-            }
-        }
-    }
-
     // MARK: - Private methods
-
-    private func setupVideoSession() {
-        setupCaptureSession()
-        setupPreviewLayer()
-    }
-
-    fileprivate func setupCaptureSession() {
-        let deviceTypes = [AVCaptureDevice.DeviceType.builtInWideAngleCamera, .builtInDualCamera]
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: deviceTypes,
-                                                                      mediaType: .video,
-                                                                      position: .back)
-
-        guard let captureDevice = deviceDiscoverySession.devices.first else {
-            fatalError("Failed to get the camera device")
-        }
-
-        do {
-            let input = try AVCaptureDeviceInput(device: captureDevice)
-            captureSession.addInput(input)
-        }
-        catch {
-            Logger.e(error.localizedDescription)
-            return
-        }
-
-        let captureMetadataOutput = AVCaptureMetadataOutput()
-        captureSession.addOutput(captureMetadataOutput)
-        guard let delegate = presenter?.interactor as? AVCaptureMetadataOutputObjectsDelegate else {
-            Logger.w("Delegate not set")
-            return
-        }
-        captureMetadataOutput.setMetadataObjectsDelegate(delegate, queue: DispatchQueue.main)
-        captureMetadataOutput.metadataObjectTypes = [.qr]
-    }
-
-    fileprivate func setupPreviewLayer() {
-        videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        videoPreviewLayer?.frame = view.layer.bounds
-        captureSession.startRunning()
-    }
 
     fileprivate func setupQrViewFinder() {
         self.qrCodeViewFinder = UIView()
@@ -104,29 +47,34 @@ internal final class QRCodeReaderViewController: UIViewController,
         }
     }
 
-    fileprivate func updateStatusLabelAndTitle(_ title: String) {
+    internal func updateStatusLabelAndTitle(_ title: String) {
         statusLabel.text = title
         self.title = statusLabel.text
     }
 
     fileprivate func setupViews() {
-        guard let layer = videoPreviewLayer else {
-            fatalError("Video layer is required for this view controller")
-        }
+
         setupQrViewFinder()
-        self.view.layer.addSublayer(layer)
+
+        if let preview = presenter?.interactor?.codeReader?.videoPreview {
+            preview.frame = view.layer.bounds
+            self.view.layer.addSublayer(preview)
+        }
+
         self.view.bringSubview(toFront: statusLabel)
         setupQrViewFinder()
     }
 
     // MARK: - QRCodeReaderViewProtocol
 
+    func loading() {
+        updateStatusLabelAndTitle(L10n.detecting)
+        qrCodeViewFinder?.frame = CGRect.zero
+    }
+
     func presentCameraPermissionWarning() {
         self.updateStatusLabelAndTitle(L10n.cameraNotAvailable)
-
-        let alert = UIAlertController(title: L10n.alertTitleCameraPermission,
-                                      message: L10n.alertMessageCameraPermission,
-                                      preferredStyle: .alert)
+        let alert = alerController(L10n.alertTitleCameraPermission, L10n.alertMessageCameraPermission)
 
         let action = UIAlertAction(title: L10n.settings, style: .default) { _ in
             guard let appSettings = URL(string: UIApplicationOpenSettingsURLString) else {
@@ -144,21 +92,48 @@ internal final class QRCodeReaderViewController: UIViewController,
         self.present(alert, animated: true)
     }
 
-    func received(metadata: AVMetadataMachineReadableCodeObject?) {
-        if let readableContent = metadata {
-            if readableContent.type == AVMetadataObject.ObjectType.qr {
-                guard let string = readableContent.stringValue,
-                let barCodeBounds = videoPreviewLayer?.transformedMetadataObject(for: readableContent)?.bounds else {
-                    return
-                }
+    func showGistAlert() {
+        let alert = alerController(L10n.detectedQRCode, L10n.validQrCodeMessage)
 
-                qrCodeViewFinder?.frame = barCodeBounds
-                self.updateStatusLabelAndTitle(string)
-            }
+        let action = UIAlertAction(title: L10n.openGist, style: .default) { _ in
+            Logger.d("Open next screen")
         }
-        else {
-            qrCodeViewFinder?.frame = CGRect.zero
-            self.updateStatusLabelAndTitle(L10n.detecting)
+
+        alert.addAction(action)
+        let cancel = UIAlertAction(title: L10n.ok, style: .cancel) { _ in
+            self.presenter?.newReading()
         }
+
+        alert.addAction(cancel)
+
+        self.present(alert, animated: true)
+    }
+
+    func showInvalidCodeAlert() {
+        let alert = alerController(L10n.detectedQRCode, L10n.invalidQrCodeMessage)
+
+        let cancel = UIAlertAction(title: L10n.ok, style: .cancel) { _ in
+            self.presenter?.newReading()
+        }
+
+        alert.addAction(cancel)
+
+        self.present(alert, animated: true)
+    }
+
+    func updateStatus(codeValue: String) {
+        updateStatusLabelAndTitle(codeValue)
+        Logger.i(codeValue)
+    }
+
+    func updateViewFinder(area: CGRect) {
+        qrCodeViewFinder?.frame = area
+        Logger.i(String(describing: area))
+    }
+
+    // MARK: - Private methods
+
+    fileprivate func alerController(_ title: String, _ message: String) -> UIAlertController {
+        return UIAlertController(title: title, message: message, preferredStyle: .alert)
     }
 }

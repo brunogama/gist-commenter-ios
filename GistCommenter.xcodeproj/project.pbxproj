@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		792350DB2063E26200C6CEBD /* UIViewController+ StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792350DA2063E26200C6CEBD /* UIViewController+ StoryboardInitializable.swift */; };
+		792A43942065453C00B8F12B /* ViewControllerBootstrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792A43932065453C00B8F12B /* ViewControllerBootstrapper.swift */; };
+		792A43962065491D00B8F12B /* MockQRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792A43952065491D00B8F12B /* MockQRCodeReader.swift */; };
+		792A4399206551A900B8F12B /* QRCodeReadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792A4398206551A900B8F12B /* QRCodeReadable.swift */; };
 		79414ECE2061CC9E00927472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79414ECD2061CC9E00927472 /* AppDelegate.swift */; };
 		79414ED62061CC9E00927472 /* GistCommenter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79414ED42061CC9E00927472 /* GistCommenter.xcdatamodeld */; };
 		79414ED82061CCA000927472 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79414ED72061CCA000927472 /* Images.xcassets */; };
@@ -23,6 +26,11 @@
 		79414F2C2061DF0000927472 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79414F292061DEFF00927472 /* Localizable.strings */; };
 		79414F2D2061DF0000927472 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79414F292061DEFF00927472 /* Localizable.strings */; };
 		797F446C20642A160078CA4A /* QRCodeReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */; };
+		798BA32620644DAD00D7F6D1 /* QRCodeReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */; };
+		798BA32A2064611D00D7F6D1 /* QRCodeReder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BA3292064611D00D7F6D1 /* QRCodeReder.swift */; };
+		79B04ABE2065669B00A9E387 /* MockQRCodeReaderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B04ABD2065669B00A9E387 /* MockQRCodeReaderInteractor.swift */; };
+		79B04AC02065682E00A9E387 /* QRCodeReder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BA3292064611D00D7F6D1 /* QRCodeReder.swift */; };
+		79B04AC12065682E00A9E387 /* QRCodeReadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792A4398206551A900B8F12B /* QRCodeReadable.swift */; };
 		79E729C72062B7FF00EF27E9 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E729C42062B7FF00EF27E9 /* Assets.swift */; };
 		79E729C92062B7FF00EF27E9 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E729C62062B7FF00EF27E9 /* Strings.swift */; };
 		79E72A0B2062CF6A00EF27E9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729EE2062CD3E00EF27E9 /* Alamofire.framework */; };
@@ -86,6 +94,9 @@
 
 /* Begin PBXFileReference section */
 		792350DA2063E26200C6CEBD /* UIViewController+ StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ StoryboardInitializable.swift"; sourceTree = "<group>"; };
+		792A43932065453C00B8F12B /* ViewControllerBootstrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBootstrapper.swift; sourceTree = "<group>"; };
+		792A43952065491D00B8F12B /* MockQRCodeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockQRCodeReader.swift; sourceTree = "<group>"; };
+		792A4398206551A900B8F12B /* QRCodeReadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReadable.swift; sourceTree = "<group>"; };
 		79414ECA2061CC9E00927472 /* GistCommenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GistCommenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79414ECD2061CC9E00927472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79414ED52061CC9E00927472 /* GistCommenter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GistCommenter.xcdatamodel; sourceTree = "<group>"; };
@@ -104,6 +115,8 @@
 		79414F152061D0F500927472 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		79414F2A2061DEFF00927472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeReaderViewController.xib; sourceTree = "<group>"; };
+		798BA3292064611D00D7F6D1 /* QRCodeReder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReder.swift; sourceTree = "<group>"; };
+		79B04ABD2065669B00A9E387 /* MockQRCodeReaderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockQRCodeReaderInteractor.swift; sourceTree = "<group>"; };
 		79E729C42062B7FF00EF27E9 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		79E729C62062B7FF00EF27E9 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		79E729D32062CD3E00EF27E9 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Moya.framework; sourceTree = "<group>"; };
@@ -184,6 +197,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		792A43972065519200B8F12B /* QRCodeReader */ = {
+			isa = PBXGroup;
+			children = (
+				798BA3292064611D00D7F6D1 /* QRCodeReder.swift */,
+				792A4398206551A900B8F12B /* QRCodeReadable.swift */,
+			);
+			path = QRCodeReader;
+			sourceTree = "<group>";
+		};
 		79414EC12061CC9E00927472 = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +248,9 @@
 				79414EE52061CCA100927472 /* GistCommenterTests.swift */,
 				79414EE72061CCA100927472 /* Info.plist */,
 				79E72A542063CEC100EF27E9 /* QRCodeReaderViewControllerTests.swift */,
+				792A43932065453C00B8F12B /* ViewControllerBootstrapper.swift */,
+				792A43952065491D00B8F12B /* MockQRCodeReader.swift */,
+				79B04ABD2065669B00A9E387 /* MockQRCodeReaderInteractor.swift */,
 			);
 			path = GistCommenterTests;
 			sourceTree = "<group>";
@@ -334,6 +359,7 @@
 				79E72A3C2062E05C00EF27E9 /* QRCodeReaderRouter.swift */,
 				79E72A3D2062E05C00EF27E9 /* QRCodeReaderViewController.swift */,
 				797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */,
+				792A43972065519200B8F12B /* QRCodeReader */,
 			);
 			path = QRCodeReader;
 			sourceTree = "<group>";
@@ -444,7 +470,6 @@
 					79414EE02061CCA100927472 = {
 						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 79414EC92061CC9E00927472;
 					};
 					79414EEB2061CCA100927472 = {
 						CreatedOnToolsVersion = 9.3;
@@ -490,6 +515,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				798BA32620644DAD00D7F6D1 /* QRCodeReaderViewController.xib in Resources */,
 				79414F112061CD8400927472 /* Info.plist in Resources */,
 				79414F2C2061DF0000927472 /* Localizable.strings in Resources */,
 				79414F082061CD8400927472 /* Settings.bundle in Resources */,
@@ -623,8 +649,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				798BA32A2064611D00D7F6D1 /* QRCodeReder.swift in Sources */,
 				79E72A4D2062EC3500EF27E9 /* Logger.swift in Sources */,
 				79E72A452062E05C00EF27E9 /* QRCodeReaderInteractor.swift in Sources */,
+				792A4399206551A900B8F12B /* QRCodeReadable.swift in Sources */,
 				79414ED62061CC9E00927472 /* GistCommenter.xcdatamodeld in Sources */,
 				79E72A4F2062F7C300EF27E9 /* stats.generated.swift in Sources */,
 				79E729C92062B7FF00EF27E9 /* Strings.swift in Sources */,
@@ -647,12 +675,17 @@
 				79E72A5E2063D8BB00EF27E9 /* QRCodeReaderPresenter.swift in Sources */,
 				79E72A652063D8C100EF27E9 /* Strings.swift in Sources */,
 				79E72A632063D8C100EF27E9 /* Assets.swift in Sources */,
+				79B04AC02065682E00A9E387 /* QRCodeReder.swift in Sources */,
 				79E72A602063D8BB00EF27E9 /* QRCodeReaderViewController.swift in Sources */,
 				79E72A5F2063D8BB00EF27E9 /* QRCodeReaderRouter.swift in Sources */,
+				79B04ABE2065669B00A9E387 /* MockQRCodeReaderInteractor.swift in Sources */,
 				79E72A672063D8CE00EF27E9 /* Logger.swift in Sources */,
 				79414EE62061CCA100927472 /* GistCommenterTests.swift in Sources */,
 				79E72A622063D8BB00EF27E9 /* QRCodeReaderInteractor.swift in Sources */,
+				792A43962065491D00B8F12B /* MockQRCodeReader.swift in Sources */,
+				79B04AC12065682E00A9E387 /* QRCodeReadable.swift in Sources */,
 				79E72A552063CEC100EF27E9 /* QRCodeReaderViewControllerTests.swift in Sources */,
+				792A43942065453C00B8F12B /* ViewControllerBootstrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -800,7 +833,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K496M4V69T;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -813,7 +845,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GistCommenter.app/GistCommenter";
 			};
 			name = Debug;
 		};
@@ -821,7 +852,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K496M4V69T;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -834,7 +864,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GistCommenter.app/GistCommenter";
 			};
 			name = Release;
 		};

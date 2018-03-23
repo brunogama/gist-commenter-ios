@@ -25,9 +25,32 @@ internal class QRCodeReaderPresenter: QRCodeReaderPresenterProtocol, QRCodeReade
         self.router = router
     }
 
-    // MARK: - QRCodeReaderInteractorOutputProtocol
-    func received(metadata: AVMetadataMachineReadableCodeObject?) {
-        view?.received(metadata: metadata)
+    // MARK: - QRCodeReaderPresenterProtocol
+
+    func viewDidLoad() {
+        interactor?.startReader()
     }
 
+    func newReading() {
+        view?.loading()
+        interactor?.startReader()
+    }
+
+    // MARK: - QRCodeReaderInteractorOutputProtocol
+
+    func didReceived(data: QRCodeReadable.QRCodeData) {
+        view?.updateStatus(codeValue: data.value)
+        view?.updateViewFinder(area: data.codeBounds)
+        if isGistHost(string: data.value) {
+            view?.showGistAlert()
+        }
+        else {
+            view?.showInvalidCodeAlert()
+        }
+    }
+
+    // MARK: - Private methods
+    fileprivate func isGistHost(string: String) -> Bool {
+        return URLComponents(string: string)?.host == "gist.github.com"
+    }
 }
