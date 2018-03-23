@@ -13,6 +13,21 @@ import UIKit
 internal class QRCodeReaderInteractor: NSObject, QRCodeReaderInteractorInputProtocol {
 
     weak var presenter: QRCodeReaderInteractorOutputProtocol?
+    var codeReader: QRCodeReadable?
 
     // MARK: - QRCodeReaderInteractorInputProtocol
+
+    func didReceived(data: QRCodeReadable.QRCodeData) {
+        presenter?.didReceived(data: data)
+    }
+
+    func startReader() {
+        codeReader?.startReading { stringValue, scannedCodeArea in
+            self.didReceived(data: (stringValue, scannedCodeArea))
+        }
+    }
+
+    func stopReader() {
+        codeReader?.stopReading()
+    }
 }

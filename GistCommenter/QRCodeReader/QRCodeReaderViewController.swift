@@ -15,44 +15,23 @@ internal final class QRCodeReaderViewController: UIViewController,
                                                QRCodeReaderViewProtocol {
 
 	var presenter: QRCodeReaderPresenterProtocol?
-    var codeReader: QRCodeReadable?
-    private var hasCameraPermissions: Bool {
-        return AVCaptureDevice.authorizationStatus(for: .video) == .authorized
-    }
 
     @IBOutlet weak var statusLabel: UILabel!
-//    var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
+
     var qrCodeViewFinder: UIView?
 
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-
-        codeReader?.startReading { urlString, barCodeBounds in
-            self.updateStatusLabelAndTitle(urlString)
-            Logger.d(String(describing: self.isGistHost(string: urlString)))
-            self.qrCodeViewFinder?.frame = barCodeBounds
-        }
+        presenter?.viewDidLoad()
 
         setupViews()
+        updateStatusLabelAndTitle(L10n.detecting)
         self.navigationController?.isNavigationBarHidden = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.isNavigationBarHidden = false
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        updateStatusLabelAndTitle(L10n.detecting)
-        if !hasCameraPermissions {
-            AVCaptureDevice.requestAccess(for: .video) { granted in
-                if !granted {
-                    Logger.w("Denied camera permissions")
-                    self.presentCameraPermissionWarning()
-                }
-            }
-        }
     }
 
     // MARK: - Private methods
@@ -77,34 +56,25 @@ internal final class QRCodeReaderViewController: UIViewController,
 
         setupQrViewFinder()
 
-        if let preview = codeReader?.videoPreview {
+        if let preview = presenter?.interactor?.codeReader?.videoPreview {
             preview.frame = view.layer.bounds
             self.view.layer.addSublayer(preview)
         }
 
         self.view.bringSubview(toFront: statusLabel)
         setupQrViewFinder()
-//        view.gestureRecognizers = [tapGesture]
-    }
-
-    fileprivate func isGistHost(string: String) -> Bool {
-        return URLComponents(string: string)?.host == "gist.github.com"
-    }
-
-    @IBAction func tapGestureRecognized(_ sender: UITapGestureRecognizer) {
-        Logger.d("Tap")
-//        codeReader?.stopReading()
-//        self.codeReader?.startReading { _, _ in }
     }
 
     // MARK: - QRCodeReaderViewProtocol
 
+    func loading() {
+        updateStatusLabelAndTitle(L10n.detecting)
+        qrCodeViewFinder?.frame = CGRect.zero
+    }
+
     func presentCameraPermissionWarning() {
         self.updateStatusLabelAndTitle(L10n.cameraNotAvailable)
-
-        let alert = UIAlertController(title: L10n.alertTitleCameraPermission,
-                                      message: L10n.alertMessageCameraPermission,
-                                      preferredStyle: .alert)
+        let alert = alerController(L10n.alertTitleCameraPermission, L10n.alertMessageCameraPermission)
 
         let action = UIAlertAction(title: L10n.settings, style: .default) { _ in
             guard let appSettings = URL(string: UIApplicationOpenSettingsURLString) else {
@@ -122,38 +92,52 @@ internal final class QRCodeReaderViewController: UIViewController,
         self.present(alert, animated: true)
     }
 
-    func openGist() {
-        guard let urlString = self.title else {
-            preconditionFailure("There is something wrong with <self.title>")
+    func showGistAlert() {
+        let alerMessage = "It turns out that the scanned QR Code is a Gist Url. Do you want to check-it outt?"
+
+        let alert = alerController("Detected QR Code", alerMessage)
+
+        let action = UIAlertAction(title: "Open Gist", style: .default) { _ in
+            Logger.d("Open next screen")
         }
 
-        let isGist = isGistHost(string: urlString)
-        var alerMessage: String!
-        if isGist {
-            alerMessage = "It turns out that the scanned QR Code is a Gist Url. Do you want to check-it outt?"
-        }
-        else {
-            alerMessage = "Invalid QR Code"
-        }
-
-        let alert = UIAlertController(title: "Detected QR Code",
-                                      message: alerMessage,
-                                      preferredStyle: .alert)
-
-        if isGist {
-            let action = UIAlertAction(title: "Open Gist", style: .default) { _ in
-                Logger.d("Open next screen")
-            }
-
-            alert.addAction(action)
-        }
-
+        alert.addAction(action)
         let cancel = UIAlertAction(title: L10n.ok, style: .cancel) { _ in
-            self.codeReader?.startReading { _, _ in }
+            self.presenter?.newReading()
         }
 
         alert.addAction(cancel)
 
         self.present(alert, animated: true)
+    }
+
+    func showInvalidCodeAlert() {
+        let alerMessage = "Invalid QR Code"
+
+        let alert = alerController("Detected QR Code", alerMessage)
+
+        let cancel = UIAlertAction(title: L10n.ok, style: .cancel) { _ in
+            self.presenter?.newReading()
+        }
+
+        alert.addAction(cancel)
+
+        self.present(alert, animated: true)
+    }
+
+    func updateStatus(codeValue: String) {
+        updateStatusLabelAndTitle(codeValue)
+        Logger.i(codeValue)
+    }
+
+    func updateViewFinder(area: CGRect) {
+        qrCodeViewFinder?.frame = area
+        Logger.i(String(describing: area))
+    }
+
+    // MARK: - Private methods
+
+    fileprivate func alerController(_ title: String, _ message: String) -> UIAlertController {
+        return UIAlertController(title: title, message: message, preferredStyle: .alert)
     }
 }

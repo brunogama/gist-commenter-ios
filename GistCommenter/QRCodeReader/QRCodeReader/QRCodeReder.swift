@@ -8,21 +8,14 @@
 
 import AVFoundation
 
-internal protocol QRCodeReadable {
-    typealias QRCodeData = (value: String, codeBounds: CGRect)
-    typealias QRCodableListener = (QRCodeData) -> Void
-
-    var videoPreview: AVCaptureVideoPreviewLayer? { get }
-
-    func startReading(completion: @escaping QRCodableListener)
-    func stopReading()
-}
-
 internal final class QRCodeReder: NSObject, QRCodeReadable, AVCaptureMetadataOutputObjectsDelegate {
 
     fileprivate(set) var videoPreview: AVCaptureVideoPreviewLayer?
     fileprivate var captureSession: AVCaptureSession = AVCaptureSession()
     fileprivate var didRead: QRCodableListener?
+    var hasCameraPermissions: Bool {
+        return AVCaptureDevice.authorizationStatus(for: .video) == .authorized
+    }
 
     override init() {
         super.init()
@@ -45,24 +38,6 @@ internal final class QRCodeReder: NSObject, QRCodeReadable, AVCaptureMetadataOut
         self.videoPreview = videoPreviewLayer
     }
 
-    // MARK: - AVCaptureMetadataOutputObjectsDelegate
-    func metadataOutput(_ output: AVCaptureMetadataOutput,
-                        didOutput metadataObjects: [AVMetadataObject],
-                        from connection: AVCaptureConnection) {
-
-        guard let redableObject = metadataObjects.first as? AVMetadataMachineReadableCodeObject,
-              let code = redableObject.stringValue,
-              let barCodeBounds = videoPreview?.transformedMetadataObject(for: redableObject)?.bounds
-        else {
-            return
-        }
-        //Vibrate the phone
-        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-        stopReading()
-
-        didRead?((value: code, codeBounds: barCodeBounds))
-    }
-
     // MARK: - QRCodeReadable
     func startReading(completion: @escaping QRCodableListener) {
         self.didRead = completion
@@ -71,5 +46,23 @@ internal final class QRCodeReder: NSObject, QRCodeReadable, AVCaptureMetadataOut
 
     func stopReading() {
         captureSession.stopRunning()
+    }
+
+    // MARK: - AVCaptureMetadataOutputObjectsDelegate
+    func metadataOutput(_ output: AVCaptureMetadataOutput,
+                        didOutput metadataObjects: [AVMetadataObject],
+                        from connection: AVCaptureConnection) {
+
+        guard let redableObject = metadataObjects.first as? AVMetadataMachineReadableCodeObject,
+            let code = redableObject.stringValue,
+            let barCodeBounds = videoPreview?.transformedMetadataObject(for: redableObject)?.bounds
+            else {
+                return
+        }
+
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate)) //Vibrate the phone
+        stopReading()
+
+        didRead?((value: code, codeBounds: barCodeBounds))
     }
 }

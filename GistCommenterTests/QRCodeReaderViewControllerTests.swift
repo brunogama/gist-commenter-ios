@@ -5,21 +5,25 @@ import XCTest
 
 internal class QRCodeReaderViewControllerTests: XCTestCase {
 
-    var viewController: QRCodeReaderViewController?
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var viewController: QRCodeReaderViewController!
+    private var controllerBootstrapper: ViewControllerBootstrapper<QRCodeReaderViewController>!
+    // swiftlint:enable implicitly_unwrapped_optional
 
     override func setUp() {
         super.setUp()
-        let bundle = Bundle(for: QRCodeReaderRouter.self)
+        let bundle = Bundle(for: type(of: self))
         let mockCodeReader = MockQRCodeReader()
         viewController = QRCodeReaderRouter.createModule(bundle: bundle, codeReader: mockCodeReader)
-        UIApplication.shared.keyWindow?.rootViewController = viewController
-        _ = viewController?.view
-        viewController?.viewWillAppear(false)
-        viewController?.viewDidAppear(false)
+        controllerBootstrapper = ViewControllerBootstrapper()
+        controllerBootstrapper.setupTopLevelUI(withViewController: viewController)
+
     }
 
     override func tearDown() {
         viewController = nil
+        controllerBootstrapper.tearDownTopLevelUI()
+        controllerBootstrapper = nil
         super.tearDown()
     }
 
@@ -41,50 +45,4 @@ internal class QRCodeReaderViewControllerTests: XCTestCase {
         let sut = viewController?.statusLabel.text
         XCTAssertEqual(sut, text)
     }
-
-    func test_QRCodeReader_didReadCallback() {
-        let expectation = self.expectation(description: "Waiting for QRCodeData")
-        var stringValue: String?
-        var area: CGRect?
-
-        viewController?.codeReader?.startReading { string, scannedArea in
-            stringValue = string
-            area = scannedArea
-            expectation.fulfill()
-        }
-
-        waitForExpectations(timeout: 1, handler: nil)
-        XCTAssertEqual(stringValue, "https://foo.bar")
-        XCTAssertEqual(area, CGRect(origin: CGPoint.zero, size: CGSize(width: 1, height: 1)))
-    }
-
-    func test_title_onForceQRCoderCallback() {
-        guard let reader = viewController?.codeReader as? MockQRCodeReader else {
-            XCTFail("Couldnt cast to MockQRCodeReader")
-            return
-        }
-
-        reader.didRead?(reader.callbackData)
-
-        let sut = viewController?.title
-
-        XCTAssertEqual(sut, "https://foo.bar")
-    }
-}
-
-// MARK: - Utils
-
-fileprivate final class MockQRCodeReader: NSObject, QRCodeReadable {
-    var videoPreview: AVCaptureVideoPreviewLayer?
-    var captureSession: AVCaptureSession = AVCaptureSession()
-    fileprivate(set) var didRead: QRCodableListener?
-    let callbackData: QRCodeData = ("https://foo.bar",
-                                    CGRect(origin: CGPoint.zero, size: CGSize(width: 1, height: 1)))
-
-    func startReading(completion: @escaping QRCodableListener) {
-        didRead = completion
-        didRead?(callbackData)
-    }
-
-    func stopReading() {}
 }
