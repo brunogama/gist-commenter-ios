@@ -1,4 +1,3 @@
-
 import AVFoundation
 @testable import GistCommenter
 import UIKit
@@ -42,6 +41,22 @@ internal class QRCodeReaderViewControllerTests: XCTestCase {
         let sut = viewController?.statusLabel.text
         XCTAssertEqual(sut, text)
     }
+
+    func test_QRCodeReader_didReadCallback() {
+        let expectation = self.expectation(description: "Waiting for QRCodeData")
+        var stringValue: String?
+        var area: CGRect?
+
+        viewController?.codeReader?.startReading { string, scannedArea in
+            stringValue = string
+            area = scannedArea
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 1, handler: nil)
+        XCTAssertEqual(stringValue, "https://foo.bar")
+        XCTAssertEqual(area, CGRect(origin: CGPoint.zero, size: CGSize(width: 1, height: 1)))
+    }
 }
 
 // MARK: - Utils
@@ -49,8 +64,14 @@ internal class QRCodeReaderViewControllerTests: XCTestCase {
 fileprivate final class MockQRCodeReader: NSObject, QRCodeReadable {
     var videoPreview: AVCaptureVideoPreviewLayer?
     var captureSession: AVCaptureSession = AVCaptureSession()
-    var didRead: QRCodableListener?
+    fileprivate(set) var didRead: QRCodableListener?
+    let callbackData: QRCodeData = ("https://foo.bar",
+                                    CGRect(origin: CGPoint.zero, size: CGSize(width: 1, height: 1)))
 
-    func startReading(completion: @escaping QRCodableListener) {}
+    func startReading(completion: @escaping QRCodableListener) {
+        didRead = completion
+        didRead?(callbackData)
+    }
+
     func stopReading() {}
 }

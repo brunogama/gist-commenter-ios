@@ -9,7 +9,8 @@
 import AVFoundation
 
 internal protocol QRCodeReadable {
-    typealias QRCodableListener = (String, CGRect) -> Void
+    typealias QRCodeData = (value: String, codeBounds: CGRect)
+    typealias QRCodableListener = (QRCodeData) -> Void
 
     var videoPreview: AVCaptureVideoPreviewLayer? { get }
 
@@ -59,7 +60,7 @@ internal final class QRCodeReder: NSObject, QRCodeReadable, AVCaptureMetadataOut
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
         stopReading()
 
-        didRead?(code, barCodeBounds)
+        didRead?((value: code, codeBounds: barCodeBounds))
     }
 
     // MARK: - QRCodeReadable
@@ -67,6 +68,7 @@ internal final class QRCodeReder: NSObject, QRCodeReadable, AVCaptureMetadataOut
         self.didRead = completion
         captureSession.startRunning()
     }
+
     func stopReading() {
         captureSession.stopRunning()
     }
