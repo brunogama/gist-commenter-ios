@@ -41,6 +41,10 @@
 		796060C82065974D00300650 /* GistComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060C6206596CB00300650 /* GistComment.swift */; };
 		796060CA2065978300300650 /* comments.json in Resources */ = {isa = PBXBuildFile; fileRef = 796060C92065978300300650 /* comments.json */; };
 		796060CB2065988200300650 /* comments.json in Resources */ = {isa = PBXBuildFile; fileRef = 796060C92065978300300650 /* comments.json */; };
+		796060CD2065A91F00300650 /* GistService+TargetType.path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060CC2065A91F00300650 /* GistService+TargetType.path.swift */; };
+		796060CF2065A9B200300650 /* GistService+TargetType.baseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060CE2065A9B200300650 /* GistService+TargetType.baseUrl.swift */; };
+		796060D12065A9E200300650 /* GistService+TargetType.sampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060D02065A9E200300650 /* GistService+TargetType.sampleData.swift */; };
+		796060D32065AA8D00300650 /* GistService+TargetType.task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060D22065AA8D00300650 /* GistService+TargetType.task.swift */; };
 		797F446C20642A160078CA4A /* QRCodeReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */; };
 		798BA32620644DAD00D7F6D1 /* QRCodeReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */; };
 		798BA32A2064611D00D7F6D1 /* QRCodeReder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BA3292064611D00D7F6D1 /* QRCodeReder.swift */; };
@@ -123,6 +127,10 @@
 		796060BC206594A300300650 /* gist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gist.json; sourceTree = "<group>"; };
 		796060C6206596CB00300650 /* GistComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistComment.swift; sourceTree = "<group>"; };
 		796060C92065978300300650 /* comments.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = comments.json; sourceTree = "<group>"; };
+		796060CC2065A91F00300650 /* GistService+TargetType.path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistService+TargetType.path.swift"; sourceTree = "<group>"; };
+		796060CE2065A9B200300650 /* GistService+TargetType.baseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistService+TargetType.baseUrl.swift"; sourceTree = "<group>"; };
+		796060D02065A9E200300650 /* GistService+TargetType.sampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistService+TargetType.sampleData.swift"; sourceTree = "<group>"; };
+		796060D22065AA8D00300650 /* GistService+TargetType.task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistService+TargetType.task.swift"; sourceTree = "<group>"; };
 		797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeReaderViewController.xib; sourceTree = "<group>"; };
 		798BA3292064611D00D7F6D1 /* QRCodeReder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReder.swift; sourceTree = "<group>"; };
 		79B04ABD2065669B00A9E387 /* MockQRCodeReaderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockQRCodeReaderInteractor.swift; sourceTree = "<group>"; };
@@ -322,7 +330,7 @@
 		796060B8206591EE00300650 /* RemoteManager */ = {
 			isa = PBXGroup;
 			children = (
-				796060B92065920600300650 /* GistService.swift */,
+				796060D42065AAD200300650 /* GistService */,
 			);
 			path = RemoteManager;
 			sourceTree = "<group>";
@@ -334,6 +342,18 @@
 				796060C92065978300300650 /* comments.json */,
 			);
 			path = SampleData;
+			sourceTree = "<group>";
+		};
+		796060D42065AAD200300650 /* GistService */ = {
+			isa = PBXGroup;
+			children = (
+				796060B92065920600300650 /* GistService.swift */,
+				796060D02065A9E200300650 /* GistService+TargetType.sampleData.swift */,
+				796060CC2065A91F00300650 /* GistService+TargetType.path.swift */,
+				796060CE2065A9B200300650 /* GistService+TargetType.baseUrl.swift */,
+				796060D22065AA8D00300650 /* GistService+TargetType.task.swift */,
+			);
+			path = GistService;
 			sourceTree = "<group>";
 		};
 		79E729C320629A3F00EF27E9 /* Constants */ = {
@@ -647,6 +667,7 @@
 			files = (
 				798BA32A2064611D00D7F6D1 /* QRCodeReder.swift in Sources */,
 				79E72A4D2062EC3500EF27E9 /* Logger.swift in Sources */,
+				796060CD2065A91F00300650 /* GistService+TargetType.path.swift in Sources */,
 				79E72A452062E05C00EF27E9 /* QRCodeReaderInteractor.swift in Sources */,
 				796060B520658F1100300650 /* Codable+Extensions.swift in Sources */,
 				796060AD2065834700300650 /* GistDetailViewController.swift in Sources */,
@@ -657,6 +678,8 @@
 				7960608F20657A0800300650 /* UIViewController+NibLoadable.swift in Sources */,
 				79E729C92062B7FF00EF27E9 /* Strings.swift in Sources */,
 				79E72A442062E05C00EF27E9 /* QRCodeReaderProtocols.swift in Sources */,
+				796060D12065A9E200300650 /* GistService+TargetType.sampleData.swift in Sources */,
+				796060CF2065A9B200300650 /* GistService+TargetType.baseUrl.swift in Sources */,
 				79E72A412062E05C00EF27E9 /* QRCodeReaderPresenter.swift in Sources */,
 				796060AE2065834700300650 /* GistDetailProtocols.swift in Sources */,
 				796060BA2065920600300650 /* GistService.swift in Sources */,
@@ -665,6 +688,7 @@
 				796060B320658C4D00300650 /* GistModel.swift in Sources */,
 				796060AF2065834700300650 /* GistDetailInteractor.swift in Sources */,
 				796060AC2065834700300650 /* GistDetailRouter.swift in Sources */,
+				796060D32065AA8D00300650 /* GistService+TargetType.task.swift in Sources */,
 				796060AB2065834700300650 /* GistDetailPresenter.swift in Sources */,
 				79E72A432062E05C00EF27E9 /* QRCodeReaderViewController.swift in Sources */,
 				796060B7206590B600300650 /* JSONNull.swift in Sources */,
