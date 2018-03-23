@@ -21,7 +21,7 @@ internal final class QRCodeReaderViewController: UIViewController,
     }
 
     @IBOutlet weak var statusLabel: UILabel!
-
+//    var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
     var qrCodeViewFinder: UIView?
 
     public override func viewDidLoad() {
@@ -29,6 +29,7 @@ internal final class QRCodeReaderViewController: UIViewController,
 
         codeReader?.startReading { urlString, barCodeBounds in
             self.updateStatusLabelAndTitle(urlString)
+            Logger.d(String(describing: self.isGistHost(string: urlString)))
             self.qrCodeViewFinder?.frame = barCodeBounds
         }
 
@@ -83,6 +84,17 @@ internal final class QRCodeReaderViewController: UIViewController,
 
         self.view.bringSubview(toFront: statusLabel)
         setupQrViewFinder()
+//        view.gestureRecognizers = [tapGesture]
+    }
+
+    fileprivate func isGistHost(string: String) -> Bool {
+        return URLComponents(string: string)?.host == "gist.github.com"
+    }
+
+    @IBAction func tapGestureRecognized(_ sender: UITapGestureRecognizer) {
+        Logger.d("Tap")
+//        codeReader?.stopReading()
+//        self.codeReader?.startReading { _, _ in }
     }
 
     // MARK: - QRCodeReaderViewProtocol
@@ -105,6 +117,41 @@ internal final class QRCodeReaderViewController: UIViewController,
         alert.addAction(action)
 
         let cancel = UIAlertAction(title: L10n.ok, style: .cancel)
+        alert.addAction(cancel)
+
+        self.present(alert, animated: true)
+    }
+
+    func openGist() {
+        guard let urlString = self.title else {
+            preconditionFailure("There is something wrong with <self.title>")
+        }
+
+        let isGist = isGistHost(string: urlString)
+        var alerMessage: String!
+        if isGist {
+            alerMessage = "It turns out that the scanned QR Code is a Gist Url. Do you want to check-it outt?"
+        }
+        else {
+            alerMessage = "Invalid QR Code"
+        }
+
+        let alert = UIAlertController(title: "Detected QR Code",
+                                      message: alerMessage,
+                                      preferredStyle: .alert)
+
+        if isGist {
+            let action = UIAlertAction(title: "Open Gist", style: .default) { _ in
+                Logger.d("Open next screen")
+            }
+
+            alert.addAction(action)
+        }
+
+        let cancel = UIAlertAction(title: L10n.ok, style: .cancel) { _ in
+            self.codeReader?.startReading { _, _ in }
+        }
+
         alert.addAction(cancel)
 
         self.present(alert, animated: true)

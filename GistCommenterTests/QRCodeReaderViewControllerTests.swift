@@ -1,4 +1,7 @@
+
+import AVFoundation
 @testable import GistCommenter
+import UIKit
 import XCTest
 
 internal class QRCodeReaderViewControllerTests: XCTestCase {
@@ -7,7 +10,9 @@ internal class QRCodeReaderViewControllerTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        viewController = QRCodeReaderRouter.createModule(bundle: Bundle(for: QRCodeReaderRouter.self))
+        let bundle = Bundle(for: QRCodeReaderRouter.self)
+        let mockCodeReader = MockQRCodeReader()
+        viewController = QRCodeReaderRouter.createModule(bundle: bundle, codeReader: mockCodeReader)
         UIApplication.shared.keyWindow?.rootViewController = viewController
         _ = viewController?.view
         viewController?.viewWillAppear(false)
@@ -37,4 +42,15 @@ internal class QRCodeReaderViewControllerTests: XCTestCase {
         let sut = viewController?.statusLabel.text
         XCTAssertEqual(sut, text)
     }
+}
+
+// MARK: - Utils
+
+fileprivate final class MockQRCodeReader: NSObject, QRCodeReadable {
+    var videoPreview: AVCaptureVideoPreviewLayer?
+    var captureSession: AVCaptureSession = AVCaptureSession()
+    var didRead: QRCodableListener?
+
+    func startReading(completion: @escaping QRCodableListener) {}
+    func stopReading() {}
 }

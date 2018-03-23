@@ -40,5 +40,6 @@ internal protocol QRCodeReaderViewProtocol: class {
     var codeReader: QRCodeReadable? { get set }
 
     func presentCameraPermissionWarning()
+    func openGist()
     /* Presenter -> ViewController */
 }
