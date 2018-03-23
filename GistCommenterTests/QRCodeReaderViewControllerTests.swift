@@ -32,15 +32,8 @@ internal class QRCodeReaderViewControllerTests: XCTestCase {
 
     func test_checkTitle_onUpdateStatusLabelAndTitle() {
         let text = "Check"
-        viewController?.updateStatusLabelAndTitle(text)
+        viewController?.title = text
         let sut = viewController?.title
-        XCTAssertEqual(sut, text)
-    }
-
-    func test_checkStatusLabelText_onUpdateStatusLabelAndTitle() {
-        let text = "Camera not available"
-        viewController?.updateStatusLabelAndTitle(text)
-        let sut = viewController?.statusLabel.text
         XCTAssertEqual(sut, text)
     }
 
@@ -81,8 +74,7 @@ internal class QRCodeReaderViewControllerTests: XCTestCase {
 
     fileprivate func createModule() -> QRCodeReaderViewController {
 
-        let view = QRCodeReaderViewController(nibName: "QRCodeReaderViewController",
-                                              bundle: Bundle(for: type(of: self)))
+        let view = QRCodeReaderViewController.instantiate(Bundle(for: type(of: self)))
         let interactor = MockQRCodeReaderInteractor()
         interactor.codeReader = MockQRCodeReader()
         let router = QRCodeReaderRouter()

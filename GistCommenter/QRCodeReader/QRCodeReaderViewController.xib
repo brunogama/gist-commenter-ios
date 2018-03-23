@@ -39,14 +39,6 @@
                 <constraint firstItem="1hz-qU-tax" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="iWo-lm-8Ax"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <connections>
-                <outletCollection property="gestureRecognizers" destination="PbW-I6-UwV" appends="YES" id="mkM-NR-el8"/>
-            </connections>
         </view>
-        <tapGestureRecognizer id="PbW-I6-UwV">
-            <connections>
-                <action selector="tapGestureRecognized:" destination="-1" id="YBv-Zu-LH1"/>
-            </connections>
-        </tapGestureRecognizer>
     </objects>
 </document>

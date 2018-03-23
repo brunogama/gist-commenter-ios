@@ -15,17 +15,22 @@ internal final class QRCodeReaderViewController: UIViewController,
                                                QRCodeReaderViewProtocol {
 
 	var presenter: QRCodeReaderPresenterProtocol?
-
-    @IBOutlet weak var statusLabel: UILabel!
-
+    @IBOutlet private weak var statusLabel: UILabel!
     var qrCodeViewFinder: UIView?
+    override var title: String? {
+        didSet {
+            statusLabel.text = title
+        }
+    }
+
+    // MARK: Overriden
 
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
 
         setupViews()
-        updateStatusLabelAndTitle(L10n.detecting)
+        self.title = L10n.detecting
         self.navigationController?.isNavigationBarHidden = true
     }
 
@@ -34,46 +39,16 @@ internal final class QRCodeReaderViewController: UIViewController,
         self.navigationController?.isNavigationBarHidden = false
     }
 
-    // MARK: - Private methods
-
-    fileprivate func setupQrViewFinder() {
-        self.qrCodeViewFinder = UIView()
-
-        if let qrCodeViewFinder = qrCodeViewFinder {
-            qrCodeViewFinder.layer.borderColor = UIColor.orange.cgColor
-            qrCodeViewFinder.layer.borderWidth = 2
-            self.view.addSubview(qrCodeViewFinder)
-            self.view.bringSubview(toFront: qrCodeViewFinder)
-        }
-    }
-
-    internal func updateStatusLabelAndTitle(_ title: String) {
-        statusLabel.text = title
-        self.title = statusLabel.text
-    }
-
-    fileprivate func setupViews() {
-
-        setupQrViewFinder()
-
-        if let preview = presenter?.interactor?.codeReader?.videoPreview {
-            preview.frame = view.layer.bounds
-            self.view.layer.addSublayer(preview)
-        }
-
-        self.view.bringSubview(toFront: statusLabel)
-        setupQrViewFinder()
-    }
-
     // MARK: - QRCodeReaderViewProtocol
 
     func loading() {
-        updateStatusLabelAndTitle(L10n.detecting)
+        self.title = L10n.detecting
         qrCodeViewFinder?.frame = CGRect.zero
     }
 
     func presentCameraPermissionWarning() {
-        self.updateStatusLabelAndTitle(L10n.cameraNotAvailable)
+        self.title = L10n.cameraNotAvailable
+
         let alert = alerController(L10n.alertTitleCameraPermission, L10n.alertMessageCameraPermission)
 
         let action = UIAlertAction(title: L10n.settings, style: .default) { _ in
@@ -95,15 +70,10 @@ internal final class QRCodeReaderViewController: UIViewController,
     func showGistAlert() {
         let alert = alerController(L10n.detectedQRCode, L10n.validQrCodeMessage)
 
-        let action = UIAlertAction(title: L10n.openGist, style: .default) { _ in
-            Logger.d("Open next screen")
-        }
+        let action = UIAlertAction(title: L10n.openGist, style: .default) { _ in Logger.d("Open next screen") }
+        let cancel = UIAlertAction(title: L10n.ok, style: .cancel) { _ in self.presenter?.newReading() }
 
         alert.addAction(action)
-        let cancel = UIAlertAction(title: L10n.ok, style: .cancel) { _ in
-            self.presenter?.newReading()
-        }
-
         alert.addAction(cancel)
 
         self.present(alert, animated: true)
@@ -111,29 +81,48 @@ internal final class QRCodeReaderViewController: UIViewController,
 
     func showInvalidCodeAlert() {
         let alert = alerController(L10n.detectedQRCode, L10n.invalidQrCodeMessage)
-
-        let cancel = UIAlertAction(title: L10n.ok, style: .cancel) { _ in
-            self.presenter?.newReading()
-        }
+        let cancel = UIAlertAction(title: L10n.ok, style: .cancel) { _ in self.presenter?.newReading() }
 
         alert.addAction(cancel)
 
-        self.present(alert, animated: true)
+        present(alert, animated: true)
     }
 
     func updateStatus(codeValue: String) {
-        updateStatusLabelAndTitle(codeValue)
-        Logger.i(codeValue)
+        self.title = codeValue
     }
 
     func updateViewFinder(area: CGRect) {
         qrCodeViewFinder?.frame = area
-        Logger.i(String(describing: area))
     }
 
     // MARK: - Private methods
 
     fileprivate func alerController(_ title: String, _ message: String) -> UIAlertController {
         return UIAlertController(title: title, message: message, preferredStyle: .alert)
+    }
+
+    fileprivate func setupQrViewFinder() {
+        qrCodeViewFinder = UIView()
+
+        if let qrCodeViewFinder = qrCodeViewFinder {
+            qrCodeViewFinder.layer.borderColor = UIColor.orange.cgColor
+            qrCodeViewFinder.layer.borderWidth = 2
+            self.view.addSubview(qrCodeViewFinder)
+            self.view.bringSubview(toFront: qrCodeViewFinder)
+        }
+    }
+
+    fileprivate func setupViews() {
+
+        setupQrViewFinder()
+
+        if let preview = presenter?.interactor?.codeReader?.videoPreview {
+            preview.frame = view.layer.bounds
+            self.view.layer.addSublayer(preview)
+        }
+
+        self.view.bringSubview(toFront: statusLabel)
+        setupQrViewFinder()
     }
 }

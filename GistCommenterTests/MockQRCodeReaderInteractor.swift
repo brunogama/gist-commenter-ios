@@ -11,7 +11,6 @@ import AVFoundation
 import UIKit
 import XCTest
 
-
 internal class MockQRCodeReaderInteractor: NSObject, QRCodeReaderInteractorInputProtocol {
 
     weak var presenter: QRCodeReaderInteractorOutputProtocol?
