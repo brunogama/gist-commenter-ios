@@ -12,9 +12,7 @@ internal class QRCodeReaderViewControllerTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        let bundle = Bundle(for: type(of: self))
-        let mockCodeReader = MockQRCodeReader()
-        viewController = QRCodeReaderRouter.createModule(bundle: bundle, codeReader: mockCodeReader)
+        viewController = createModule()
         controllerBootstrapper = ViewControllerBootstrapper()
         controllerBootstrapper.setupTopLevelUI(withViewController: viewController)
 
@@ -44,5 +42,55 @@ internal class QRCodeReaderViewControllerTests: XCTestCase {
         viewController?.updateStatusLabelAndTitle(text)
         let sut = viewController?.statusLabel.text
         XCTAssertEqual(sut, text)
+    }
+
+    func test_title_onForceQRCoderCallback() {
+        viewController?.presenter?.interactor?.startReader()
+
+        let sut = viewController?.title
+
+        XCTAssertEqual(sut, "https://foo.bar")
+    }
+
+    func test_viewFinderArea_onForceQRCoderCallback() {
+        viewController?.presenter?.interactor?.startReader()
+
+        let sut = viewController?.qrCodeViewFinder?.frame
+
+        XCTAssertEqual(sut, CGRect(origin: CGPoint.zero, size: CGSize(width: 1, height: 1)))
+    }
+
+    func test_checkTitle_afterCancelDetectionAlerts() {
+        viewController?.presenter?.interactor?.startReader()
+        viewController?.loading()
+
+        let sut = viewController?.title
+        XCTAssertEqual(sut, "Detecting ...")
+    }
+
+    func test_viewFinderArea_afterCancelDetectionAlerts() {
+        viewController?.presenter?.interactor?.startReader()
+        viewController?.loading()
+
+        let sut = viewController?.qrCodeViewFinder?.frame
+
+        XCTAssertEqual(sut, CGRect.zero)
+    }
+
+    // MARK: - Private methods
+
+    fileprivate func createModule() -> QRCodeReaderViewController {
+
+        let view = QRCodeReaderViewController(nibName: "QRCodeReaderViewController",
+                                              bundle: Bundle(for: type(of: self)))
+        let interactor = MockQRCodeReaderInteractor()
+        interactor.codeReader = MockQRCodeReader()
+        let router = QRCodeReaderRouter()
+        let presenter = QRCodeReaderPresenter(interface: view, interactor: interactor, router: router)
+
+        view.presenter = presenter
+        interactor.presenter = presenter
+        router.viewController = view
+        return view
     }
 }
