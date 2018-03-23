@@ -21,6 +21,12 @@
 		79414F2C2061DF0000927472 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79414F292061DEFF00927472 /* Localizable.strings */; };
 		7960608F20657A0800300650 /* UIViewController+NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960608E20657A0800300650 /* UIViewController+NibLoadable.swift */; };
 		7960609020657A3000300650 /* UIViewController+NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960608E20657A0800300650 /* UIViewController+NibLoadable.swift */; };
+		796060AB2065834700300650 /* GistDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060A52065834700300650 /* GistDetailPresenter.swift */; };
+		796060AC2065834700300650 /* GistDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060A62065834700300650 /* GistDetailRouter.swift */; };
+		796060AD2065834700300650 /* GistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060A72065834700300650 /* GistDetailViewController.swift */; };
+		796060AE2065834700300650 /* GistDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060A82065834700300650 /* GistDetailProtocols.swift */; };
+		796060AF2065834700300650 /* GistDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060A92065834700300650 /* GistDetailInteractor.swift */; };
+		796060B02065834700300650 /* GistDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796060AA2065834700300650 /* GistDetailViewController.xib */; };
 		797F446C20642A160078CA4A /* QRCodeReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */; };
 		798BA32620644DAD00D7F6D1 /* QRCodeReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */; };
 		798BA32A2064611D00D7F6D1 /* QRCodeReder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BA3292064611D00D7F6D1 /* QRCodeReder.swift */; };
@@ -90,6 +96,12 @@
 		79414F152061D0F500927472 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		79414F2A2061DEFF00927472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7960608E20657A0800300650 /* UIViewController+NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NibLoadable.swift"; sourceTree = "<group>"; };
+		796060A52065834700300650 /* GistDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailPresenter.swift; sourceTree = "<group>"; };
+		796060A62065834700300650 /* GistDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailRouter.swift; sourceTree = "<group>"; };
+		796060A72065834700300650 /* GistDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailViewController.swift; sourceTree = "<group>"; };
+		796060A82065834700300650 /* GistDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailProtocols.swift; sourceTree = "<group>"; };
+		796060A92065834700300650 /* GistDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailInteractor.swift; sourceTree = "<group>"; };
+		796060AA2065834700300650 /* GistDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GistDetailViewController.xib; sourceTree = "<group>"; };
 		797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeReaderViewController.xib; sourceTree = "<group>"; };
 		798BA3292064611D00D7F6D1 /* QRCodeReder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReder.swift; sourceTree = "<group>"; };
 		79B04ABD2065669B00A9E387 /* MockQRCodeReaderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockQRCodeReaderInteractor.swift; sourceTree = "<group>"; };
@@ -190,6 +202,7 @@
 				79E72A4B2062EC2800EF27E9 /* Debug */,
 				79E72A4A2062E18600EF27E9 /* Entities */,
 				79414F332061E3F700927472 /* Generated */,
+				796060A42065833400300650 /* GistDetail */,
 				79E72A492062E0AF00EF27E9 /* QRCodeReader */,
 				79414EFE2061CD8400927472 /* Resources */,
 				79E72A502062F7D400EF27E9 /* Templates */,
@@ -266,6 +279,19 @@
 				79E729C320629A3F00EF27E9 /* Constants */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		796060A42065833400300650 /* GistDetail */ = {
+			isa = PBXGroup;
+			children = (
+				796060A52065834700300650 /* GistDetailPresenter.swift */,
+				796060A62065834700300650 /* GistDetailRouter.swift */,
+				796060A72065834700300650 /* GistDetailViewController.swift */,
+				796060A82065834700300650 /* GistDetailProtocols.swift */,
+				796060A92065834700300650 /* GistDetailInteractor.swift */,
+				796060AA2065834700300650 /* GistDetailViewController.xib */,
+			);
+			path = GistDetail;
 			sourceTree = "<group>";
 		};
 		79E729C320629A3F00EF27E9 /* Constants */ = {
@@ -437,6 +463,7 @@
 			files = (
 				79E72A532063283C00EF27E9 /* Localizable.strings in Resources */,
 				79414F072061CD8400927472 /* Settings.bundle in Resources */,
+				796060B02065834700300650 /* GistDetailViewController.xib in Resources */,
 				797F446C20642A160078CA4A /* QRCodeReaderViewController.xib in Resources */,
 				79E72A522062F7D400EF27E9 /* stats.stencil in Resources */,
 				79414ED82061CCA000927472 /* Images.xcassets in Resources */,
@@ -573,6 +600,7 @@
 				798BA32A2064611D00D7F6D1 /* QRCodeReder.swift in Sources */,
 				79E72A4D2062EC3500EF27E9 /* Logger.swift in Sources */,
 				79E72A452062E05C00EF27E9 /* QRCodeReaderInteractor.swift in Sources */,
+				796060AD2065834700300650 /* GistDetailViewController.swift in Sources */,
 				792A4399206551A900B8F12B /* QRCodeReadable.swift in Sources */,
 				79414ED62061CC9E00927472 /* GistCommenter.xcdatamodeld in Sources */,
 				79E72A4F2062F7C300EF27E9 /* stats.generated.swift in Sources */,
@@ -580,8 +608,12 @@
 				79E729C92062B7FF00EF27E9 /* Strings.swift in Sources */,
 				79E72A442062E05C00EF27E9 /* QRCodeReaderProtocols.swift in Sources */,
 				79E72A412062E05C00EF27E9 /* QRCodeReaderPresenter.swift in Sources */,
+				796060AE2065834700300650 /* GistDetailProtocols.swift in Sources */,
 				79414ECE2061CC9E00927472 /* AppDelegate.swift in Sources */,
 				79E729C72062B7FF00EF27E9 /* Assets.swift in Sources */,
+				796060AF2065834700300650 /* GistDetailInteractor.swift in Sources */,
+				796060AC2065834700300650 /* GistDetailRouter.swift in Sources */,
+				796060AB2065834700300650 /* GistDetailPresenter.swift in Sources */,
 				79E72A432062E05C00EF27E9 /* QRCodeReaderViewController.swift in Sources */,
 				79E72A422062E05C00EF27E9 /* QRCodeReaderRouter.swift in Sources */,
 			);
