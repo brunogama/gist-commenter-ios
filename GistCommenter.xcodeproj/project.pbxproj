@@ -50,6 +50,7 @@
 		796060DC2065CAE900300650 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060DB2065CAE900300650 /* UserModel.swift */; };
 		796060DE2065CB1300300650 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060DD2065CB1300300650 /* HistoryModel.swift */; };
 		796060E02065CB2D00300650 /* ChangeStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060DF2065CB2D00300650 /* ChangeStatusModel.swift */; };
+		796060E32065D16C00300650 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796060E22065D16C00300650 /* PKHUD.framework */; };
 		797F446C20642A160078CA4A /* QRCodeReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */; };
 		798BA32620644DAD00D7F6D1 /* QRCodeReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */; };
 		798BA32A2064611D00D7F6D1 /* QRCodeReder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BA3292064611D00D7F6D1 /* QRCodeReder.swift */; };
@@ -141,6 +142,7 @@
 		796060DB2065CAE900300650 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		796060DD2065CB1300300650 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		796060DF2065CB2D00300650 /* ChangeStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStatusModel.swift; sourceTree = "<group>"; };
+		796060E22065D16C00300650 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 		797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeReaderViewController.xib; sourceTree = "<group>"; };
 		798BA3292064611D00D7F6D1 /* QRCodeReder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReder.swift; sourceTree = "<group>"; };
 		79B04ABD2065669B00A9E387 /* MockQRCodeReaderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockQRCodeReaderInteractor.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79E72A182062CF8600EF27E9 /* Alamofire.framework in Frameworks */,
+				796060E32065D16C00300650 /* PKHUD.framework in Frameworks */,
 				79E72A192062CF8600EF27E9 /* Moya.framework in Frameworks */,
 				79E72A1C2062CF8600EF27E9 /* Result.framework in Frameworks */,
 			);
@@ -392,6 +395,7 @@
 		79E729CD2062CD3E00EF27E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				796060E22065D16C00300650 /* PKHUD.framework */,
 				79E729CE2062CD3E00EF27E9 /* iOS */,
 			);
 			name = Frameworks;
@@ -626,12 +630,8 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveMoya.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework",
 			);
 			name = "Carthage: Copy frameworks";
 			outputPaths = (
@@ -649,16 +649,9 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/OHHTTPStubs.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveMoya.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework",
 			);
 			name = "Carthage: Copy frameworks";
 			outputPaths = (
