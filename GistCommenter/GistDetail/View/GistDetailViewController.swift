@@ -34,23 +34,35 @@ internal final class GistDetailViewController: UIViewController, UITableViewDele
         return .lightContent
     }
 
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return -1
+    }
+
     func tableView(_ tableView: UITableView,
                    heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 44 : 0
+        return section == 0 ? 44 : -1
     }
 
     func tableView(_ tableView: UITableView,
                    viewForHeaderInSection section: Int) -> UIView? {
-        let frame = CGRect(x: 0, y: 0, width: tableView.bounds.size.width,
-                           height: self.tableView(tableView, heightForHeaderInSection: section))
+        if section == 0 {
+            let frame = CGRect(x: 0, y: 0, width: tableView.bounds.size.width,
+                               height: self.tableView(tableView, heightForHeaderInSection: section))
 
-        let view = GistHeaderView(frame: frame)
-        view.title = datasource?.files.first?.filename
-        return view
+            let view = GistHeaderView(frame: frame)
+            view.title = datasource?.files.first?.filename
+            return view
+        }
+
+        return nil
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 1 {
+        if indexPath.section == 0 {
             return UITableViewAutomaticDimension
         }
 
@@ -76,7 +88,7 @@ internal final class GistDetailViewController: UIViewController, UITableViewDele
 
         let indicatorView = activityIndicatorView(with: activityViewSize)
         tableFooterView.addSubview(indicatorView)
-        addCenteringConstraings(indicatorView)
+        addCenteringConstraints(indicatorView)
         tableView.tableFooterView = tableFooterView
         tableView.tableFooterView?.frame = tableFooterView.frame
     }
@@ -89,13 +101,14 @@ internal final class GistDetailViewController: UIViewController, UITableViewDele
 
     func cleanTableFooterView() {
         tableView.tableFooterView?.subviews.flatMap { $0 as UIView }.forEach { $0.removeFromSuperview() }
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
 
     func presentEmpty() {
         datasource?.data.value = []
         hideLoading()
         cleanTableFooterView()
-        let text = "No comments 😢"
+        let text = L10n.noComments
         let label = emptyLabel(with: text)
         tableView.tableFooterView = label
         tableView.tableFooterView?.frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 44)
@@ -107,7 +120,7 @@ internal final class GistDetailViewController: UIViewController, UITableViewDele
         tableView.register(cellType: CommentTableViewCell.self)
         tableView.register(cellType: FileCell.self)
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 100
+        tableView.estimatedRowHeight = 180
         tableView.dataSource = datasource
         tableView.delegate = self
         tableView.tableFooterView = UIView()
@@ -118,30 +131,19 @@ internal final class GistDetailViewController: UIViewController, UITableViewDele
 
     fileprivate func setupNavigationBar() {
         navigationItem.title = title
-        navigationItem.prompt = ""
-        let image = #imageLiteral(resourceName: "github").withRenderingMode(.alwaysTemplate)
-        let imageView = UIImageView(image: image)
-        imageView.tintColor = .white
-
-        let ratio: CGFloat = 2
-        let imageWidth = image.size.width * ratio
-        let imageHeight = image.size.height * ratio
-        let positionX = view.frame.size.width / 2
-        let positionY: CGFloat = 0
-
-        imageView.frame = CGRect(x: positionX, y: positionY, width: imageWidth, height: imageHeight)
-        imageView.contentMode = .scaleAspectFill
-
-        self.navigationController?.navigationBar.addSubview(imageView)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "message-square"), style: .plain, target: nil, action: nil)
+        navigationItem.prompt = L10n.gistDetail
     }
 
-    fileprivate func addCenteringConstraings(_ toView: UIView) {
-        toView.translatesAutoresizingMaskIntoConstraints = false
-        ["H:|[v]|", "V:|[v]|"].forEach { format in
+    fileprivate func add(visualConstraints: [String], to views: [String: Any]) {
+        visualConstraints.forEach { format in
             NSLayoutConstraint.constraints(withVisualFormat: format, options: .init(rawValue:0), metrics: nil,
-                                           views: ["v": toView]).forEach { $0.isActive = true }
+                                           views: views).forEach { $0.isActive = true }
         }
+    }
+
+    fileprivate func addCenteringConstraints(_ toView: UIView) {
+        toView.translatesAutoresizingMaskIntoConstraints = false
+        add(visualConstraints: ["H:|[view]|", "V:|[view]|"], to: ["view": toView])
     }
 
     fileprivate func activityIndicatorView(with size: CGFloat) -> UIActivityIndicatorView {

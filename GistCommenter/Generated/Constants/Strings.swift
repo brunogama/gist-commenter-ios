@@ -23,6 +23,8 @@ internal enum L10n {
   internal static let gistDetail = L10n.tr("Localizable", "gistDetail")
   /// Invalid QR Code
   internal static let invalidQrCodeMessage = L10n.tr("Localizable", "invalidQrCodeMessage")
+  /// No comments 😢
+  internal static let noComments = L10n.tr("Localizable", "noComments")
   /// OK
   internal static let ok = L10n.tr("Localizable", "ok")
   /// Open Gist

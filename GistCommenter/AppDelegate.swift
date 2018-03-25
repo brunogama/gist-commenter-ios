@@ -90,3 +90,14 @@ internal class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().isTranslucent = false
     }
 }
+
+extension UINavigationController {
+    override open var preferredStatusBarStyle: UIStatusBarStyle {
+        if let style = self.topViewController?.preferredStatusBarStyle {
+            return style
+        }
+        
+        return .lightContent
+    }
+}
+

@@ -41,7 +41,6 @@
                 <constraint firstItem="UKl-I6-Y0j" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="PlX-hQ-jpu"/>
                 <constraint firstAttribute="trailing" secondItem="dgf-Fr-8MP" secondAttribute="trailing" id="VFc-wk-sKS"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UKl-I6-Y0j" secondAttribute="trailing" constant="16" id="WK5-AC-spg"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="UKl-I6-Y0j" secondAttribute="bottom" constant="12" id="eRl-fz-Y6d"/>
                 <constraint firstItem="dgf-Fr-8MP" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="xlB-tQ-nDA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
