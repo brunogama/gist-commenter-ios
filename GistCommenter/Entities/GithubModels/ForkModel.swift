@@ -9,8 +9,11 @@
 import Foundation
 
 internal struct ForkModel: Codable, CodableExtension {
+    let createdAt: Date
+    let id: String
+    let updatedAt: Date
+    let url: URL
     let user: UserModel
-    let url, id, createdAt, updatedAt: String
 
     enum CodingKeys: String, CodingKey {
         case user, url, id

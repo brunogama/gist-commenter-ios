@@ -16,31 +16,12 @@ internal final class GistDetailInteractor: GistDetailInteractorInputProtocol {
     weak var presenter: GistDetailInteractorOutputProtocol?
     var remoteDataManager: MoyaProvider<GistService>?
 
+    func retrieveComments(with gistId: GistId) { }
+
     func requestGistModel(url: URL) {
-        guard let substring = URLComponents(url: url, resolvingAgainstBaseURL: true)?
-            .path
-            .split(separator: "/")
-            .last else {
-                Logger.e("Failed to parse gist id")
-                return
-        }
+    }
 
-        let gistId = String(substring)
-        remoteDataManager?.request(.gist(gistId: gistId)) { result in
-            switch result {
-
-            case let .success(response):
-            switch response.statusCode {
-            case 200 ... 300:
-                let gistModel = GistModel(data: response.data)
-                Logger.i(String(describing: gistModel))
-            default:
-                Logger.i("FOOOBAR")
-            }
-
-            case let .failure(error):
-                Logger.e(String(describing: error))
-            }
-        }
+    func didReceived(comments: [GistComment]) {
+        presenter?.didReceived(comments: comments)
     }
 }

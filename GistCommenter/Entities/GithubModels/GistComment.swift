@@ -9,13 +9,15 @@
 import Foundation
 
 internal struct GistComment: Codable, CodableExtension {
+    let body: String
+    let createdAt: Date
     let id: Int
-    let url, body: String
+    let updatedAt: Date
+    let url: String
     let user: UserModel
-    let createdAt, updatedAt: String
 
     enum CodingKeys: String, CodingKey {
-        case id, url, body, user
+        case body, id, url, user
         case createdAt = "created_at"
         case updatedAt = "updated_at"
     }

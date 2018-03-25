@@ -8,33 +8,38 @@
 
 import Foundation
 
+internal typealias GistId = String
+
 internal struct GistModel: Codable, CodableExtension {
-    let url, forksURL, commitsURL, id: String
-    let description: String
-    let purplePublic: Bool
-    let owner: UserModel
-    let user: JSONNull?
-    let files: [String: FileModel]
-    let truncated: Bool
     let comments: Int
-    let commentsURL, htmlURL, gitPullURL, gitPushURL: String
-    let createdAt, updatedAt: String
+    let commentsURL: URL
+    let commitsURL: URL
+    let createdAt, updatedAt: Date
+    let description: String
+    let files: [String: FileModel]
     let forks: [ForkModel]
+    let forksURL: URL
+    let gitPullURL: URL
+    let gitPushURL: URL
     let history: [HistoryModel]
+    let htmlURL: URL
+    let id: GistId
+    let owner: UserModel
+    let purplePublic: Bool
+    let truncated: Bool
+    let url: URL
+    let user: UserModel?
 
     enum CodingKeys: String, CodingKey {
-        case url
-        case forksURL = "forks_url"
-        case commitsURL = "commits_url"
-        case id, description
-        case purplePublic = "public"
-        case owner, user, files, truncated, comments
+        case comments, files, forks, history, id, description, owner, truncated, url, user
         case commentsURL = "comments_url"
-        case htmlURL = "html_url"
+        case commitsURL = "commits_url"
+        case createdAt = "created_at"
+        case forksURL = "forks_url"
         case gitPullURL = "git_pull_url"
         case gitPushURL = "git_push_url"
-        case createdAt = "created_at"
+        case htmlURL = "html_url"
+        case purplePublic = "public"
         case updatedAt = "updated_at"
-        case forks, history
     }
 }

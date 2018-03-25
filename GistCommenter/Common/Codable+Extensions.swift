@@ -17,9 +17,17 @@ internal protocol CodableExtension {
     init?(fromURL url: String)
 }
 
+fileprivate extension CodableExtension {
+    static var jsonDecoder: JSONDecoder {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return decoder
+    }
+}
+
 extension CodableExtension where Self: Codable {
     init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(Self.self, from: data) else { return nil }
+        guard let me = try? Self.jsonDecoder.decode(Self.self, from: data) else { return nil }
         self = me
     }
 

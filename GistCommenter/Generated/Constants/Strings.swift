@@ -19,6 +19,8 @@ internal enum L10n {
   internal static let detecting = L10n.tr("Localizable", "detecting")
   /// Gist Commenter - L10 Test
   internal static let gistCommenter = L10n.tr("Localizable", "GistCommenter")
+  /// Gist Detail
+  internal static let gistDetail = L10n.tr("Localizable", "gistDetail")
   /// Invalid QR Code
   internal static let invalidQrCodeMessage = L10n.tr("Localizable", "invalidQrCodeMessage")
   /// OK

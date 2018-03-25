@@ -13,22 +13,16 @@ import UIKit
 internal class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    private let navigationController: UINavigationController = {
-        let navigationController = UINavigationController()
-        if #available(iOS 11.0, *) {
-            navigationController.navigationBar.isTranslucent = false
-            navigationController.navigationBar.prefersLargeTitles = true
-        }
-        return navigationController
-    }()
 
     public func application(_ application: UIApplication,
                             didFinishLaunchingWithOptions
         launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        navigationController.pushViewController(GistDetailRouter.createModule(), animated: false)
+
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navigationController
+        window?.rootViewController = UINavigationController(rootViewController: GistDetailRouter.createModule())
         window?.makeKeyAndVisible()
+
+        appearanceSetup()
 
         return true
     }
@@ -89,4 +83,11 @@ internal class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    // MARK: - Private methods
+    fileprivate func appearanceSetup() {
+        UINavigationBar.appearance().barTintColor = Asset.Colors.black.color
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
+    }
 }

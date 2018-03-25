@@ -10,13 +10,13 @@ import Foundation
 
 internal struct FileModel: Codable, CodableExtension {
     let size: Int
-    let rawURL, type, language: String
+    let rawURL, type, filename, language: String
     let truncated: Bool
     let content: String
 
     enum CodingKeys: String, CodingKey {
         case size
         case rawURL = "raw_url"
-        case type, language, truncated, content
+        case type, language, truncated, content, filename
     }
 }

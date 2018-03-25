@@ -1,1 +1,97 @@
-{"url":"https://api.github.com/gists/a3f7520c9727bc3d134818658fcae5dd","forks_url":"https://api.github.com/gists/a3f7520c9727bc3d134818658fcae5dd/forks","commits_url":"https://api.github.com/gists/a3f7520c9727bc3d134818658fcae5dd/commits","id":"a3f7520c9727bc3d134818658fcae5dd","git_pull_url":"https://gist.github.com/a3f7520c9727bc3d134818658fcae5dd.git","git_push_url":"https://gist.github.com/a3f7520c9727bc3d134818658fcae5dd.git","html_url":"https://gist.github.com/a3f7520c9727bc3d134818658fcae5dd","files":{"UIViewController+StoryboardInstantiable.swift":{"filename":"UIViewController+StoryboardInstantiable.swift","type":"text/plain","language":"Swift","raw_url":"https://gist.githubusercontent.com/brunogama/a3f7520c9727bc3d134818658fcae5dd/raw/8b6ab47e47aebc32e823d434a4cf38d991a6d777/UIViewController+StoryboardInstantiable.swift","size":646,"truncated":false,"content":"public protocol StoryboardInstantiable: class {\n    static func fromStoryboard(name: String, bundle: Bundle?) -> Self\n}\n\nextension StoryboardInstantiable where Self: UIViewController {\n    static func fromStoryboard(name: String = \"Main\", bundle: Bundle? = nil) -> Self {\n        let identifier = String(describing: self)\n        let storyboard = UIStoryboard(name: name, bundle: bundle)\n        guard let viewController =\n            storyboard.instantiateViewController(withIdentifier: identifier) as? Self else {\n            fatalError(\"Cannot instantiate view controller of type \" + identifier)\n        }\n        return viewController\n    }\n}"}},"public":true,"created_at":"2018-03-22T18:33:55Z","updated_at":"2018-03-22T18:34:41Z","description":"UIViewController+StoryboardInstantiable","comments":1,"user":null,"comments_url":"https://api.github.com/gists/a3f7520c9727bc3d134818658fcae5dd/comments","owner":{"login":"brunogama","id":652969,"avatar_url":"https://avatars1.githubusercontent.com/u/652969?v=4","gravatar_id":"","url":"https://api.github.com/users/brunogama","html_url":"https://github.com/brunogama","followers_url":"https://api.github.com/users/brunogama/followers","following_url":"https://api.github.com/users/brunogama/following{/other_user}","gists_url":"https://api.github.com/users/brunogama/gists{/gist_id}","starred_url":"https://api.github.com/users/brunogama/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/brunogama/subscriptions","organizations_url":"https://api.github.com/users/brunogama/orgs","repos_url":"https://api.github.com/users/brunogama/repos","events_url":"https://api.github.com/users/brunogama/events{/privacy}","received_events_url":"https://api.github.com/users/brunogama/received_events","type":"User","site_admin":false},"forks":[],"history":[{"user":{"login":"brunogama","id":652969,"avatar_url":"https://avatars1.githubusercontent.com/u/652969?v=4","gravatar_id":"","url":"https://api.github.com/users/brunogama","html_url":"https://github.com/brunogama","followers_url":"https://api.github.com/users/brunogama/followers","following_url":"https://api.github.com/users/brunogama/following{/other_user}","gists_url":"https://api.github.com/users/brunogama/gists{/gist_id}","starred_url":"https://api.github.com/users/brunogama/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/brunogama/subscriptions","organizations_url":"https://api.github.com/users/brunogama/orgs","repos_url":"https://api.github.com/users/brunogama/repos","events_url":"https://api.github.com/users/brunogama/events{/privacy}","received_events_url":"https://api.github.com/users/brunogama/received_events","type":"User","site_admin":false},"version":"8135804642e2149ff8598be101d8f821d820d5d8","committed_at":"2018-03-22T18:33:55Z","change_status":{"total":15,"additions":15,"deletions":0},"url":"https://api.github.com/gists/a3f7520c9727bc3d134818658fcae5dd/8135804642e2149ff8598be101d8f821d820d5d8"}],"truncated":false}
+{
+    "url": "https://api.github.com/gists/244ec4359c3ff33d56888a1dbdbf94f5",
+    "forks_url": "https://api.github.com/gists/244ec4359c3ff33d56888a1dbdbf94f5/forks",
+    "commits_url": "https://api.github.com/gists/244ec4359c3ff33d56888a1dbdbf94f5/commits",
+    "id": "244ec4359c3ff33d56888a1dbdbf94f5",
+    "git_pull_url": "https://gist.github.com/244ec4359c3ff33d56888a1dbdbf94f5.git",
+    "git_push_url": "https://gist.github.com/244ec4359c3ff33d56888a1dbdbf94f5.git",
+    "html_url": "https://gist.github.com/244ec4359c3ff33d56888a1dbdbf94f5",
+    "files": {
+        "contents_json.py": {
+            "filename": "contents_json.py",
+            "type": "application/x-python",
+            "language": "Python",
+            "raw_url": "https://gist.githubusercontent.com/brunogama/244ec4359c3ff33d56888a1dbdbf94f5/raw/5c8c19bc1909c054b0bc4c357b3ee5d65985031e/contents_json.py",
+            "size": 378,
+            "truncated": false,
+            "content": "#!/usr/bin/python\n\nimport json\nimport sys\n\nfilename = \"%s\" % sys.argv[1]\njson_output = {\n  \"images\" : [\n    {\n      \"idiom\" : \"universal\",\n      \"filename\" : filename\n    }\n  ],\n  \"info\" : {\n    \"version\" : 1,\n    \"author\" : \"xcode\"\n  },\n  \"properties\" : {\n    \"preserves-vector-representation\" : True\n  }\n}\n\njson_output = json.dumps(json_output)\n\nprint(json.loads(json_output))"
+        },
+        "convert-to-pdf.sh": {
+            "filename": "convert-to-pdf.sh",
+            "type": "application/x-sh",
+            "language": "Shell",
+            "raw_url": "https://gist.githubusercontent.com/brunogama/244ec4359c3ff33d56888a1dbdbf94f5/raw/dafdec69663fcbbc38ea39fc0a54ce1fcb175251/convert-to-pdf.sh",
+            "size": 683,
+            "truncated": false,
+            "content": "#!/bin/bash\n\ninkscape=/Applications/Inkscape.app/Contents/Resources/bin/inkscape\n\nmkdir \"$PWD\"/pdf\n\nfor file in $PWD/*.svg\ndo\n \tfilename=$(basename \"$file\")\n \tinkscape \"$file\" -d 1200 -A \"$PWD\"/pdf/\"${filename%.svg}.pdf\"\ndone\n\nfor file in $PWD/pdf/*.pdf\ndo\n\techo \"\"\n\tfilename=$(basename \"$file\")\n\tcurrent_file_location=$(echo \"${PWD}/pdf/${filename%.*}.pdf\")\n\tnew_dir=$(echo \"${PWD}/FeatherIcons.xcassets/${filename%.*}.imageset\")\n\t\n\tmkdir -p ${new_dir}\n\tcp ${current_file_location} ${new_dir}/\n\techo \"$(python contents_json.py $filename  | sed 's/'\\''/'\\\"'/g' | tr '[:upper:]' '[:lower:]')\" >| ${new_dir}/Contents.json\ndone\n\ncp root_contents.json FeatherIcons.xcassets/Contents.json"
+        },
+        "root_contents.json": {
+            "filename": "root_contents.json",
+            "type": "application/json",
+            "language": "JSON",
+            "raw_url": "https://gist.githubusercontent.com/brunogama/244ec4359c3ff33d56888a1dbdbf94f5/raw/da4a164c918651cdd1e11dca5cc62c333f097601/root_contents.json",
+            "size": 62,
+            "truncated": false,
+            "content": "{\n  \"info\" : {\n    \"version\" : 1,\n    \"author\" : \"xcode\"\n  }\n}"
+        }
+    },
+    "public": false,
+    "created_at": "2018-03-24T22:56:56Z",
+    "updated_at": "2018-03-24T22:56:57Z",
+    "description": "Scripts used to generate the FeatherIcons.xcassets in the project",
+    "comments": 0,
+    "user": null,
+    "comments_url": "https://api.github.com/gists/244ec4359c3ff33d56888a1dbdbf94f5/comments",
+    "owner": {
+        "login": "brunogama",
+        "id": 652969,
+        "avatar_url": "https://avatars1.githubusercontent.com/u/652969?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/brunogama",
+        "html_url": "https://github.com/brunogama",
+        "followers_url": "https://api.github.com/users/brunogama/followers",
+        "following_url": "https://api.github.com/users/brunogama/following{/other_user}",
+        "gists_url": "https://api.github.com/users/brunogama/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/brunogama/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/brunogama/subscriptions",
+        "organizations_url": "https://api.github.com/users/brunogama/orgs",
+        "repos_url": "https://api.github.com/users/brunogama/repos",
+        "events_url": "https://api.github.com/users/brunogama/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/brunogama/received_events",
+        "type": "User",
+        "site_admin": false
+    },
+    "forks": [],
+    "history": [
+        {
+            "user": {
+                "login": "brunogama",
+                "id": 652969,
+                "avatar_url": "https://avatars1.githubusercontent.com/u/652969?v=4",
+                "gravatar_id": "",
+                "url": "https://api.github.com/users/brunogama",
+                "html_url": "https://github.com/brunogama",
+                "followers_url": "https://api.github.com/users/brunogama/followers",
+                "following_url": "https://api.github.com/users/brunogama/following{/other_user}",
+                "gists_url": "https://api.github.com/users/brunogama/gists{/gist_id}",
+                "starred_url": "https://api.github.com/users/brunogama/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/brunogama/subscriptions",
+                "organizations_url": "https://api.github.com/users/brunogama/orgs",
+                "repos_url": "https://api.github.com/users/brunogama/repos",
+                "events_url": "https://api.github.com/users/brunogama/events{/privacy}",
+                "received_events_url": "https://api.github.com/users/brunogama/received_events",
+                "type": "User",
+                "site_admin": false
+            },
+            "version": "dbbab7beda537081b010bbae42ee101a00ac1b4e",
+            "committed_at": "2018-03-24T22:56:56Z",
+            "change_status": {
+                "total": 56,
+                "additions": 56,
+                "deletions": 0
+            },
+            "url": "https://api.github.com/gists/244ec4359c3ff33d56888a1dbdbf94f5/dbbab7beda537081b010bbae42ee101a00ac1b4e"
+        }
+    ],
+    "truncated": false
+}

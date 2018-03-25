@@ -9,5 +9,7 @@
 import Foundation
 
 internal struct ChangeStatusModel: Codable, CodableExtension {
-    let deletions, additions, total: Int
+    let additions: Int
+    let deletions: Int
+    let total: Int
 }

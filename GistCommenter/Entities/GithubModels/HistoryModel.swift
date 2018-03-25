@@ -9,13 +9,14 @@
 import Foundation
 
 internal struct HistoryModel: Codable, CodableExtension {
-    let url, version: String
-    let user: UserModel
     let changeStatus: ChangeStatusModel
-    let committedAt: String
+    let committedAt: Date
+    let url: String
+    let user: UserModel
+    let version: String
 
     enum CodingKeys: String, CodingKey {
-        case url, version, user
+        case url, user, version
         case changeStatus = "change_status"
         case committedAt = "committed_at"
     }
