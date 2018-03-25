@@ -17,32 +17,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4FT-R8-IOm">
-                                <rect key="frame" x="51" y="291" width="273" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="5SK-OA-MFD">
+                                <rect key="frame" x="40" y="273" width="295" height="120"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="aperture" translatesAutoresizingMaskIntoConstraints="NO" id="HhW-H0-s66">
-                                        <rect key="frame" x="20" y="20" width="44" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="aperture" translatesAutoresizingMaskIntoConstraints="NO" id="HhW-H0-s66">
+                                        <rect key="frame" x="0.0" y="0.0" width="60.5" height="120"/>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="github" translatesAutoresizingMaskIntoConstraints="NO" id="HgA-in-NHn">
-                                        <rect key="frame" x="81" y="20" width="44" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="github" translatesAutoresizingMaskIntoConstraints="NO" id="HgA-in-NHn">
+                                        <rect key="frame" x="78.5" y="0.0" width="60" height="120"/>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="code" translatesAutoresizingMaskIntoConstraints="NO" id="Rg2-97-vnx">
-                                        <rect key="frame" x="143" y="20" width="44" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="code" translatesAutoresizingMaskIntoConstraints="NO" id="Rg2-97-vnx">
+                                        <rect key="frame" x="156.5" y="0.0" width="60.5" height="120"/>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="message-square" translatesAutoresizingMaskIntoConstraints="NO" id="2PV-1O-LSO">
-                                        <rect key="frame" x="209" y="20" width="44" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="message-square" translatesAutoresizingMaskIntoConstraints="NO" id="2PV-1O-LSO">
+                                        <rect key="frame" x="235" y="0.0" width="60" height="120"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="TPT-qe-1HV"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647707462311" green="0.16078431904315948" blue="0.18039216101169586" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="5SK-OA-MFD" firstAttribute="leading" secondItem="Zyi-PY-MnO" secondAttribute="leading" constant="40" id="TRG-7w-5PE"/>
+                            <constraint firstItem="5SK-OA-MFD" firstAttribute="centerX" secondItem="5Ub-DU-cbs" secondAttribute="centerX" id="dgs-se-ikA"/>
+                            <constraint firstItem="Zyi-PY-MnO" firstAttribute="trailing" secondItem="5SK-OA-MFD" secondAttribute="trailing" constant="40" id="fxJ-18-ATY"/>
+                            <constraint firstItem="5SK-OA-MFD" firstAttribute="centerY" secondItem="5Ub-DU-cbs" secondAttribute="centerY" id="iRZ-kV-qAB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Zyi-PY-MnO"/>
                     </view>
                 </viewController>
