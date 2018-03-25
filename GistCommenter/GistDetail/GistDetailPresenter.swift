@@ -36,7 +36,8 @@ internal class GistDetailPresenter: GistDetailPresenterProtocol, GistDetailInter
     func didReceived(comments: [GistComment]) {
         if comments.isEmpty {
             view?.presentEmpty()
-        } else {
+        }
+        else {
             view?.show(comments: comments)
         }
     }

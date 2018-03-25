@@ -65,27 +65,39 @@ internal final class GistDetailViewController: UIViewController, UITableViewDele
     }
 
     func loading() {
-        tableView.tableFooterView?.subviews.flatMap { $0 as UIView }.forEach {
-            $0.removeFromSuperview()
-        }
-        tableView.tableFooterView?.frame = CGRect.zero
+        cleanTableFooterView()
+
+        let activityViewSize = CGFloat(44)
+        let tableFooterViewHeight = activityViewSize * 1.4
+        let width = tableView.frame.size.width
+
+        let footerViewFrame = CGRect(x: 0, y: 0, width: width, height: tableFooterViewHeight)
+        let tableFooterView = UIView(frame: footerViewFrame)
+
+        let indicatorView = activityIndicatorView(with: activityViewSize)
+        tableFooterView.addSubview(indicatorView)
+        addCenteringConstraings(indicatorView)
+        tableView.tableFooterView = tableFooterView
+        tableView.tableFooterView?.frame = tableFooterView.frame
     }
 
     func hideLoading() {
+        cleanTableFooterView()
         tableView.reloadData()
         tableView.flashScrollIndicators()
+    }
+
+    func cleanTableFooterView() {
+        tableView.tableFooterView?.subviews.flatMap { $0 as UIView }.forEach { $0.removeFromSuperview() }
     }
 
     func presentEmpty() {
         datasource?.data.value = []
         hideLoading()
-        let emptyLabel = UILabel()
-        emptyLabel.text = "No comments 😢"
-        Logger.w(emptyLabel.text)
-        emptyLabel.textColor = Asset.Colors.darkGray.color
-        emptyLabel.sizeToFit()
-        emptyLabel.textAlignment = .center
-        tableView.tableFooterView = emptyLabel
+        cleanTableFooterView()
+        let text = "No comments 😢"
+        let label = emptyLabel(with: text)
+        tableView.tableFooterView = label
         tableView.tableFooterView?.frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 44)
         tableView.reloadData()
     }
@@ -122,6 +134,33 @@ internal final class GistDetailViewController: UIViewController, UITableViewDele
 
         self.navigationController?.navigationBar.addSubview(imageView)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "message-square"), style: .plain, target: nil, action: nil)
+    }
+
+    fileprivate func addCenteringConstraings(_ toView: UIView) {
+        toView.translatesAutoresizingMaskIntoConstraints = false
+        ["H:|[v]|", "V:|[v]|"].forEach { format in
+            NSLayoutConstraint.constraints(withVisualFormat: format, options: .init(rawValue:0), metrics: nil,
+                                           views: ["v": toView]).forEach { $0.isActive = true }
+        }
+    }
+
+    fileprivate func activityIndicatorView(with size: CGFloat) -> UIActivityIndicatorView {
+        let activityIndicatiorViewFrame = CGRect(x: 0, y: 0, width: size, height: size)
+        let activityIndicatiorView = UIActivityIndicatorView(frame: activityIndicatiorViewFrame)
+        activityIndicatiorView.activityIndicatorViewStyle = .gray
+        activityIndicatiorView.startAnimating()
+
+        return activityIndicatiorView
+    }
+
+    fileprivate func emptyLabel(with text: String) -> UILabel {
+        let emptyLabel = UILabel()
+        emptyLabel.text = text
+        emptyLabel.textColor = Asset.Colors.darkGray.color
+        emptyLabel.sizeToFit()
+        emptyLabel.textAlignment = .center
+
+        return emptyLabel
     }
 }
 
