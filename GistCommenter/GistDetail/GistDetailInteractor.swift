@@ -12,18 +12,6 @@ import Moya
 import UIKit
 
 internal final class GistDetailInteractor: GistDetailInteractorInputProtocol, RemoteDataManagerOutputProtocol {
-    func onGistRetrieved(_ gist: GistModel) {}
-    func onGistRetrievalFailure(_ error: Error) {}
-
-
-    func onCommentsRetrieved(_ comments: [GistComment]) {
-        Logger.i("CHEGOU \(comments)")
-    }
-
-    func onCommentsRetrievalFailure(_ error: Error) {
-        Logger.e("\(error)")
-    }
-
 
     weak var presenter: GistDetailInteractorOutputProtocol?
     var remoteDataManager: RemoteDataManagerInputProtocol?
@@ -38,4 +26,16 @@ internal final class GistDetailInteractor: GistDetailInteractorInputProtocol, Re
     func didReceived(comments: [GistComment]) {
         presenter?.didReceived(comments: comments)
     }
+
+    func onGistRetrieved(_ gist: GistModel) {}
+    func onGistRetrievalFailure(_ error: Error) {}
+
+    func onCommentsRetrieved(_ comments: [GistComment]) {
+        presenter?.didReceived(comments: comments)
+    }
+
+    func onCommentsRetrievalFailure(_ error: Error) {
+        Logger.e("\(error)")
+    }
+
 }

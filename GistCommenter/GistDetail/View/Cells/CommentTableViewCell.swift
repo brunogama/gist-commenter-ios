@@ -7,6 +7,7 @@
 //
 
 import Reusable
+import SwiftDate
 import UIKit
 
 internal protocol CommentTableViewCellProtocol: class {
@@ -17,10 +18,12 @@ internal protocol CommentTableViewCellProtocol: class {
 internal final class CommentTableViewCell: UITableViewCell, CommentTableViewCellProtocol, NibReusable {
     @IBOutlet private weak var userImageView: UIImageView!
     @IBOutlet private weak var userHandle: UILabel!
+    @IBOutlet weak var timeElapsedLabel: UILabel!
     @IBOutlet private weak var userComment: UITextView!
 
     func setup(data: GistComment) {
         userHandle.text = data.user.login
         userComment.text = data.body
+        timeElapsedLabel.text = data.updatedAt.colloquialSinceNow()
     }
 }

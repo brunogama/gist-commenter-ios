@@ -51,4 +51,5 @@ internal protocol GistDetailViewProtocol: class {
     func loading()
     func hideLoading()
     func show(comments: [GistComment])
+    func presentEmpty()
 }

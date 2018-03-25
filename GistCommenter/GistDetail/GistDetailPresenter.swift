@@ -29,13 +29,15 @@ internal class GistDetailPresenter: GistDetailPresenterProtocol, GistDetailInter
 
     func viewDidLoad() {
         view?.loading()
-        let gistId: GistId = "711b5553533d1a14364907bbcdbee677"
         interactor?.retrieveComments(fromGistId: (view?.datasource?.gistModel.id)!)
     }
 
     // MARK: - GistDetailInteractorOutputProtocol
     func didReceived(comments: [GistComment]) {
-        view?.show(comments: comments)
+        if comments.isEmpty {
+            view?.presentEmpty()
+        } else {
+            view?.show(comments: comments)
+        }
     }
-
 }

@@ -41,11 +41,20 @@ internal final class GistDetailViewController: UIViewController, UITableViewDele
 
     func tableView(_ tableView: UITableView,
                    viewForHeaderInSection section: Int) -> UIView? {
-        let frame = CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: self.tableView(tableView, heightForHeaderInSection: section))
+        let frame = CGRect(x: 0, y: 0, width: tableView.bounds.size.width,
+                           height: self.tableView(tableView, heightForHeaderInSection: section))
 
         let view = GistHeaderView(frame: frame)
         view.title = datasource?.files.first?.filename
         return view
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 1 {
+            return UITableViewAutomaticDimension
+        }
+
+        return 44
     }
 
     // MARK: - GistDetailViewProtocol
@@ -56,11 +65,29 @@ internal final class GistDetailViewController: UIViewController, UITableViewDele
     }
 
     func loading() {
+        tableView.tableFooterView?.subviews.flatMap { $0 as UIView }.forEach {
+            $0.removeFromSuperview()
+        }
+        tableView.tableFooterView?.frame = CGRect.zero
     }
 
     func hideLoading() {
         tableView.reloadData()
         tableView.flashScrollIndicators()
+    }
+
+    func presentEmpty() {
+        datasource?.data.value = []
+        hideLoading()
+        let emptyLabel = UILabel()
+        emptyLabel.text = "No comments 😢"
+        Logger.w(emptyLabel.text)
+        emptyLabel.textColor = Asset.Colors.darkGray.color
+        emptyLabel.sizeToFit()
+        emptyLabel.textAlignment = .center
+        tableView.tableFooterView = emptyLabel
+        tableView.tableFooterView?.frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 44)
+        tableView.reloadData()
     }
 
     // MARK: Private methods
