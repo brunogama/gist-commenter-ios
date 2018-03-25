@@ -12,6 +12,8 @@
 		792A43942065453C00B8F12B /* ViewControllerBootstrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792A43932065453C00B8F12B /* ViewControllerBootstrapper.swift */; };
 		792A43962065491D00B8F12B /* MockQRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792A43952065491D00B8F12B /* MockQRCodeReader.swift */; };
 		792A4399206551A900B8F12B /* QRCodeReadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792A4398206551A900B8F12B /* QRCodeReadable.swift */; };
+		793B042220677B6400E93BED /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 793B042120677B6400E93BED /* SwiftDate.framework */; };
+		793B042320677B9B00E93BED /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 793B042120677B6400E93BED /* SwiftDate.framework */; };
 		79414ECE2061CC9E00927472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79414ECD2061CC9E00927472 /* AppDelegate.swift */; };
 		79414ED62061CC9E00927472 /* GistCommenter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79414ED42061CC9E00927472 /* GistCommenter.xcdatamodeld */; };
 		79414ED82061CCA000927472 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79414ED72061CCA000927472 /* Images.xcassets */; };
@@ -136,6 +138,7 @@
 		792A43932065453C00B8F12B /* ViewControllerBootstrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBootstrapper.swift; sourceTree = "<group>"; };
 		792A43952065491D00B8F12B /* MockQRCodeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockQRCodeReader.swift; sourceTree = "<group>"; };
 		792A4398206551A900B8F12B /* QRCodeReadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReadable.swift; sourceTree = "<group>"; };
+		793B042120677B6400E93BED /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
 		79414ECA2061CC9E00927472 /* GistCommenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GistCommenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79414ECD2061CC9E00927472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79414ED52061CC9E00927472 /* GistCommenter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GistCommenter.xcdatamodel; sourceTree = "<group>"; };
@@ -230,6 +233,7 @@
 				79E72A182062CF8600EF27E9 /* Alamofire.framework in Frameworks */,
 				790B3D80206635A1005DAABA /* Kingfisher.framework in Frameworks */,
 				79B682EA2066D2FC00E221DD /* Reusable.framework in Frameworks */,
+				793B042220677B6400E93BED /* SwiftDate.framework in Frameworks */,
 				79B0C2EC2066429D0084D453 /* SkeletonView.framework in Frameworks */,
 				79E72A192062CF8600EF27E9 /* Moya.framework in Frameworks */,
 				79E72A1C2062CF8600EF27E9 /* Result.framework in Frameworks */,
@@ -243,6 +247,7 @@
 				79E72A0B2062CF6A00EF27E9 /* Alamofire.framework in Frameworks */,
 				79E72A0C2062CF6A00EF27E9 /* Moya.framework in Frameworks */,
 				79E72A0D2062CF6A00EF27E9 /* Nimble.framework in Frameworks */,
+				793B042320677B9B00E93BED /* SwiftDate.framework in Frameworks */,
 				79B0C2EB2066426F0084D453 /* SkeletonView.framework in Frameworks */,
 				79B0C2E92066361B0084D453 /* Kingfisher.framework in Frameworks */,
 				79E72A0F2062CF6A00EF27E9 /* Quick.framework in Frameworks */,
@@ -480,6 +485,7 @@
 		79E729CD2062CD3E00EF27E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				793B042120677B6400E93BED /* SwiftDate.framework */,
 				79B682E92066D2FC00E221DD /* Reusable.framework */,
 				79B0C2EA2066426F0084D453 /* SkeletonView.framework */,
 				790B3D7F206635A1005DAABA /* Kingfisher.framework */,
@@ -736,6 +742,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SkeletonView.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Reusable.framework",
+				"$(SRCROOT)/Carhage/Build/iOS/SwiftDate.framework",
 			);
 			name = "Carthage: Copy frameworks";
 			outputPaths = (
@@ -757,6 +764,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SkeletonView.framework",
+				"$(SRCROOT)/Carhage/Build/iOS/SwiftDate.framework",
 			);
 			name = "Carthage: Copy frameworks";
 			outputPaths = (
