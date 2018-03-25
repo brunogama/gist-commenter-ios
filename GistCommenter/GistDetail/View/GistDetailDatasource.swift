@@ -80,6 +80,7 @@ internal final class GistDetailDatasource: NSObject, UITableViewDataSource, Gist
             default:
                 let commentCell = tableView.dequeueReusableCell(for: indexPath) as CommentTableViewCell
                 commentCell.setup(data: self[comment: row])
+
                 return commentCell
             }
         }

@@ -25,6 +25,12 @@ internal final class CommentTableViewCell: UITableViewCell, CommentTableViewCell
         #imageLiteral(resourceName: "user").with(insets: UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
     }()
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        isUserInteractionEnabled = false
+        selectionStyle = .none
+    }
+
     func setup(data: GistComment) {
         userHandle.text = data.user.login
         userComment.text = data.body
