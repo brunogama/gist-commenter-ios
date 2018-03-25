@@ -13,13 +13,20 @@ import UIKit
 internal class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private let navigationController: UINavigationController = {
+        let navigationController = UINavigationController()
+        navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.prefersLargeTitles = false
+        return navigationController
+    }()
 
     public func application(_ application: UIApplication,
                             didFinishLaunchingWithOptions
         launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        navigationController.pushViewController(GistDetailRouter.createModule(), animated: true)
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: GistDetailRouter.createModule())
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
 
         appearanceSetup()
@@ -88,16 +95,13 @@ internal class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         UINavigationBar.appearance().isTranslucent = false
+        UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).textColor = .white
     }
 }
 
 extension UINavigationController {
     override open var preferredStatusBarStyle: UIStatusBarStyle {
-        if let style = self.topViewController?.preferredStatusBarStyle {
-            return style
-        }
-        
+        if let style = self.topViewController?.preferredStatusBarStyle { return style }
         return .lightContent
     }
 }
-

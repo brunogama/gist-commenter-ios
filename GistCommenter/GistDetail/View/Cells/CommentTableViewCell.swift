@@ -30,5 +30,6 @@ internal final class CommentTableViewCell: UITableViewCell, CommentTableViewCell
         userComment.text = data.body
         timeElapsedLabel.text = data.updatedAt.colloquialSinceNow()
         userImageView.kf.setImage(with: data.user.avatarURL, placeholder: placeholder)
+        timeElapsedLabel.sizeToFit()    
     }
 }

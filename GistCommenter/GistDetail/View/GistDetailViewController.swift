@@ -35,38 +35,25 @@ internal final class GistDetailViewController: UIViewController, UITableViewDele
     }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return nil
+        return UIView.zero()
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return -1
+        return 0
     }
 
     func tableView(_ tableView: UITableView,
                    heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 44 : -1
+        return 44
     }
 
     func tableView(_ tableView: UITableView,
                    viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            let frame = CGRect(x: 0, y: 0, width: tableView.bounds.size.width,
-                               height: self.tableView(tableView, heightForHeaderInSection: section))
-
-            let view = GistHeaderView(frame: frame)
-            view.title = datasource?.files.first?.filename
-            return view
-        }
-
-        return nil
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return UITableViewAutomaticDimension
-        }
-
-        return 44
+        let frame = CGRect(x: 0, y: 0, width: tableView.bounds.size.width,
+                           height: self.tableView(tableView, heightForHeaderInSection: section))
+        let view = GistHeaderView(frame: frame)
+        view.title = section == 0 ? "Files inside the Gist" : "Comments"
+        return view
     }
 
     // MARK: - GistDetailViewProtocol
@@ -101,7 +88,7 @@ internal final class GistDetailViewController: UIViewController, UITableViewDele
 
     func cleanTableFooterView() {
         tableView.tableFooterView?.subviews.flatMap { $0 as UIView }.forEach { $0.removeFromSuperview() }
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        tableView.tableFooterView = UIView.zero()
     }
 
     func presentEmpty() {
@@ -120,10 +107,10 @@ internal final class GistDetailViewController: UIViewController, UITableViewDele
         tableView.register(cellType: CommentTableViewCell.self)
         tableView.register(cellType: FileCell.self)
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 180
+        tableView.estimatedRowHeight = 44
         tableView.dataSource = datasource
         tableView.delegate = self
-        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView.zero()
         tableView.separatorInset = .zero
         tableView.separatorColor = Asset.Colors.lightGray.color.withAlphaComponent(0.5)
         tableView.reloadData()
@@ -172,4 +159,8 @@ extension UITableView {
         block()
         endUpdates()
     }
+}
+
+extension UIView {
+    static func zero() -> UIView { return self.init(frame: CGRect.zero ) }
 }

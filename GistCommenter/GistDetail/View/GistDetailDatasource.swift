@@ -14,8 +14,10 @@ internal protocol GistDetailDatasourceProtocol: class {
 
     var data: Dynamic<[GistComment]> { get set }
     var gistModel: GistModel { get }
-    var files: [FileModel] { get }
     var title: String { get }
+
+    subscript(comment index: Int) -> GistComment { get }
+    subscript(file index: Int) -> FileModel { get }
 }
 
 internal final class GistDetailDatasource: NSObject, UITableViewDataSource, GistDetailDatasourceProtocol {
@@ -69,19 +71,28 @@ internal final class GistDetailDatasource: NSObject, UITableViewDataSource, Gist
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let gistSection = GistSection(indexPath: indexPath) {
+            let row = indexPath.row
             switch gistSection {
             case .gistFiles:
                 let fileCell = tableView.dequeueReusableCell(for: indexPath) as FileCell
-                fileCell.setup(data: files[indexPath.row])
+                fileCell.setup(data: self[file: row])
                 return fileCell
             default:
                 let commentCell = tableView.dequeueReusableCell(for: indexPath) as CommentTableViewCell
-                commentCell.setup(data: data.value[indexPath.row])
+                commentCell.setup(data: self[comment: row])
                 return commentCell
             }
         }
         else {
             fatalError("Wrong count, check your data")
         }
+    }
+
+    internal subscript(comment index: Int) -> GistComment {
+        return data.value[index]
+    }
+
+    internal subscript(file index: Int) -> FileModel {
+        return files[index]
     }
 }

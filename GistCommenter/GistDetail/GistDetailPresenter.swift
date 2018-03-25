@@ -29,7 +29,18 @@ internal class GistDetailPresenter: GistDetailPresenterProtocol, GistDetailInter
 
     func viewDidLoad() {
         view?.loading()
-        interactor?.retrieveComments(fromGistId: (view?.datasource?.gistModel.id)!)
+        #if DEBUG
+            guard let url = Bundle.main.url(forResource: "comments", withExtension: "json"),
+                let data = try? Data(contentsOf: url),
+                let comments = try? GistComment.jsonDecoder.decode([GistComment].self, from: data)  else {
+                    return
+            }
+
+            didReceived(comments: comments)
+        #else
+            interactor?.retrieveComments(fromGistId: (view?.datasource?.gistModel.id)!)
+        #endif
+
     }
 
     // MARK: - GistDetailInteractorOutputProtocol
