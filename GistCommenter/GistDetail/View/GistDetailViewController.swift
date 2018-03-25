@@ -11,31 +11,48 @@
 import SkeletonView
 import UIKit
 
-internal final class GistDetailViewController: UIViewController, GistDetailViewProtocol {
+internal final class GistDetailViewController: UIViewController, UITableViewDelegate, GistDetailViewProtocol {
 
 	var presenter: GistDetailPresenterProtocol?
     var datasource: (GistDetailDatasourceProtocol & UITableViewDataSource)?
 
     @IBOutlet private weak var tableView: UITableView!
-//    private var headerView: GistView = GistView()
+    private var tableHeaderView: GistHeaderView?
 
     // MARK: - View life cycle
 	override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Gist Detail"
-        navigationItem.title = title
-        tableView.register(cellType: GistCommentTableViewCell.self)
-        tableView.dataSource = datasource
-        tableView.tableFooterView = UIView()
-        tableView.separatorInset = .zero
+        title = datasource?.title
+
+        setupNavigationBar()
+        setupTableView()
         presenter?.viewDidLoad()
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
+    func tableView(_ tableView: UITableView,
+                   heightForHeaderInSection section: Int) -> CGFloat {
+        return section == 0 ? 44 : 0
+    }
+
+    func tableView(_ tableView: UITableView,
+                   viewForHeaderInSection section: Int) -> UIView? {
+        let frame = CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: self.tableView(tableView, heightForHeaderInSection: section))
+
+        let view = GistHeaderView(frame: frame)
+        view.title = datasource?.files.first?.filename
+        return view
     }
 
     // MARK: - GistDetailViewProtocol
     func show(comments: [GistComment]) {
         datasource?.data.value = comments
         hideLoading()
+        tableView.reloadData()
     }
 
     func loading() {
@@ -44,6 +61,40 @@ internal final class GistDetailViewController: UIViewController, GistDetailViewP
     func hideLoading() {
         tableView.reloadData()
         tableView.flashScrollIndicators()
+    }
+
+    // MARK: Private methods
+    fileprivate func setupTableView() {
+        tableView.register(cellType: CommentTableViewCell.self)
+        tableView.register(cellType: FileCell.self)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
+        tableView.dataSource = datasource
+        tableView.delegate = self
+        tableView.tableFooterView = UIView()
+        tableView.separatorInset = .zero
+        tableView.separatorColor = Asset.Colors.lightGray.color.withAlphaComponent(0.5)
+        tableView.reloadData()
+    }
+
+    fileprivate func setupNavigationBar() {
+        navigationItem.title = title
+        navigationItem.prompt = ""
+        let image = #imageLiteral(resourceName: "github").withRenderingMode(.alwaysTemplate)
+        let imageView = UIImageView(image: image)
+        imageView.tintColor = .white
+
+        let ratio: CGFloat = 2
+        let imageWidth = image.size.width * ratio
+        let imageHeight = image.size.height * ratio
+        let positionX = view.frame.size.width / 2
+        let positionY: CGFloat = 0
+
+        imageView.frame = CGRect(x: positionX, y: positionY, width: imageWidth, height: imageHeight)
+        imageView.contentMode = .scaleAspectFill
+
+        self.navigationController?.navigationBar.addSubview(imageView)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "message-square"), style: .plain, target: nil, action: nil)
     }
 }
 

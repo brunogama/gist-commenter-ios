@@ -17,18 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="activity" translatesAutoresizingMaskIntoConstraints="NO" id="FqR-7u-TlE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="github" translatesAutoresizingMaskIntoConstraints="NO" id="4wk-lJ-hi1">
+                                <rect key="frame" x="32" y="178" width="311" height="311"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647707462311" green="0.16078431904315948" blue="0.18039216101169586" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="FqR-7u-TlE" firstAttribute="leading" secondItem="Zyi-PY-MnO" secondAttribute="leading" id="BDa-Ew-ovF"/>
-                            <constraint firstItem="FqR-7u-TlE" firstAttribute="trailing" secondItem="Zyi-PY-MnO" secondAttribute="trailing" id="O8N-C6-U3z"/>
-                            <constraint firstItem="FqR-7u-TlE" firstAttribute="top" secondItem="5Ub-DU-cbs" secondAttribute="top" id="b7Q-YR-0FL"/>
-                            <constraint firstItem="FqR-7u-TlE" firstAttribute="bottom" secondItem="Zyi-PY-MnO" secondAttribute="bottom" id="pw1-XX-ltQ"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Zyi-PY-MnO"/>
                     </view>
                 </viewController>
@@ -38,6 +33,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="activity" width="18" height="18"/>
+        <image name="github" width="18" height="18"/>
     </resources>
 </document>

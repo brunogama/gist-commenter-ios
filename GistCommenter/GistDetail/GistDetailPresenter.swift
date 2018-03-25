@@ -29,12 +29,8 @@ internal class GistDetailPresenter: GistDetailPresenterProtocol, GistDetailInter
 
     func viewDidLoad() {
         view?.loading()
-//        let urlString = "https://gist.github.com/brunogama/a3f7520c9727bc3d134818658fcae5dd"
-//        let urlString = "https://gist.github.com/akitaonrails/711b5553533d1a14364907bbcdbee677"
-//        let urlString = "https://gist.github.com/brunogama/244ec4359c3ff33d56888a1dbdbf94f5"
-//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-//            self.interactor?.requestGistModel(url: URL(string: urlString)!)
-//        }
+        let gistId: GistId = "711b5553533d1a14364907bbcdbee677"
+        interactor?.retrieveComments(fromGistId: (view?.datasource?.gistModel.id)!)
     }
 
     // MARK: - GistDetailInteractorOutputProtocol

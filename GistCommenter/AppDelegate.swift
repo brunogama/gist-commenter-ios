@@ -23,7 +23,6 @@ internal class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
 
         appearanceSetup()
-
         return true
     }
 

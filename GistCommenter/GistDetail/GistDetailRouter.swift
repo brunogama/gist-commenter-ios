@@ -27,7 +27,10 @@ internal final class GistDetailRouter: GistDetailWireframeProtocol {
         view.datasource = dataSource
 
         let interactor = GistDetailInteractor()
-        interactor.remoteDataManager = MoyaProvider()
+        let client = Client(provider: MoyaProvider<GistService>())
+        client?.remoteRequestHandler = interactor
+
+        interactor.remoteDataManager = client
 
         let router = GistDetailRouter()
         let presenter = GistDetailPresenter(interface: view, interactor: interactor, router: router)

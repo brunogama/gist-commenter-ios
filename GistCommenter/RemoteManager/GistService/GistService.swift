@@ -10,8 +10,8 @@ import Foundation
 import Moya
 
 internal enum GistService: TargetType {
-    case gist(gistId: String)
-    case comments(gistId: String)
+    case gist(gistId: GistId)
+    case comments(gistId: GistId)
 
     // MARK: TargetType
     var method: Moya.Method { return .get }

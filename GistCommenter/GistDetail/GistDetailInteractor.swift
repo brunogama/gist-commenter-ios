@@ -11,12 +11,26 @@
 import Moya
 import UIKit
 
-internal final class GistDetailInteractor: GistDetailInteractorInputProtocol {
+internal final class GistDetailInteractor: GistDetailInteractorInputProtocol, RemoteDataManagerOutputProtocol {
+    func onGistRetrieved(_ gist: GistModel) {}
+    func onGistRetrievalFailure(_ error: Error) {}
+
+
+    func onCommentsRetrieved(_ comments: [GistComment]) {
+        Logger.i("CHEGOU \(comments)")
+    }
+
+    func onCommentsRetrievalFailure(_ error: Error) {
+        Logger.e("\(error)")
+    }
+
 
     weak var presenter: GistDetailInteractorOutputProtocol?
-    var remoteDataManager: MoyaProvider<GistService>?
+    var remoteDataManager: RemoteDataManagerInputProtocol?
 
-    func retrieveComments(with gistId: GistId) { }
+    func retrieveComments(fromGistId: GistId) {
+        remoteDataManager?.retriveComments(with: fromGistId)
+    }
 
     func requestGistModel(url: URL) {
     }

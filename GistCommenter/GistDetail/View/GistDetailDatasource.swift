@@ -14,14 +14,26 @@ internal protocol GistDetailDatasourceProtocol: class {
 
     var data: Dynamic<[GistComment]> { get set }
     var gistModel: GistModel { get }
+    var files: [FileModel] { get }
+    var title: String { get }
 }
 
 internal final class GistDetailDatasource: NSObject, UITableViewDataSource, GistDetailDatasourceProtocol {
 
     var data: Dynamic<[GistComment]> = Dynamic([])
     var gistModel: GistModel
+    var files: [FileModel] {
+        return gistModel.files.lazy.map { $0.value }
+    }
+    var title: String {
+        guard let filename = files.first?.filename else {
+            return "Shomething happened, check the files: [FileModels]"
+        }
+        let login = gistModel.owner.login
+        return "\(login)/\(filename)"
+    }
 
-    private enum GistSection: Int {
+    enum GistSection: Int {
         case gistFiles = 0
         case comments
 
@@ -59,9 +71,11 @@ internal final class GistDetailDatasource: NSObject, UITableViewDataSource, Gist
         if let gistSection = GistSection(indexPath: indexPath) {
             switch gistSection {
             case .gistFiles:
-                return UITableViewCell()
+                let fileCell = tableView.dequeueReusableCell(for: indexPath) as FileCell
+                fileCell.setup(data: files[indexPath.row])
+                return fileCell
             default:
-                let commentCell = tableView.dequeueReusableCell(for: indexPath) as GistCommentTableViewCell
+                let commentCell = tableView.dequeueReusableCell(for: indexPath) as CommentTableViewCell
                 commentCell.setup(data: data.value[indexPath.row])
                 return commentCell
             }
@@ -70,5 +84,4 @@ internal final class GistDetailDatasource: NSObject, UITableViewDataSource, Gist
             fatalError("Wrong count, check your data")
         }
     }
-
 }

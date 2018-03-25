@@ -34,9 +34,9 @@ internal protocol GistDetailInteractorOutputProtocol: class {
 
 internal protocol GistDetailInteractorInputProtocol: class {
     var presenter: GistDetailInteractorOutputProtocol? { get set }
-    var remoteDataManager: MoyaProvider<GistService>? { get set }
+    var remoteDataManager: RemoteDataManagerInputProtocol? { get set }
 
-    func retrieveComments(with gistId: GistId)
+    func retrieveComments(fromGistId: GistId)
 
     /* Presenter -> Interactor */
 }

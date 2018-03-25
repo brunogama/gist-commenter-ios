@@ -1,5 +1,5 @@
 //
-//  GistCommentTableViewCell.swift
+//  CommentTableViewCell.swift
 //  GistCommenter
 //
 //  Created by Bruno Gama on 23/03/2018.
@@ -9,12 +9,12 @@
 import Reusable
 import UIKit
 
-internal protocol GistCommentTableViewCellProtocol: class {
+internal protocol CommentTableViewCellProtocol: class {
 
     func setup(data: GistComment)
 }
 
-internal final class CommentTableViewCell: UITableViewCell, GistCommentTableViewCellProtocol, NibReusable {
+internal final class CommentTableViewCell: UITableViewCell, CommentTableViewCellProtocol, NibReusable {
     @IBOutlet private weak var userImageView: UIImageView!
     @IBOutlet private weak var userHandle: UILabel!
     @IBOutlet private weak var userComment: UITextView!
