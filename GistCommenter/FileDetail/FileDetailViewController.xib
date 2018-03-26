@@ -1,23 +1,1686 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FileDetailViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FileDetailViewController" customModule="GistCommenter" customModuleProvider="target">
             <connections>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="editorTextView" destination="6H7-K4-J8C" id="4Nm-nh-7hR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="I5v-zJ-bhH"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6H7-K4-J8C">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <attributedString key="attributedText">
+                        <fragment content="    ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="static">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="1" green="0.47450999999999999" blue="0.77646999999999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="func">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="1" green="0.47450999999999999" blue="0.77646999999999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" createModule() -&gt; ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="UIViewController">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.54510000000000003" green="0.91373000000000004" blue="0.99216000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" {">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cgo
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="        ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="guard">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="1" green="0.47450999999999999" blue="0.77646999999999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="let">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="1" green="0.47450999999999999" blue="0.77646999999999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" url = ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Bundle">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.54510000000000003" green="0.91373000000000004" blue="0.99216000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=".">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="main">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.54510000000000003" green="0.91373000000000004" blue="0.99216000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=".">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="url">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.54510000000000003" green="0.91373000000000004" blue="0.99216000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="(forResource: ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="&quot;gist&quot;">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.81845999999999997" green="0.33333000000000002" blue="0.33333000000000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=", withExtension: ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="&quot;json&quot;">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.81845999999999997" green="0.33333000000000002" blue="0.33333000000000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="),">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="            ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="let">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="1" green="0.47450999999999999" blue="0.77646999999999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" data = ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="try">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="1" green="0.47450999999999999" blue="0.77646999999999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="? ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Data">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.54510000000000003" green="0.91373000000000004" blue="0.99216000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="(contentsOf: url) ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="else">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="1" green="0.47450999999999999" blue="0.77646999999999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" {">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="                ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="fatalError">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.54510000000000003" green="0.91373000000000004" blue="0.99216000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="(">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="&quot;Bundle not loaded&quot;">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.81845999999999997" green="0.33333000000000002" blue="0.33333000000000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=")">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="        }">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cgo
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="        ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="let">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="1" green="0.47450999999999999" blue="0.77646999999999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" dataSource = ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="GistDetailDatasource">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.31372" green="0.98038999999999998" blue="0.48235" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="(gistModel: ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="GistModel">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.31372" green="0.98038999999999998" blue="0.48235" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="(data: data)!)">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cgo
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="        ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="let">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="1" green="0.47450999999999999" blue="0.77646999999999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" view = ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="GistDetailViewController">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.31372" green="0.98038999999999998" blue="0.48235" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=".">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="instantiate">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.31372" green="0.98038999999999998" blue="0.48235" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="()">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="        view.">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="datasource">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.31372" green="0.98038999999999998" blue="0.48235" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" = dataSource">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cgo
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="        ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="let">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="1" green="0.47450999999999999" blue="0.77646999999999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" interactor = ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="GistDetailInteractor">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.31372" green="0.98038999999999998" blue="0.48235" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="()">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="        ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="let">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="1" green="0.47450999999999999" blue="0.77646999999999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" client = ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Client">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.31372" green="0.98038999999999998" blue="0.48235" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="(provider: ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="MoyaProvider">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.31372" green="0.98038999999999998" blue="0.48235" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="&lt;">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="GistService">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.31372" green="0.98038999999999998" blue="0.48235" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="&gt;())">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="        client?.">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="remoteRequestHandler">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.31372" green="0.98038999999999998" blue="0.48235" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" = interactor">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cgo
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="        interactor.">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="remoteDataManager">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.31372" green="0.98038999999999998" blue="0.48235" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" = client">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cgo
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="        ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="let">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="1" green="0.47450999999999999" blue="0.77646999999999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" router = ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="GistDetailRouter">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.31372" green="0.98038999999999998" blue="0.48235" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="()">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="        ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="let">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="1" green="0.47450999999999999" blue="0.77646999999999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" presenter = ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="GistDetailPresenter">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.31372" green="0.98038999999999998" blue="0.48235" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="(interface: view, interactor: interactor, router: router)">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cgo
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="        view.">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="presenter">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.31372" green="0.98038999999999998" blue="0.48235" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" = presenter">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="        interactor.">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="presenter">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.31372" green="0.98038999999999998" blue="0.48235" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" = presenter">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="        router.">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="viewController">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.31372" green="0.98038999999999998" blue="0.48235" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" = view">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cgo
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="        ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="return">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="1" green="0.47450999999999999" blue="0.77646999999999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" view">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="    }">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.11766" green="0.12214999999999999" blue="0.15978000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.87792999999999999" green="0.87297999999999998" blue="0.87804000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="Monaco"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="36">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="6H7-K4-J8C" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="9Jp-PV-yCL"/>
+                <constraint firstItem="6H7-K4-J8C" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Bad-rq-Ygt"/>
+                <constraint firstItem="6H7-K4-J8C" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Bsa-S4-Xpw"/>
+                <constraint firstItem="6H7-K4-J8C" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Guu-uN-j9B"/>
+            </constraints>
+            <point key="canvasLocation" x="-293" y="38"/>
         </view>
     </objects>
 </document>

@@ -22,11 +22,12 @@ internal protocol FileDetailPresenterProtocol: class {
 // MARK: Interactor -
 internal protocol FileDetailInteractorProtocol: class {
 
-  var presenter: FileDetailPresenterProtocol? { get set }
+    var presenter: FileDetailPresenterProtocol? { get set }
 }
 
 // MARK: View -
 internal protocol FileDetailViewProtocol: class {
 
-  var presenter: FileDetailPresenterProtocol? { get set }
+    var presenter: FileDetailPresenterProtocol? { get set }
+    var file: FileModel? { get set }
 }

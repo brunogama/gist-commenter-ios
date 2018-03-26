@@ -15,7 +15,8 @@ internal final class FileDetailRouter: FileDetailWireframeProtocol {
     weak var viewController: UIViewController?
 
     static func createModule(fileModel: FileModel) -> UIViewController {
-        let view = FileDetailViewController(nibName: nil, bundle: nil)
+        let view = FileDetailViewController.instantiate()
+        view.file = fileModel
         let interactor = FileDetailInteractor()
         let router = FileDetailRouter()
         let presenter = FileDetailPresenter(interface: view, interactor: interactor, router: router)
