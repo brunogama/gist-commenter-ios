@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		790B3D7C2066272B005DAABA /* UIImage+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B3D7B2066272B005DAABA /* UIImage+Padding.swift */; };
+		790B3D80206635A1005DAABA /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790B3D7F206635A1005DAABA /* Kingfisher.framework */; };
 		792A43942065453C00B8F12B /* ViewControllerBootstrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792A43932065453C00B8F12B /* ViewControllerBootstrapper.swift */; };
 		792A43962065491D00B8F12B /* MockQRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792A43952065491D00B8F12B /* MockQRCodeReader.swift */; };
 		792A4399206551A900B8F12B /* QRCodeReadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792A4398206551A900B8F12B /* QRCodeReadable.swift */; };
+		792EE3D62067E3B300F8322D /* UIView+DesignableCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792EE3D52067E3B300F8322D /* UIView+DesignableCorners.swift */; };
+		792EE3D82067E58E00F8322D /* UIImageView+fixVectorTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792EE3D72067E58E00F8322D /* UIImageView+fixVectorTemplate.swift */; };
+		792EE3D92067E58E00F8322D /* UIImageView+fixVectorTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792EE3D72067E58E00F8322D /* UIImageView+fixVectorTemplate.swift */; };
+		793B042220677B6400E93BED /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 793B042120677B6400E93BED /* SwiftDate.framework */; };
+		793B042320677B9B00E93BED /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 793B042120677B6400E93BED /* SwiftDate.framework */; };
 		79414ECE2061CC9E00927472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79414ECD2061CC9E00927472 /* AppDelegate.swift */; };
 		79414ED62061CC9E00927472 /* GistCommenter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79414ED42061CC9E00927472 /* GistCommenter.xcdatamodeld */; };
 		79414ED82061CCA000927472 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79414ED72061CCA000927472 /* Images.xcassets */; };
@@ -19,20 +26,82 @@
 		79414F0B2061CD8400927472 /* XcodeWarnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 79414F022061CD8400927472 /* XcodeWarnings.xcconfig */; };
 		79414F112061CD8400927472 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79414F062061CD8400927472 /* Info.plist */; };
 		79414F2C2061DF0000927472 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79414F292061DEFF00927472 /* Localizable.strings */; };
-		7960608F20657A0800300650 /* UIViewController+NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960608E20657A0800300650 /* UIViewController+NibLoadable.swift */; };
-		7960609020657A3000300650 /* UIViewController+NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960608E20657A0800300650 /* UIViewController+NibLoadable.swift */; };
+		796060AB2065834700300650 /* GistDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060A52065834700300650 /* GistDetailPresenter.swift */; };
+		796060AC2065834700300650 /* GistDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060A62065834700300650 /* GistDetailRouter.swift */; };
+		796060AD2065834700300650 /* GistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060A72065834700300650 /* GistDetailViewController.swift */; };
+		796060AE2065834700300650 /* GistDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060A82065834700300650 /* GistDetailProtocols.swift */; };
+		796060AF2065834700300650 /* GistDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060A92065834700300650 /* GistDetailInteractor.swift */; };
+		796060B02065834700300650 /* GistDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796060AA2065834700300650 /* GistDetailViewController.xib */; };
+		796060B320658C4D00300650 /* GistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060B220658C4D00300650 /* GistModel.swift */; };
+		796060B520658F1100300650 /* Codable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060B420658F1100300650 /* Codable+Extensions.swift */; };
+		796060B7206590B600300650 /* JSONNull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060B6206590B600300650 /* JSONNull.swift */; };
+		796060BA2065920600300650 /* GistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060B92065920600300650 /* GistService.swift */; };
+		796060BD206594A300300650 /* gist.json in Resources */ = {isa = PBXBuildFile; fileRef = 796060BC206594A300300650 /* gist.json */; };
+		796060BE2065950A00300650 /* gist.json in Resources */ = {isa = PBXBuildFile; fileRef = 796060BC206594A300300650 /* gist.json */; };
+		796060C12065951000300650 /* JSONNull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060B6206590B600300650 /* JSONNull.swift */; };
+		796060C32065951000300650 /* Codable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060B420658F1100300650 /* Codable+Extensions.swift */; };
+		796060C42065951400300650 /* GistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060B220658C4D00300650 /* GistModel.swift */; };
+		796060C52065951600300650 /* GistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060B92065920600300650 /* GistService.swift */; };
+		796060C7206596CB00300650 /* GistComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060C6206596CB00300650 /* GistComment.swift */; };
+		796060C82065974D00300650 /* GistComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060C6206596CB00300650 /* GistComment.swift */; };
+		796060CA2065978300300650 /* comments.json in Resources */ = {isa = PBXBuildFile; fileRef = 796060C92065978300300650 /* comments.json */; };
+		796060CB2065988200300650 /* comments.json in Resources */ = {isa = PBXBuildFile; fileRef = 796060C92065978300300650 /* comments.json */; };
+		796060CD2065A91F00300650 /* GistService+TargetType.path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060CC2065A91F00300650 /* GistService+TargetType.path.swift */; };
+		796060CF2065A9B200300650 /* GistService+TargetType.baseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060CE2065A9B200300650 /* GistService+TargetType.baseUrl.swift */; };
+		796060D12065A9E200300650 /* GistService+TargetType.sampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060D02065A9E200300650 /* GistService+TargetType.sampleData.swift */; };
+		796060D32065AA8D00300650 /* GistService+TargetType.task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060D22065AA8D00300650 /* GistService+TargetType.task.swift */; };
+		796060D82065CAA200300650 /* FileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060D72065CAA200300650 /* FileModel.swift */; };
+		796060DA2065CACC00300650 /* ForkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060D92065CACC00300650 /* ForkModel.swift */; };
+		796060DC2065CAE900300650 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060DB2065CAE900300650 /* UserModel.swift */; };
+		796060DE2065CB1300300650 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060DD2065CB1300300650 /* HistoryModel.swift */; };
+		796060E02065CB2D00300650 /* ChangeStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060DF2065CB2D00300650 /* ChangeStatusModel.swift */; };
+		796060E52065D48800300650 /* GistDetailDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060E42065D48800300650 /* GistDetailDatasource.swift */; };
+		796060E72065D70600300650 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060E62065D70600300650 /* Dynamic.swift */; };
+		796060E82065D70600300650 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060E62065D70600300650 /* Dynamic.swift */; };
+		796060ED2065DD7F00300650 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060EC2065DD7F00300650 /* CommentTableViewCell.swift */; };
+		796060EE2065DD7F00300650 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796060EC2065DD7F00300650 /* CommentTableViewCell.swift */; };
+		796060FA2066021200300650 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796060F92066021200300650 /* CommentTableViewCell.xib */; };
+		796060FB2066021200300650 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796060F92066021200300650 /* CommentTableViewCell.xib */; };
 		797F446C20642A160078CA4A /* QRCodeReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */; };
+		7982AC2B206875CE0062E6F4 /* Highlightr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7982AC2A206875CE0062E6F4 /* Highlightr.framework */; };
+		7982AC2C206876080062E6F4 /* Highlightr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7982AC2A206875CE0062E6F4 /* Highlightr.framework */; };
+		7982AC35206876580062E6F4 /* FileDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982AC2F206876580062E6F4 /* FileDetailPresenter.swift */; };
+		7982AC36206876580062E6F4 /* FileDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982AC30206876580062E6F4 /* FileDetailRouter.swift */; };
+		7982AC37206876580062E6F4 /* FileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982AC31206876580062E6F4 /* FileDetailViewController.swift */; };
+		7982AC38206876580062E6F4 /* FileDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982AC32206876580062E6F4 /* FileDetailProtocols.swift */; };
+		7982AC39206876580062E6F4 /* FileDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982AC33206876580062E6F4 /* FileDetailInteractor.swift */; };
+		7982AC3A206876580062E6F4 /* FileDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7982AC34206876580062E6F4 /* FileDetailViewController.xib */; };
 		798BA32620644DAD00D7F6D1 /* QRCodeReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */; };
 		798BA32A2064611D00D7F6D1 /* QRCodeReder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BA3292064611D00D7F6D1 /* QRCodeReder.swift */; };
 		79B04ABE2065669B00A9E387 /* MockQRCodeReaderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B04ABD2065669B00A9E387 /* MockQRCodeReaderInteractor.swift */; };
 		79B04AC02065682E00A9E387 /* QRCodeReder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BA3292064611D00D7F6D1 /* QRCodeReder.swift */; };
 		79B04AC12065682E00A9E387 /* QRCodeReadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792A4398206551A900B8F12B /* QRCodeReadable.swift */; };
+		79B0C2E92066361B0084D453 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790B3D7F206635A1005DAABA /* Kingfisher.framework */; };
+		79B0C2EB2066426F0084D453 /* SkeletonView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79B0C2EA2066426F0084D453 /* SkeletonView.framework */; };
+		79B682EA2066D2FC00E221DD /* Reusable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79B682E92066D2FC00E221DD /* Reusable.framework */; };
+		79B682EF2066DBFC00E221DD /* UIViewController+NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B682EE2066DBFC00E221DD /* UIViewController+NibLoadable.swift */; };
+		79B682F02066DBFC00E221DD /* UIViewController+NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B682EE2066DBFC00E221DD /* UIViewController+NibLoadable.swift */; };
+		79B682F22066DDF800E221DD /* Github.clr in Resources */ = {isa = PBXBuildFile; fileRef = 79B682F12066DDF800E221DD /* Github.clr */; };
+		79B682F32066DDF800E221DD /* Github.clr in Resources */ = {isa = PBXBuildFile; fileRef = 79B682F12066DDF800E221DD /* Github.clr */; };
+		79B682F52066DE1600E221DD /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B682F42066DE1500E221DD /* Colors.swift */; };
+		79B682F62066DE1600E221DD /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B682F42066DE1500E221DD /* Colors.swift */; };
+		79B682F82066DE4300E221DD /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79B682F72066DE4300E221DD /* Colors.xcassets */; };
+		79B682F92066DE4300E221DD /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79B682F72066DE4300E221DD /* Colors.xcassets */; };
+		79B682FB2066E2B400E221DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79B682FA2066E2B400E221DD /* LaunchScreen.storyboard */; };
+		79B682FC2066E2B400E221DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79B682FA2066E2B400E221DD /* LaunchScreen.storyboard */; };
+		79C4E86B2067053B00636F09 /* FeatherIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C4E86A2067053B00636F09 /* FeatherIcons.xcassets */; };
+		79C4E86C2067053B00636F09 /* FeatherIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C4E86A2067053B00636F09 /* FeatherIcons.xcassets */; };
+		79C4E86F206716AE00636F09 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4E86E206716AE00636F09 /* Client.swift */; };
+		79C4E870206716AE00636F09 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4E86E206716AE00636F09 /* Client.swift */; };
+		79C4E872206721DC00636F09 /* FileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4E871206721DC00636F09 /* FileCell.swift */; };
+		79C4E873206721DC00636F09 /* FileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4E871206721DC00636F09 /* FileCell.swift */; };
+		79C4E875206721E900636F09 /* FileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C4E874206721E900636F09 /* FileCell.xib */; };
+		79C4E876206721E900636F09 /* FileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C4E874206721E900636F09 /* FileCell.xib */; };
 		79E729C72062B7FF00EF27E9 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E729C42062B7FF00EF27E9 /* Assets.swift */; };
 		79E729C92062B7FF00EF27E9 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E729C62062B7FF00EF27E9 /* Strings.swift */; };
 		79E72A0B2062CF6A00EF27E9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729EE2062CD3E00EF27E9 /* Alamofire.framework */; };
 		79E72A0C2062CF6A00EF27E9 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729D32062CD3E00EF27E9 /* Moya.framework */; };
 		79E72A0D2062CF6A00EF27E9 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729DE2062CD3E00EF27E9 /* Nimble.framework */; };
-		79E72A0E2062CF6A00EF27E9 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729DD2062CD3E00EF27E9 /* OHHTTPStubs.framework */; };
 		79E72A0F2062CF6A00EF27E9 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729D72062CD3E00EF27E9 /* Quick.framework */; };
 		79E72A122062CF6A00EF27E9 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729D62062CD3E00EF27E9 /* Result.framework */; };
 		79E72A182062CF8600EF27E9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729EE2062CD3E00EF27E9 /* Alamofire.framework */; };
@@ -57,6 +126,8 @@
 		79E72A652063D8C100EF27E9 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E729C62062B7FF00EF27E9 /* Strings.swift */; };
 		79E72A662063D8C800EF27E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79414ECD2061CC9E00927472 /* AppDelegate.swift */; };
 		79E72A672063D8CE00EF27E9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E72A4C2062EC3500EF27E9 /* Logger.swift */; };
+		79F517FA20675D7E00E37186 /* GistHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F517F920675D7E00E37186 /* GistHeaderView.swift */; };
+		79F517FC20675DEB00E37186 /* GistHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F517FB20675DEB00E37186 /* GistHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,9 +141,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		790B3D7B2066272B005DAABA /* UIImage+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Padding.swift"; sourceTree = "<group>"; };
+		790B3D7D20663107005DAABA /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		790B3D7F206635A1005DAABA /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		792A43932065453C00B8F12B /* ViewControllerBootstrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBootstrapper.swift; sourceTree = "<group>"; };
 		792A43952065491D00B8F12B /* MockQRCodeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockQRCodeReader.swift; sourceTree = "<group>"; };
 		792A4398206551A900B8F12B /* QRCodeReadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReadable.swift; sourceTree = "<group>"; };
+		792EE3D52067E3B300F8322D /* UIView+DesignableCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DesignableCorners.swift"; sourceTree = "<group>"; };
+		792EE3D72067E58E00F8322D /* UIImageView+fixVectorTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+fixVectorTemplate.swift"; sourceTree = "<group>"; };
+		793B042120677B6400E93BED /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
 		79414ECA2061CC9E00927472 /* GistCommenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GistCommenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79414ECD2061CC9E00927472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79414ED52061CC9E00927472 /* GistCommenter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GistCommenter.xcdatamodel; sourceTree = "<group>"; };
@@ -89,10 +166,54 @@
 		79414F142061CE6100927472 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		79414F152061D0F500927472 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		79414F2A2061DEFF00927472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		7960608E20657A0800300650 /* UIViewController+NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NibLoadable.swift"; sourceTree = "<group>"; };
+		796060A52065834700300650 /* GistDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailPresenter.swift; sourceTree = "<group>"; };
+		796060A62065834700300650 /* GistDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailRouter.swift; sourceTree = "<group>"; };
+		796060A72065834700300650 /* GistDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailViewController.swift; sourceTree = "<group>"; };
+		796060A82065834700300650 /* GistDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailProtocols.swift; sourceTree = "<group>"; };
+		796060A92065834700300650 /* GistDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailInteractor.swift; sourceTree = "<group>"; };
+		796060AA2065834700300650 /* GistDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GistDetailViewController.xib; sourceTree = "<group>"; };
+		796060B220658C4D00300650 /* GistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistModel.swift; sourceTree = "<group>"; };
+		796060B420658F1100300650 /* Codable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extensions.swift"; sourceTree = "<group>"; };
+		796060B6206590B600300650 /* JSONNull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNull.swift; sourceTree = "<group>"; };
+		796060B92065920600300650 /* GistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistService.swift; sourceTree = "<group>"; };
+		796060BC206594A300300650 /* gist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gist.json; sourceTree = "<group>"; };
+		796060C6206596CB00300650 /* GistComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistComment.swift; sourceTree = "<group>"; };
+		796060C92065978300300650 /* comments.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = comments.json; sourceTree = "<group>"; };
+		796060CC2065A91F00300650 /* GistService+TargetType.path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistService+TargetType.path.swift"; sourceTree = "<group>"; };
+		796060CE2065A9B200300650 /* GistService+TargetType.baseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistService+TargetType.baseUrl.swift"; sourceTree = "<group>"; };
+		796060D02065A9E200300650 /* GistService+TargetType.sampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistService+TargetType.sampleData.swift"; sourceTree = "<group>"; };
+		796060D22065AA8D00300650 /* GistService+TargetType.task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistService+TargetType.task.swift"; sourceTree = "<group>"; };
+		796060D72065CAA200300650 /* FileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileModel.swift; sourceTree = "<group>"; };
+		796060D92065CACC00300650 /* ForkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkModel.swift; sourceTree = "<group>"; };
+		796060DB2065CAE900300650 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		796060DD2065CB1300300650 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		796060DF2065CB2D00300650 /* ChangeStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStatusModel.swift; sourceTree = "<group>"; };
+		796060E22065D16C00300650 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
+		796060E42065D48800300650 /* GistDetailDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailDatasource.swift; sourceTree = "<group>"; };
+		796060E62065D70600300650 /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		796060EC2065DD7F00300650 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		796060F92066021200300650 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeReaderViewController.xib; sourceTree = "<group>"; };
+		7982AC2A206875CE0062E6F4 /* Highlightr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Highlightr.framework; path = Carthage/Build/iOS/Highlightr.framework; sourceTree = "<group>"; };
+		7982AC2F206876580062E6F4 /* FileDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailPresenter.swift; sourceTree = "<group>"; };
+		7982AC30206876580062E6F4 /* FileDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailRouter.swift; sourceTree = "<group>"; };
+		7982AC31206876580062E6F4 /* FileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailViewController.swift; sourceTree = "<group>"; };
+		7982AC32206876580062E6F4 /* FileDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailProtocols.swift; sourceTree = "<group>"; };
+		7982AC33206876580062E6F4 /* FileDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailInteractor.swift; sourceTree = "<group>"; };
+		7982AC34206876580062E6F4 /* FileDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileDetailViewController.xib; sourceTree = "<group>"; };
 		798BA3292064611D00D7F6D1 /* QRCodeReder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReder.swift; sourceTree = "<group>"; };
 		79B04ABD2065669B00A9E387 /* MockQRCodeReaderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockQRCodeReaderInteractor.swift; sourceTree = "<group>"; };
+		79B0C2EA2066426F0084D453 /* SkeletonView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkeletonView.framework; path = Carthage/Build/iOS/SkeletonView.framework; sourceTree = "<group>"; };
+		79B682E92066D2FC00E221DD /* Reusable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reusable.framework; path = Carthage/Build/iOS/Reusable.framework; sourceTree = "<group>"; };
+		79B682EE2066DBFC00E221DD /* UIViewController+NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+NibLoadable.swift"; sourceTree = "<group>"; };
+		79B682F12066DDF800E221DD /* Github.clr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Github.clr; sourceTree = "<group>"; };
+		79B682F42066DE1500E221DD /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		79B682F72066DE4300E221DD /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		79B682FA2066E2B400E221DD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		79C4E86A2067053B00636F09 /* FeatherIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = FeatherIcons.xcassets; path = "../../../feather-xcassets/FeatherIcons.xcassets"; sourceTree = "<group>"; };
+		79C4E86E206716AE00636F09 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		79C4E871206721DC00636F09 /* FileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCell.swift; sourceTree = "<group>"; };
+		79C4E874206721E900636F09 /* FileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileCell.xib; sourceTree = "<group>"; };
 		79E729C42062B7FF00EF27E9 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		79E729C62062B7FF00EF27E9 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		79E729D32062CD3E00EF27E9 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Moya.framework; sourceTree = "<group>"; };
@@ -117,6 +238,8 @@
 		79E72A4E2062F7C300EF27E9 /* stats.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stats.generated.swift; sourceTree = "<group>"; };
 		79E72A512062F7D400EF27E9 /* stats.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stats.stencil; sourceTree = "<group>"; };
 		79E72A542063CEC100EF27E9 /* QRCodeReaderViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewControllerTests.swift; sourceTree = "<group>"; };
+		79F517F920675D7E00E37186 /* GistHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistHeaderView.swift; sourceTree = "<group>"; };
+		79F517FB20675DEB00E37186 /* GistHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GistHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +248,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				79E72A182062CF8600EF27E9 /* Alamofire.framework in Frameworks */,
+				790B3D80206635A1005DAABA /* Kingfisher.framework in Frameworks */,
+				79B682EA2066D2FC00E221DD /* Reusable.framework in Frameworks */,
+				793B042220677B6400E93BED /* SwiftDate.framework in Frameworks */,
 				79E72A192062CF8600EF27E9 /* Moya.framework in Frameworks */,
+				7982AC2B206875CE0062E6F4 /* Highlightr.framework in Frameworks */,
 				79E72A1C2062CF8600EF27E9 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +264,11 @@
 				79E72A0B2062CF6A00EF27E9 /* Alamofire.framework in Frameworks */,
 				79E72A0C2062CF6A00EF27E9 /* Moya.framework in Frameworks */,
 				79E72A0D2062CF6A00EF27E9 /* Nimble.framework in Frameworks */,
-				79E72A0E2062CF6A00EF27E9 /* OHHTTPStubs.framework in Frameworks */,
+				793B042320677B9B00E93BED /* SwiftDate.framework in Frameworks */,
+				79B0C2EB2066426F0084D453 /* SkeletonView.framework in Frameworks */,
+				79B0C2E92066361B0084D453 /* Kingfisher.framework in Frameworks */,
 				79E72A0F2062CF6A00EF27E9 /* Quick.framework in Frameworks */,
+				7982AC2C206876080062E6F4 /* Highlightr.framework in Frameworks */,
 				79E72A122062CF6A00EF27E9 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,12 +276,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		792350D92063E21600C6CEBD /* Utils */ = {
+		792350D92063E21600C6CEBD /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				7960608E20657A0800300650 /* UIViewController+NibLoadable.swift */,
+				796060E62065D70600300650 /* Dynamic.swift */,
+				792EE3D72067E58E00F8322D /* UIImageView+fixVectorTemplate.swift */,
+				79B682EE2066DBFC00E221DD /* UIViewController+NibLoadable.swift */,
+				796060B6206590B600300650 /* JSONNull.swift */,
+				796060B420658F1100300650 /* Codable+Extensions.swift */,
+				790B3D7B2066272B005DAABA /* UIImage+Padding.swift */,
+				792EE3D52067E3B300F8322D /* UIView+DesignableCorners.swift */,
 			);
-			path = Utils;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		792A43972065519200B8F12B /* QRCodeReader */ = {
@@ -166,11 +302,11 @@
 		79414EC12061CC9E00927472 = {
 			isa = PBXGroup;
 			children = (
+				79E729CD2062CD3E00EF27E9 /* Frameworks */,
 				79414ECC2061CC9E00927472 /* GistCommenter */,
 				79414EE42061CCA100927472 /* GistCommenterTests */,
 				79414EEF2061CCA100927472 /* GistCommenterUITests */,
 				79414ECB2061CC9E00927472 /* Products */,
-				79E729CD2062CD3E00EF27E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,14 +322,17 @@
 		79414ECC2061CC9E00927472 /* GistCommenter */ = {
 			isa = PBXGroup;
 			children = (
+				7982AC2D206876290062E6F4 /* FileDetail */,
+				796060B8206591EE00300650 /* RemoteManager */,
 				79414ECD2061CC9E00927472 /* AppDelegate.swift */,
 				79E72A4B2062EC2800EF27E9 /* Debug */,
 				79E72A4A2062E18600EF27E9 /* Entities */,
 				79414F332061E3F700927472 /* Generated */,
+				796060A42065833400300650 /* GistDetail */,
 				79E72A492062E0AF00EF27E9 /* QRCodeReader */,
 				79414EFE2061CD8400927472 /* Resources */,
 				79E72A502062F7D400EF27E9 /* Templates */,
-				792350D92063E21600C6CEBD /* Utils */,
+				792350D92063E21600C6CEBD /* Common */,
 			);
 			path = GistCommenter;
 			sourceTree = "<group>";
@@ -223,12 +362,16 @@
 		79414EFE2061CD8400927472 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				796060BB206593DF00300650 /* SampleData */,
 				79414F292061DEFF00927472 /* Localizable.strings */,
 				79414ED72061CCA000927472 /* Images.xcassets */,
+				79C4E86A2067053B00636F09 /* FeatherIcons.xcassets */,
+				79B682F12066DDF800E221DD /* Github.clr */,
 				79414EFF2061CD8400927472 /* Storyboards */,
 				79414F002061CD8400927472 /* Settings.bundle */,
 				79414F012061CD8400927472 /* Config */,
 				79414F052061CD8400927472 /* Other-Sources */,
+				79B682F72066DE4300E221DD /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -236,6 +379,7 @@
 		79414EFF2061CD8400927472 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				79B682FA2066E2B400E221DD /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -268,9 +412,103 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		796060A42065833400300650 /* GistDetail */ = {
+			isa = PBXGroup;
+			children = (
+				796060F8206601EF00300650 /* View */,
+				796060A52065834700300650 /* GistDetailPresenter.swift */,
+				796060A62065834700300650 /* GistDetailRouter.swift */,
+				796060A82065834700300650 /* GistDetailProtocols.swift */,
+				796060A92065834700300650 /* GistDetailInteractor.swift */,
+			);
+			path = GistDetail;
+			sourceTree = "<group>";
+		};
+		796060B8206591EE00300650 /* RemoteManager */ = {
+			isa = PBXGroup;
+			children = (
+				796060D42065AAD200300650 /* GistService */,
+				79C4E86E206716AE00636F09 /* Client.swift */,
+			);
+			path = RemoteManager;
+			sourceTree = "<group>";
+		};
+		796060BB206593DF00300650 /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				796060BC206594A300300650 /* gist.json */,
+				796060C92065978300300650 /* comments.json */,
+			);
+			path = SampleData;
+			sourceTree = "<group>";
+		};
+		796060D42065AAD200300650 /* GistService */ = {
+			isa = PBXGroup;
+			children = (
+				796060B92065920600300650 /* GistService.swift */,
+				796060D02065A9E200300650 /* GistService+TargetType.sampleData.swift */,
+				796060CC2065A91F00300650 /* GistService+TargetType.path.swift */,
+				796060CE2065A9B200300650 /* GistService+TargetType.baseUrl.swift */,
+				796060D22065AA8D00300650 /* GistService+TargetType.task.swift */,
+			);
+			path = GistService;
+			sourceTree = "<group>";
+		};
+		796060E12065CB3E00300650 /* GithubModels */ = {
+			isa = PBXGroup;
+			children = (
+				796060B220658C4D00300650 /* GistModel.swift */,
+				796060C6206596CB00300650 /* GistComment.swift */,
+				796060D72065CAA200300650 /* FileModel.swift */,
+				796060D92065CACC00300650 /* ForkModel.swift */,
+				796060DB2065CAE900300650 /* UserModel.swift */,
+				796060DD2065CB1300300650 /* HistoryModel.swift */,
+				796060DF2065CB2D00300650 /* ChangeStatusModel.swift */,
+			);
+			path = GithubModels;
+			sourceTree = "<group>";
+		};
+		796060F8206601EF00300650 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79C4E86D20670B5200636F09 /* Cells */,
+				796060E42065D48800300650 /* GistDetailDatasource.swift */,
+				796060A72065834700300650 /* GistDetailViewController.swift */,
+				796060AA2065834700300650 /* GistDetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7982AC2D206876290062E6F4 /* FileDetail */ = {
+			isa = PBXGroup;
+			children = (
+				7982AC2F206876580062E6F4 /* FileDetailPresenter.swift */,
+				7982AC30206876580062E6F4 /* FileDetailRouter.swift */,
+				7982AC31206876580062E6F4 /* FileDetailViewController.swift */,
+				7982AC32206876580062E6F4 /* FileDetailProtocols.swift */,
+				7982AC33206876580062E6F4 /* FileDetailInteractor.swift */,
+				7982AC34206876580062E6F4 /* FileDetailViewController.xib */,
+			);
+			path = FileDetail;
+			sourceTree = "<group>";
+		};
+		79C4E86D20670B5200636F09 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				796060EC2065DD7F00300650 /* CommentTableViewCell.swift */,
+				796060F92066021200300650 /* CommentTableViewCell.xib */,
+				79C4E871206721DC00636F09 /* FileCell.swift */,
+				79C4E874206721E900636F09 /* FileCell.xib */,
+				79F517F920675D7E00E37186 /* GistHeaderView.swift */,
+				79F517FB20675DEB00E37186 /* GistHeaderView.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		79E729C320629A3F00EF27E9 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				79B682F42066DE1500E221DD /* Colors.swift */,
 				79E729C42062B7FF00EF27E9 /* Assets.swift */,
 				79E729C62062B7FF00EF27E9 /* Strings.swift */,
 			);
@@ -280,6 +518,13 @@
 		79E729CD2062CD3E00EF27E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7982AC2A206875CE0062E6F4 /* Highlightr.framework */,
+				793B042120677B6400E93BED /* SwiftDate.framework */,
+				79B682E92066D2FC00E221DD /* Reusable.framework */,
+				79B0C2EA2066426F0084D453 /* SkeletonView.framework */,
+				790B3D7F206635A1005DAABA /* Kingfisher.framework */,
+				790B3D7D20663107005DAABA /* AlamofireImage.framework */,
+				796060E22065D16C00300650 /* PKHUD.framework */,
 				79E729CE2062CD3E00EF27E9 /* iOS */,
 			);
 			name = Frameworks;
@@ -324,6 +569,7 @@
 			isa = PBXGroup;
 			children = (
 				79414ED42061CC9E00927472 /* GistCommenter.xcdatamodeld */,
+				796060E12065CB3E00300650 /* GithubModels */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -436,10 +682,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				79E72A532063283C00EF27E9 /* Localizable.strings in Resources */,
+				79C4E86B2067053B00636F09 /* FeatherIcons.xcassets in Resources */,
+				79B682F22066DDF800E221DD /* Github.clr in Resources */,
 				79414F072061CD8400927472 /* Settings.bundle in Resources */,
+				796060B02065834700300650 /* GistDetailViewController.xib in Resources */,
+				796060CA2065978300300650 /* comments.json in Resources */,
+				79F517FC20675DEB00E37186 /* GistHeaderView.xib in Resources */,
+				796060BD206594A300300650 /* gist.json in Resources */,
+				79C4E875206721E900636F09 /* FileCell.xib in Resources */,
+				79B682FB2066E2B400E221DD /* LaunchScreen.storyboard in Resources */,
 				797F446C20642A160078CA4A /* QRCodeReaderViewController.xib in Resources */,
 				79E72A522062F7D400EF27E9 /* stats.stencil in Resources */,
+				79B682F82066DE4300E221DD /* Colors.xcassets in Resources */,
+				796060FA2066021200300650 /* CommentTableViewCell.xib in Resources */,
 				79414ED82061CCA000927472 /* Images.xcassets in Resources */,
+				7982AC3A206876580062E6F4 /* FileDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,11 +704,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79B682F32066DDF800E221DD /* Github.clr in Resources */,
 				798BA32620644DAD00D7F6D1 /* QRCodeReaderViewController.xib in Resources */,
+				79C4E86C2067053B00636F09 /* FeatherIcons.xcassets in Resources */,
+				79B682F92066DE4300E221DD /* Colors.xcassets in Resources */,
 				79414F112061CD8400927472 /* Info.plist in Resources */,
 				79414F2C2061DF0000927472 /* Localizable.strings in Resources */,
 				79414F082061CD8400927472 /* Settings.bundle in Resources */,
+				796060BE2065950A00300650 /* gist.json in Resources */,
 				79414F0B2061CD8400927472 /* XcodeWarnings.xcconfig in Resources */,
+				796060CB2065988200300650 /* comments.json in Resources */,
+				79B682FC2066E2B400E221DD /* LaunchScreen.storyboard in Resources */,
+				79C4E876206721E900636F09 /* FileCell.xib in Resources */,
+				796060FB2066021200300650 /* CommentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,12 +773,11 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveMoya.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Reusable.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftDate.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Highlightr.framework",
 			);
 			name = "Carthage: Copy frameworks";
 			outputPaths = (
@@ -531,16 +795,11 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/OHHTTPStubs.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveMoya.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftDate.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Highlightr.framework",
 			);
 			name = "Carthage: Copy frameworks";
 			outputPaths = (
@@ -572,18 +831,52 @@
 			files = (
 				798BA32A2064611D00D7F6D1 /* QRCodeReder.swift in Sources */,
 				79E72A4D2062EC3500EF27E9 /* Logger.swift in Sources */,
+				796060CD2065A91F00300650 /* GistService+TargetType.path.swift in Sources */,
+				7982AC36206876580062E6F4 /* FileDetailRouter.swift in Sources */,
+				790B3D7C2066272B005DAABA /* UIImage+Padding.swift in Sources */,
+				796060DA2065CACC00300650 /* ForkModel.swift in Sources */,
 				79E72A452062E05C00EF27E9 /* QRCodeReaderInteractor.swift in Sources */,
+				796060B520658F1100300650 /* Codable+Extensions.swift in Sources */,
+				792EE3D82067E58E00F8322D /* UIImageView+fixVectorTemplate.swift in Sources */,
+				796060AD2065834700300650 /* GistDetailViewController.swift in Sources */,
+				79C4E872206721DC00636F09 /* FileCell.swift in Sources */,
 				792A4399206551A900B8F12B /* QRCodeReadable.swift in Sources */,
+				796060C7206596CB00300650 /* GistComment.swift in Sources */,
 				79414ED62061CC9E00927472 /* GistCommenter.xcdatamodeld in Sources */,
 				79E72A4F2062F7C300EF27E9 /* stats.generated.swift in Sources */,
-				7960608F20657A0800300650 /* UIViewController+NibLoadable.swift in Sources */,
 				79E729C92062B7FF00EF27E9 /* Strings.swift in Sources */,
+				796060E02065CB2D00300650 /* ChangeStatusModel.swift in Sources */,
 				79E72A442062E05C00EF27E9 /* QRCodeReaderProtocols.swift in Sources */,
+				7982AC38206876580062E6F4 /* FileDetailProtocols.swift in Sources */,
+				7982AC39206876580062E6F4 /* FileDetailInteractor.swift in Sources */,
+				796060D12065A9E200300650 /* GistService+TargetType.sampleData.swift in Sources */,
+				79B682EF2066DBFC00E221DD /* UIViewController+NibLoadable.swift in Sources */,
+				796060CF2065A9B200300650 /* GistService+TargetType.baseUrl.swift in Sources */,
+				796060DE2065CB1300300650 /* HistoryModel.swift in Sources */,
 				79E72A412062E05C00EF27E9 /* QRCodeReaderPresenter.swift in Sources */,
+				796060AE2065834700300650 /* GistDetailProtocols.swift in Sources */,
+				79B682F52066DE1600E221DD /* Colors.swift in Sources */,
+				796060E52065D48800300650 /* GistDetailDatasource.swift in Sources */,
+				79F517FA20675D7E00E37186 /* GistHeaderView.swift in Sources */,
+				796060BA2065920600300650 /* GistService.swift in Sources */,
 				79414ECE2061CC9E00927472 /* AppDelegate.swift in Sources */,
+				7982AC37206876580062E6F4 /* FileDetailViewController.swift in Sources */,
+				796060DC2065CAE900300650 /* UserModel.swift in Sources */,
 				79E729C72062B7FF00EF27E9 /* Assets.swift in Sources */,
+				79C4E86F206716AE00636F09 /* Client.swift in Sources */,
+				7982AC35206876580062E6F4 /* FileDetailPresenter.swift in Sources */,
+				796060B320658C4D00300650 /* GistModel.swift in Sources */,
+				796060D82065CAA200300650 /* FileModel.swift in Sources */,
+				796060AF2065834700300650 /* GistDetailInteractor.swift in Sources */,
+				796060AC2065834700300650 /* GistDetailRouter.swift in Sources */,
+				796060D32065AA8D00300650 /* GistService+TargetType.task.swift in Sources */,
+				796060AB2065834700300650 /* GistDetailPresenter.swift in Sources */,
+				796060E72065D70600300650 /* Dynamic.swift in Sources */,
+				796060ED2065DD7F00300650 /* CommentTableViewCell.swift in Sources */,
 				79E72A432062E05C00EF27E9 /* QRCodeReaderViewController.swift in Sources */,
+				796060B7206590B600300650 /* JSONNull.swift in Sources */,
 				79E72A422062E05C00EF27E9 /* QRCodeReaderRouter.swift in Sources */,
+				792EE3D62067E3B300F8322D /* UIView+DesignableCorners.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,21 +886,32 @@
 			files = (
 				79E72A662063D8C800EF27E9 /* AppDelegate.swift in Sources */,
 				79E72A612063D8BB00EF27E9 /* QRCodeReaderProtocols.swift in Sources */,
+				79B682F02066DBFC00E221DD /* UIViewController+NibLoadable.swift in Sources */,
 				79E72A5E2063D8BB00EF27E9 /* QRCodeReaderPresenter.swift in Sources */,
 				79E72A652063D8C100EF27E9 /* Strings.swift in Sources */,
 				79E72A632063D8C100EF27E9 /* Assets.swift in Sources */,
 				79B04AC02065682E00A9E387 /* QRCodeReder.swift in Sources */,
+				796060C12065951000300650 /* JSONNull.swift in Sources */,
+				796060C52065951600300650 /* GistService.swift in Sources */,
+				79C4E873206721DC00636F09 /* FileCell.swift in Sources */,
+				79B682F62066DE1600E221DD /* Colors.swift in Sources */,
+				792EE3D92067E58E00F8322D /* UIImageView+fixVectorTemplate.swift in Sources */,
 				79E72A602063D8BB00EF27E9 /* QRCodeReaderViewController.swift in Sources */,
 				79E72A5F2063D8BB00EF27E9 /* QRCodeReaderRouter.swift in Sources */,
 				79B04ABE2065669B00A9E387 /* MockQRCodeReaderInteractor.swift in Sources */,
 				79E72A672063D8CE00EF27E9 /* Logger.swift in Sources */,
+				796060C32065951000300650 /* Codable+Extensions.swift in Sources */,
 				79414EE62061CCA100927472 /* GistCommenterTests.swift in Sources */,
+				796060C42065951400300650 /* GistModel.swift in Sources */,
+				796060C82065974D00300650 /* GistComment.swift in Sources */,
 				79E72A622063D8BB00EF27E9 /* QRCodeReaderInteractor.swift in Sources */,
 				792A43962065491D00B8F12B /* MockQRCodeReader.swift in Sources */,
 				79B04AC12065682E00A9E387 /* QRCodeReadable.swift in Sources */,
 				79E72A552063CEC100EF27E9 /* QRCodeReaderViewControllerTests.swift in Sources */,
-				7960609020657A3000300650 /* UIViewController+NibLoadable.swift in Sources */,
+				79C4E870206716AE00636F09 /* Client.swift in Sources */,
 				792A43942065453C00B8F12B /* ViewControllerBootstrapper.swift in Sources */,
+				796060E82065D70600300650 /* Dynamic.swift in Sources */,
+				796060EE2065DD7F00300650 /* CommentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,7 +1004,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K496M4V69T;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -708,7 +1011,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "GistCommenter/Resources/Other-Sources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_IDENTIFIER)$(BUNDLE_IDENTIFIER_SUFFIX)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -721,7 +1024,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K496M4V69T;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -729,7 +1031,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "GistCommenter/Resources/Other-Sources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_IDENTIFIER)$(BUNDLE_IDENTIFIER_SUFFIX)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

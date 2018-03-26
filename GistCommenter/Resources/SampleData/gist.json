@@ -1,0 +1,173 @@
+{
+    "url": "https://api.github.com/gists/244ec4359c3ff33d56888a1dbdbf94f5",
+    "forks_url": "https://api.github.com/gists/244ec4359c3ff33d56888a1dbdbf94f5/forks",
+    "commits_url": "https://api.github.com/gists/244ec4359c3ff33d56888a1dbdbf94f5/commits",
+    "id": "244ec4359c3ff33d56888a1dbdbf94f5",
+    "git_pull_url": "https://gist.github.com/244ec4359c3ff33d56888a1dbdbf94f5.git",
+    "git_push_url": "https://gist.github.com/244ec4359c3ff33d56888a1dbdbf94f5.git",
+    "html_url": "https://gist.github.com/244ec4359c3ff33d56888a1dbdbf94f5",
+    "files": {
+        "contents_json.py": {
+            "filename": "contents_json.py",
+            "type": "application/x-python",
+            "language": "Python",
+            "raw_url": "https://gist.githubusercontent.com/brunogama/244ec4359c3ff33d56888a1dbdbf94f5/raw/5c8c19bc1909c054b0bc4c357b3ee5d65985031e/contents_json.py",
+            "size": 378,
+            "truncated": false,
+            "content": "#!/usr/bin/python\n\nimport json\nimport sys\n\nfilename = \"%s\" % sys.argv[1]\njson_output = {\n  \"images\" : [\n    {\n      \"idiom\" : \"universal\",\n      \"filename\" : filename\n    }\n  ],\n  \"info\" : {\n    \"version\" : 1,\n    \"author\" : \"xcode\"\n  },\n  \"properties\" : {\n    \"preserves-vector-representation\" : True\n  }\n}\n\njson_output = json.dumps(json_output)\n\nprint(json.loads(json_output))"
+        },
+        "convert-to-pdf.sh": {
+            "filename": "convert-to-pdf.sh",
+            "type": "application/x-sh",
+            "language": "Shell",
+            "raw_url": "https://gist.githubusercontent.com/brunogama/244ec4359c3ff33d56888a1dbdbf94f5/raw/dafdec69663fcbbc38ea39fc0a54ce1fcb175251/convert-to-pdf.sh",
+            "size": 683,
+            "truncated": false,
+            "content": "#!/bin/bash\n\ninkscape=/Applications/Inkscape.app/Contents/Resources/bin/inkscape\n\nmkdir \"$PWD\"/pdf\n\nfor file in $PWD/*.svg\ndo\n \tfilename=$(basename \"$file\")\n \tinkscape \"$file\" -d 1200 -A \"$PWD\"/pdf/\"${filename%.svg}.pdf\"\ndone\n\nfor file in $PWD/pdf/*.pdf\ndo\n\techo \"\"\n\tfilename=$(basename \"$file\")\n\tcurrent_file_location=$(echo \"${PWD}/pdf/${filename%.*}.pdf\")\n\tnew_dir=$(echo \"${PWD}/FeatherIcons.xcassets/${filename%.*}.imageset\")\n\t\n\tmkdir -p ${new_dir}\n\tcp ${current_file_location} ${new_dir}/\n\techo \"$(python contents_json.py $filename  | sed 's/'\\''/'\\\"'/g' | tr '[:upper:]' '[:lower:]')\" >| ${new_dir}/Contents.json\ndone\n\ncp root_contents.json FeatherIcons.xcassets/Contents.json"
+        },
+        "gistfile1.txt": {
+            "filename": "gistfile1.txt",
+            "type": "text/plain",
+            "language": "Text",
+            "raw_url": "https://gist.githubusercontent.com/brunogama/244ec4359c3ff33d56888a1dbdbf94f5/raw/ae31db96b098562cf577de615b3ac5bc8af82eed/gistfile1.txt",
+            "size": 279,
+            "truncated": false,
+            "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-navigation-2\"><polygon points=\"12 2 19 21 12 17 5 21 12 2\"></polygon></svg>"
+        },
+        "navigation-2.svg": {
+            "filename": "navigation-2.svg",
+            "type": "image/svg+xml",
+            "language": "SVG",
+            "raw_url": "https://gist.githubusercontent.com/brunogama/244ec4359c3ff33d56888a1dbdbf94f5/raw/ae31db96b098562cf577de615b3ac5bc8af82eed/navigation-2.svg",
+            "size": 279,
+            "truncated": false,
+            "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-navigation-2\"><polygon points=\"12 2 19 21 12 17 5 21 12 2\"></polygon></svg>"
+        },
+        "root_contents.json": {
+            "filename": "root_contents.json",
+            "type": "application/json",
+            "language": "JSON",
+            "raw_url": "https://gist.githubusercontent.com/brunogama/244ec4359c3ff33d56888a1dbdbf94f5/raw/da4a164c918651cdd1e11dca5cc62c333f097601/root_contents.json",
+            "size": 62,
+            "truncated": false,
+            "content": "{\n  \"info\" : {\n    \"version\" : 1,\n    \"author\" : \"xcode\"\n  }\n}"
+        }
+    },
+    "public": false,
+    "created_at": "2018-03-24T22:56:56Z",
+    "updated_at": "2018-03-25T06:13:31Z",
+    "description": "Scripts used to generate the FeatherIcons.xcassets in the project",
+    "comments": 3,
+    "user": null,
+    "comments_url": "https://api.github.com/gists/244ec4359c3ff33d56888a1dbdbf94f5/comments",
+    "owner": {
+        "login": "brunogama",
+        "id": 652969,
+        "avatar_url": "https://avatars1.githubusercontent.com/u/652969?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/brunogama",
+        "html_url": "https://github.com/brunogama",
+        "followers_url": "https://api.github.com/users/brunogama/followers",
+        "following_url": "https://api.github.com/users/brunogama/following{/other_user}",
+        "gists_url": "https://api.github.com/users/brunogama/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/brunogama/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/brunogama/subscriptions",
+        "organizations_url": "https://api.github.com/users/brunogama/orgs",
+        "repos_url": "https://api.github.com/users/brunogama/repos",
+        "events_url": "https://api.github.com/users/brunogama/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/brunogama/received_events",
+        "type": "User",
+        "site_admin": false
+    },
+    "forks": [],
+    "history": [
+        {
+            "user": {
+                "login": "brunogama",
+                "id": 652969,
+                "avatar_url": "https://avatars1.githubusercontent.com/u/652969?v=4",
+                "gravatar_id": "",
+                "url": "https://api.github.com/users/brunogama",
+                "html_url": "https://github.com/brunogama",
+                "followers_url": "https://api.github.com/users/brunogama/followers",
+                "following_url": "https://api.github.com/users/brunogama/following{/other_user}",
+                "gists_url": "https://api.github.com/users/brunogama/gists{/gist_id}",
+                "starred_url": "https://api.github.com/users/brunogama/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/brunogama/subscriptions",
+                "organizations_url": "https://api.github.com/users/brunogama/orgs",
+                "repos_url": "https://api.github.com/users/brunogama/repos",
+                "events_url": "https://api.github.com/users/brunogama/events{/privacy}",
+                "received_events_url": "https://api.github.com/users/brunogama/received_events",
+                "type": "User",
+                "site_admin": false
+            },
+            "version": "0ea0079f4986fc8c26df84eca1fe610fc98e25d0",
+            "committed_at": "2018-03-25T00:58:06Z",
+            "change_status": {
+                "total": 2,
+                "additions": 2,
+                "deletions": 0
+            },
+            "url": "https://api.github.com/gists/244ec4359c3ff33d56888a1dbdbf94f5/0ea0079f4986fc8c26df84eca1fe610fc98e25d0"
+        },
+        {
+            "user": {
+                "login": "brunogama",
+                "id": 652969,
+                "avatar_url": "https://avatars1.githubusercontent.com/u/652969?v=4",
+                "gravatar_id": "",
+                "url": "https://api.github.com/users/brunogama",
+                "html_url": "https://github.com/brunogama",
+                "followers_url": "https://api.github.com/users/brunogama/followers",
+                "following_url": "https://api.github.com/users/brunogama/following{/other_user}",
+                "gists_url": "https://api.github.com/users/brunogama/gists{/gist_id}",
+                "starred_url": "https://api.github.com/users/brunogama/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/brunogama/subscriptions",
+                "organizations_url": "https://api.github.com/users/brunogama/orgs",
+                "repos_url": "https://api.github.com/users/brunogama/repos",
+                "events_url": "https://api.github.com/users/brunogama/events{/privacy}",
+                "received_events_url": "https://api.github.com/users/brunogama/received_events",
+                "type": "User",
+                "site_admin": false
+            },
+            "version": "0335cb5bcf9002dc37617a5867c303384844d8cd",
+            "committed_at": "2018-03-25T00:54:05Z",
+            "change_status": {
+                "total": 0,
+                "additions": 0,
+                "deletions": 0
+            },
+            "url": "https://api.github.com/gists/244ec4359c3ff33d56888a1dbdbf94f5/0335cb5bcf9002dc37617a5867c303384844d8cd"
+        },
+        {
+            "user": {
+                "login": "brunogama",
+                "id": 652969,
+                "avatar_url": "https://avatars1.githubusercontent.com/u/652969?v=4",
+                "gravatar_id": "",
+                "url": "https://api.github.com/users/brunogama",
+                "html_url": "https://github.com/brunogama",
+                "followers_url": "https://api.github.com/users/brunogama/followers",
+                "following_url": "https://api.github.com/users/brunogama/following{/other_user}",
+                "gists_url": "https://api.github.com/users/brunogama/gists{/gist_id}",
+                "starred_url": "https://api.github.com/users/brunogama/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/brunogama/subscriptions",
+                "organizations_url": "https://api.github.com/users/brunogama/orgs",
+                "repos_url": "https://api.github.com/users/brunogama/repos",
+                "events_url": "https://api.github.com/users/brunogama/events{/privacy}",
+                "received_events_url": "https://api.github.com/users/brunogama/received_events",
+                "type": "User",
+                "site_admin": false
+            },
+            "version": "dbbab7beda537081b010bbae42ee101a00ac1b4e",
+            "committed_at": "2018-03-24T22:56:56Z",
+            "change_status": {
+                "total": 56,
+                "additions": 56,
+                "deletions": 0
+            },
+            "url": "https://api.github.com/gists/244ec4359c3ff33d56888a1dbdbf94f5/dbbab7beda537081b010bbae42ee101a00ac1b4e"
+        }
+    ],
+    "truncated": false
+}

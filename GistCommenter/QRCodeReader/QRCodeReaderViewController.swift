@@ -11,8 +11,7 @@
 import AVFoundation
 import UIKit
 
-internal final class QRCodeReaderViewController: UIViewController,
-                                               QRCodeReaderViewProtocol {
+internal final class QRCodeReaderViewController: UIViewController, QRCodeReaderViewProtocol {
 
 	var presenter: QRCodeReaderPresenterProtocol?
     @IBOutlet private weak var statusLabel: UILabel!

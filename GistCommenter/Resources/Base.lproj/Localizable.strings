@@ -18,3 +18,5 @@ detectedQRCode="Detected QR Code";
 invalidQrCodeMessage="Invalid QR Code";
 validQrCodeMessage="It turns out that the scanned QR Code is a Gist Url. Do you want to check-it outt?";
 openGist="Open Gist";
+gistDetail="Gist Detail";
+noComments="No comments 😢";

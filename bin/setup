@@ -26,7 +26,7 @@ echo "Checking requirements 🤞"
 
 check_requirement swiflint "SwiftLint" "https://github.com/realm/SwiftLint"
 dcheck_requirement swiftgen "SwiftGen" "https://github.com/SwiftGen/SwiftGen"
-check_requirement sourcery "Sourcert" "https://github.com/krzysztofzablocki/Sourcery"
+check_requirement sourcery "Sourcery" "https://github.com/krzysztofzablocki/Sourcery"
 
 echo "Downloading and compiling frameworks used in the project"
 echo "This can take a few minutes 😰"

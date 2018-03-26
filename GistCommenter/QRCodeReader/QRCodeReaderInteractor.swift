@@ -15,6 +15,17 @@ internal class QRCodeReaderInteractor: NSObject, QRCodeReaderInteractorInputProt
     weak var presenter: QRCodeReaderInteractorOutputProtocol?
     var codeReader: QRCodeReadable?
 
+    //        guard let substring = URLComponents(url: url, resolvingAgainstBaseURL: true)?
+    //            .path
+    //            .split(separator: "/")
+    //            .last else {
+    //                Logger.e("Failed to parse gist id")
+    //                return
+    //        }
+    //
+    //        let gistId = String(substring)
+
+
     // MARK: - QRCodeReaderInteractorInputProtocol
 
     func didReceived(data: QRCodeReadable.QRCodeData) {

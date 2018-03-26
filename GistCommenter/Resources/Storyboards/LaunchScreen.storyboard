@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eBt-TY-VmS">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="aVP-Av-WxP">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" hidesBottomBarWhenPushed="YES" id="eBt-TY-VmS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Ub-DU-cbs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="5SK-OA-MFD">
+                                <rect key="frame" x="40" y="273" width="295" height="120"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="aperture" translatesAutoresizingMaskIntoConstraints="NO" id="HhW-H0-s66">
+                                        <rect key="frame" x="0.0" y="0.0" width="60.5" height="120"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="github" translatesAutoresizingMaskIntoConstraints="NO" id="HgA-in-NHn">
+                                        <rect key="frame" x="78.5" y="0.0" width="60" height="120"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="code" translatesAutoresizingMaskIntoConstraints="NO" id="Rg2-97-vnx">
+                                        <rect key="frame" x="156.5" y="0.0" width="60.5" height="120"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="message-square" translatesAutoresizingMaskIntoConstraints="NO" id="2PV-1O-LSO">
+                                        <rect key="frame" x="235" y="0.0" width="60" height="120"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="TPT-qe-1HV"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14117647707462311" green="0.16078431904315948" blue="0.18039216101169586" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="5SK-OA-MFD" firstAttribute="leading" secondItem="Zyi-PY-MnO" secondAttribute="leading" constant="40" id="TRG-7w-5PE"/>
+                            <constraint firstItem="5SK-OA-MFD" firstAttribute="centerX" secondItem="5Ub-DU-cbs" secondAttribute="centerX" id="dgs-se-ikA"/>
+                            <constraint firstItem="Zyi-PY-MnO" firstAttribute="trailing" secondItem="5SK-OA-MFD" secondAttribute="trailing" constant="40" id="fxJ-18-ATY"/>
+                            <constraint firstItem="5SK-OA-MFD" firstAttribute="centerY" secondItem="5Ub-DU-cbs" secondAttribute="centerY" id="iRZ-kV-qAB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zyi-PY-MnO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K12-RA-eAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="405.60000000000002" y="-143.47826086956522"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="aperture" width="18" height="18"/>
+        <image name="code" width="18" height="18"/>
+        <image name="github" width="18" height="18"/>
+        <image name="message-square" width="18" height="18"/>
+    </resources>
+</document>
