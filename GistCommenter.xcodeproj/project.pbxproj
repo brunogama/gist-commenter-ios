@@ -193,6 +193,10 @@
 		796060E62065D70600300650 /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		796060EC2065DD7F00300650 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		796060F92066021200300650 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		79776BC120689E6C0006194B /* text-qr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text-qr.png"; sourceTree = "<group>"; };
+		79776BC220689E6C0006194B /* gist-url-qrcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gist-url-qrcode.png"; sourceTree = "<group>"; };
+		79776BC320689E6D0006194B /* google-qr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-qr.png"; sourceTree = "<group>"; };
+		79776BC420689E6D0006194B /* qrcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qrcode.png; sourceTree = "<group>"; };
 		797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeReaderViewController.xib; sourceTree = "<group>"; };
 		7982AC2A206875CE0062E6F4 /* Highlightr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Highlightr.framework; path = Carthage/Build/iOS/Highlightr.framework; sourceTree = "<group>"; };
 		7982AC2F206876580062E6F4 /* FileDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailPresenter.swift; sourceTree = "<group>"; };
@@ -436,6 +440,10 @@
 		796060BB206593DF00300650 /* SampleData */ = {
 			isa = PBXGroup;
 			children = (
+				79776BC220689E6C0006194B /* gist-url-qrcode.png */,
+				79776BC320689E6D0006194B /* google-qr.png */,
+				79776BC420689E6D0006194B /* qrcode.png */,
+				79776BC120689E6C0006194B /* text-qr.png */,
 				796060BC206594A300300650 /* gist.json */,
 				796060C92065978300300650 /* comments.json */,
 			);
