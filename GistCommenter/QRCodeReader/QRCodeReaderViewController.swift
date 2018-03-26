@@ -16,6 +16,8 @@ internal final class QRCodeReaderViewController: UIViewController, QRCodeReaderV
 	var presenter: QRCodeReaderPresenterProtocol?
     @IBOutlet private weak var statusLabel: UILabel!
     var qrCodeViewFinder: UIView?
+    private var alertController: UIAlertController?
+
     override var title: String? {
         didSet {
             statusLabel.text = title
@@ -30,12 +32,18 @@ internal final class QRCodeReaderViewController: UIViewController, QRCodeReaderV
 
         setupViews()
         self.title = L10n.detecting
-        self.navigationController?.isNavigationBarHidden = true
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+        presenter?.newReading()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.isNavigationBarHidden = false
+        alertController?.dismiss(animated: true)
     }
 
     // MARK: - QRCodeReaderViewProtocol
@@ -50,16 +58,6 @@ internal final class QRCodeReaderViewController: UIViewController, QRCodeReaderV
 
         let alert = alerController(L10n.alertTitleCameraPermission, L10n.alertMessageCameraPermission)
 
-        let action = UIAlertAction(title: L10n.settings, style: .default) { _ in
-            guard let appSettings = URL(string: UIApplicationOpenSettingsURLString) else {
-                return
-            }
-
-            UIApplication.shared.canOpenURL(appSettings)
-        }
-
-        alert.addAction(action)
-
         let cancel = UIAlertAction(title: L10n.ok, style: .cancel)
         alert.addAction(cancel)
 
@@ -67,15 +65,18 @@ internal final class QRCodeReaderViewController: UIViewController, QRCodeReaderV
     }
 
     func showGistAlert() {
-        let alert = alerController(L10n.detectedQRCode, L10n.validQrCodeMessage)
-
-        let action = UIAlertAction(title: L10n.openGist, style: .default) { _ in Logger.d("Open next screen") }
-        let cancel = UIAlertAction(title: L10n.ok, style: .cancel) { _ in self.presenter?.newReading() }
-
-        alert.addAction(action)
-        alert.addAction(cancel)
-
+        let alert = alerController("Loading Gist", nil)
+        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        indicator.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        alert.view.addSubview(indicator)
+        indicator.isUserInteractionEnabled = false
+        indicator.startAnimating()
         self.present(alert, animated: true)
+        alertController = alert
+    }
+
+    func dismisLoadingGist(completion: (() -> Void)?) {
+        alertController?.dismiss(animated: true, completion: completion)
     }
 
     func showInvalidCodeAlert() {
@@ -97,7 +98,7 @@ internal final class QRCodeReaderViewController: UIViewController, QRCodeReaderV
 
     // MARK: - Private methods
 
-    fileprivate func alerController(_ title: String, _ message: String) -> UIAlertController {
+    fileprivate func alerController(_ title: String, _ message: String?) -> UIAlertController {
         return UIAlertController(title: title, message: message, preferredStyle: .alert)
     }
 

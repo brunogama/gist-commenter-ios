@@ -24,7 +24,7 @@ internal class AppDelegate: UIResponder, UIApplicationDelegate {
                             didFinishLaunchingWithOptions
         launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        navigationController.pushViewController(GistDetailRouter.createModule(), animated: true)
+        navigationController.pushViewController(QRCodeReaderRouter.createModule(), animated: true)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

@@ -14,7 +14,7 @@ import UIKit
 internal final class GistDetailRouter: GistDetailWireframeProtocol {
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule(gist: GistModel) -> UIViewController {
 
         guard let url = Bundle.main.url(forResource: "gist", withExtension: "json"),
             let data = try? Data(contentsOf: url) else {

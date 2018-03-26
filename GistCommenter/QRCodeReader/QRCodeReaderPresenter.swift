@@ -36,6 +36,12 @@ internal class QRCodeReaderPresenter: QRCodeReaderPresenterProtocol, QRCodeReade
         interactor?.startReader()
     }
 
+    func open(gist: GistModel) {
+        view?.dismisLoadingGist {
+            self.router.presentGistInformation(from: self.view, gist: gist)
+        }
+    }
+
     // MARK: - QRCodeReaderInteractorOutputProtocol
 
     func didReceived(data: QRCodeReadable.QRCodeData) {
@@ -48,9 +54,8 @@ internal class QRCodeReaderPresenter: QRCodeReaderPresenterProtocol, QRCodeReade
             view?.showInvalidCodeAlert()
         }
     }
+}
 
-    // MARK: - Private methods
-    fileprivate func isGistHost(string: String) -> Bool {
-        return URLComponents(string: string)?.host == "gist.github.com"
-    }
+internal func isGistHost(string: String) -> Bool {
+    return URLComponents(string: string)?.host == "gist.github.com"
 }

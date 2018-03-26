@@ -12,7 +12,8 @@ import UIKit
 
 // MARK: Wireframe -
 internal protocol QRCodeReaderWireframeProtocol: class {
-
+    
+    func presentGistInformation(from view:QRCodeReaderViewProtocol?, gist: GistModel)
 }
 // MARK: Presenter -
 internal protocol QRCodeReaderPresenterProtocol: class {
@@ -29,19 +30,21 @@ internal protocol QRCodeReaderInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
 
     func didReceived(data: QRCodeReadable.QRCodeData)
+    func open(gist: GistModel)
 }
 
 internal protocol QRCodeReaderInteractorInputProtocol: class {
 
     var codeReader: QRCodeReadable? { get set }
+    var remoteDataManager: RemoteDataManagerInputProtocol? { get set }
     var presenter: QRCodeReaderInteractorOutputProtocol? { get set }
 
     /* Presenter -> Interactor */
 
-//    func checkForCameraPermissions
     func didReceived(data: QRCodeReadable.QRCodeData)
     func startReader()
     func stopReader()
+    func retrieve(url: URL)
 }
 
 // MARK: View -
@@ -57,4 +60,5 @@ internal protocol QRCodeReaderViewProtocol: class {
     func updateStatus(codeValue: String)
     func updateViewFinder(area: CGRect)
     func loading()
+    func dismisLoadingGist(completion: (() -> Void)?)
 }
