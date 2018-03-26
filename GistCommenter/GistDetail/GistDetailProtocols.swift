@@ -14,7 +14,7 @@ import UIKit
 // MARK: Wireframe -
 internal protocol GistDetailWireframeProtocol: class {
 
-    func showRaw(gist: GistModel)
+func presentDetailView(from view: GistDetailViewProtocol?, file: FileModel)
 }
 
 // MARK: Presenter -
@@ -23,6 +23,7 @@ internal protocol GistDetailPresenterProtocol: class {
     var interactor: GistDetailInteractorInputProtocol? { get set }
 
     func viewDidLoad()
+    func openFileDetailsView(file: FileModel)
 }
 
 // MARK: Interactor -

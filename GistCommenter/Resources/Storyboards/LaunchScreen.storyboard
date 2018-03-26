@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="aVP-Av-WxP">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="eBt-TY-VmS" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" hidesBottomBarWhenPushed="YES" id="eBt-TY-VmS" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Ub-DU-cbs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

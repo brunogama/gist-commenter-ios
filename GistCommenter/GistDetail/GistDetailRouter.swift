@@ -42,12 +42,10 @@ internal final class GistDetailRouter: GistDetailWireframeProtocol {
         return view
     }
 
-    func showRaw(gist: GistModel) {
-        guard let urlString = gist.files.first?.value.rawURL,
-              let url = URL(string: urlString) else {
-            fatalError("Invalid url")
+    func presentDetailView(from view: GistDetailViewProtocol?, file: FileModel) {
+        if let sourceView = view as? UIViewController {
+            let detinationView = FileDetailRouter.createModule(fileModel: file)
+            sourceView.navigationController?.pushViewController(detinationView, animated: true)
         }
-
-        UIApplication.shared.open(url, options: [:])
     }
 }

@@ -63,6 +63,14 @@
 		796060FA2066021200300650 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796060F92066021200300650 /* CommentTableViewCell.xib */; };
 		796060FB2066021200300650 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796060F92066021200300650 /* CommentTableViewCell.xib */; };
 		797F446C20642A160078CA4A /* QRCodeReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */; };
+		7982AC2B206875CE0062E6F4 /* Highlightr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7982AC2A206875CE0062E6F4 /* Highlightr.framework */; };
+		7982AC2C206876080062E6F4 /* Highlightr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7982AC2A206875CE0062E6F4 /* Highlightr.framework */; };
+		7982AC35206876580062E6F4 /* FileDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982AC2F206876580062E6F4 /* FileDetailPresenter.swift */; };
+		7982AC36206876580062E6F4 /* FileDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982AC30206876580062E6F4 /* FileDetailRouter.swift */; };
+		7982AC37206876580062E6F4 /* FileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982AC31206876580062E6F4 /* FileDetailViewController.swift */; };
+		7982AC38206876580062E6F4 /* FileDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982AC32206876580062E6F4 /* FileDetailProtocols.swift */; };
+		7982AC39206876580062E6F4 /* FileDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982AC33206876580062E6F4 /* FileDetailInteractor.swift */; };
+		7982AC3A206876580062E6F4 /* FileDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7982AC34206876580062E6F4 /* FileDetailViewController.xib */; };
 		798BA32620644DAD00D7F6D1 /* QRCodeReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */; };
 		798BA32A2064611D00D7F6D1 /* QRCodeReder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BA3292064611D00D7F6D1 /* QRCodeReder.swift */; };
 		79B04ABE2065669B00A9E387 /* MockQRCodeReaderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B04ABD2065669B00A9E387 /* MockQRCodeReaderInteractor.swift */; };
@@ -70,7 +78,6 @@
 		79B04AC12065682E00A9E387 /* QRCodeReadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792A4398206551A900B8F12B /* QRCodeReadable.swift */; };
 		79B0C2E92066361B0084D453 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790B3D7F206635A1005DAABA /* Kingfisher.framework */; };
 		79B0C2EB2066426F0084D453 /* SkeletonView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79B0C2EA2066426F0084D453 /* SkeletonView.framework */; };
-		79B0C2EC2066429D0084D453 /* SkeletonView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79B0C2EA2066426F0084D453 /* SkeletonView.framework */; };
 		79B682EA2066D2FC00E221DD /* Reusable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79B682E92066D2FC00E221DD /* Reusable.framework */; };
 		79B682EF2066DBFC00E221DD /* UIViewController+NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B682EE2066DBFC00E221DD /* UIViewController+NibLoadable.swift */; };
 		79B682F02066DBFC00E221DD /* UIViewController+NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B682EE2066DBFC00E221DD /* UIViewController+NibLoadable.swift */; };
@@ -187,6 +194,13 @@
 		796060EC2065DD7F00300650 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		796060F92066021200300650 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		797F446B20642A160078CA4A /* QRCodeReaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeReaderViewController.xib; sourceTree = "<group>"; };
+		7982AC2A206875CE0062E6F4 /* Highlightr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Highlightr.framework; path = Carthage/Build/iOS/Highlightr.framework; sourceTree = "<group>"; };
+		7982AC2F206876580062E6F4 /* FileDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailPresenter.swift; sourceTree = "<group>"; };
+		7982AC30206876580062E6F4 /* FileDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailRouter.swift; sourceTree = "<group>"; };
+		7982AC31206876580062E6F4 /* FileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailViewController.swift; sourceTree = "<group>"; };
+		7982AC32206876580062E6F4 /* FileDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailProtocols.swift; sourceTree = "<group>"; };
+		7982AC33206876580062E6F4 /* FileDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailInteractor.swift; sourceTree = "<group>"; };
+		7982AC34206876580062E6F4 /* FileDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileDetailViewController.xib; sourceTree = "<group>"; };
 		798BA3292064611D00D7F6D1 /* QRCodeReder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReder.swift; sourceTree = "<group>"; };
 		79B04ABD2065669B00A9E387 /* MockQRCodeReaderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockQRCodeReaderInteractor.swift; sourceTree = "<group>"; };
 		79B0C2EA2066426F0084D453 /* SkeletonView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkeletonView.framework; path = Carthage/Build/iOS/SkeletonView.framework; sourceTree = "<group>"; };
@@ -237,8 +251,8 @@
 				790B3D80206635A1005DAABA /* Kingfisher.framework in Frameworks */,
 				79B682EA2066D2FC00E221DD /* Reusable.framework in Frameworks */,
 				793B042220677B6400E93BED /* SwiftDate.framework in Frameworks */,
-				79B0C2EC2066429D0084D453 /* SkeletonView.framework in Frameworks */,
 				79E72A192062CF8600EF27E9 /* Moya.framework in Frameworks */,
+				7982AC2B206875CE0062E6F4 /* Highlightr.framework in Frameworks */,
 				79E72A1C2062CF8600EF27E9 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +268,7 @@
 				79B0C2EB2066426F0084D453 /* SkeletonView.framework in Frameworks */,
 				79B0C2E92066361B0084D453 /* Kingfisher.framework in Frameworks */,
 				79E72A0F2062CF6A00EF27E9 /* Quick.framework in Frameworks */,
+				7982AC2C206876080062E6F4 /* Highlightr.framework in Frameworks */,
 				79E72A122062CF6A00EF27E9 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +322,7 @@
 		79414ECC2061CC9E00927472 /* GistCommenter */ = {
 			isa = PBXGroup;
 			children = (
+				7982AC2D206876290062E6F4 /* FileDetail */,
 				796060B8206591EE00300650 /* RemoteManager */,
 				79414ECD2061CC9E00927472 /* AppDelegate.swift */,
 				79E72A4B2062EC2800EF27E9 /* Debug */,
@@ -463,6 +479,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		7982AC2D206876290062E6F4 /* FileDetail */ = {
+			isa = PBXGroup;
+			children = (
+				7982AC2F206876580062E6F4 /* FileDetailPresenter.swift */,
+				7982AC30206876580062E6F4 /* FileDetailRouter.swift */,
+				7982AC31206876580062E6F4 /* FileDetailViewController.swift */,
+				7982AC32206876580062E6F4 /* FileDetailProtocols.swift */,
+				7982AC33206876580062E6F4 /* FileDetailInteractor.swift */,
+				7982AC34206876580062E6F4 /* FileDetailViewController.xib */,
+			);
+			path = FileDetail;
+			sourceTree = "<group>";
+		};
 		79C4E86D20670B5200636F09 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,6 +518,7 @@
 		79E729CD2062CD3E00EF27E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7982AC2A206875CE0062E6F4 /* Highlightr.framework */,
 				793B042120677B6400E93BED /* SwiftDate.framework */,
 				79B682E92066D2FC00E221DD /* Reusable.framework */,
 				79B0C2EA2066426F0084D453 /* SkeletonView.framework */,
@@ -666,6 +696,7 @@
 				79B682F82066DE4300E221DD /* Colors.xcassets in Resources */,
 				796060FA2066021200300650 /* CommentTableViewCell.xib in Resources */,
 				79414ED82061CCA000927472 /* Images.xcassets in Resources */,
+				7982AC3A206876580062E6F4 /* FileDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,9 +775,9 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SkeletonView.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Reusable.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftDate.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Highlightr.framework",
 			);
 			name = "Carthage: Copy frameworks";
 			outputPaths = (
@@ -767,8 +798,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SkeletonView.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftDate.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Highlightr.framework",
 			);
 			name = "Carthage: Copy frameworks";
 			outputPaths = (
@@ -801,6 +832,7 @@
 				798BA32A2064611D00D7F6D1 /* QRCodeReder.swift in Sources */,
 				79E72A4D2062EC3500EF27E9 /* Logger.swift in Sources */,
 				796060CD2065A91F00300650 /* GistService+TargetType.path.swift in Sources */,
+				7982AC36206876580062E6F4 /* FileDetailRouter.swift in Sources */,
 				790B3D7C2066272B005DAABA /* UIImage+Padding.swift in Sources */,
 				796060DA2065CACC00300650 /* ForkModel.swift in Sources */,
 				79E72A452062E05C00EF27E9 /* QRCodeReaderInteractor.swift in Sources */,
@@ -815,6 +847,8 @@
 				79E729C92062B7FF00EF27E9 /* Strings.swift in Sources */,
 				796060E02065CB2D00300650 /* ChangeStatusModel.swift in Sources */,
 				79E72A442062E05C00EF27E9 /* QRCodeReaderProtocols.swift in Sources */,
+				7982AC38206876580062E6F4 /* FileDetailProtocols.swift in Sources */,
+				7982AC39206876580062E6F4 /* FileDetailInteractor.swift in Sources */,
 				796060D12065A9E200300650 /* GistService+TargetType.sampleData.swift in Sources */,
 				79B682EF2066DBFC00E221DD /* UIViewController+NibLoadable.swift in Sources */,
 				796060CF2065A9B200300650 /* GistService+TargetType.baseUrl.swift in Sources */,
@@ -826,9 +860,11 @@
 				79F517FA20675D7E00E37186 /* GistHeaderView.swift in Sources */,
 				796060BA2065920600300650 /* GistService.swift in Sources */,
 				79414ECE2061CC9E00927472 /* AppDelegate.swift in Sources */,
+				7982AC37206876580062E6F4 /* FileDetailViewController.swift in Sources */,
 				796060DC2065CAE900300650 /* UserModel.swift in Sources */,
 				79E729C72062B7FF00EF27E9 /* Assets.swift in Sources */,
 				79C4E86F206716AE00636F09 /* Client.swift in Sources */,
+				7982AC35206876580062E6F4 /* FileDetailPresenter.swift in Sources */,
 				796060B320658C4D00300650 /* GistModel.swift in Sources */,
 				796060D82065CAA200300650 /* FileModel.swift in Sources */,
 				796060AF2065834700300650 /* GistDetailInteractor.swift in Sources */,

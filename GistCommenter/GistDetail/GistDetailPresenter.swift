@@ -32,6 +32,10 @@ internal class GistDetailPresenter: GistDetailPresenterProtocol, GistDetailInter
         interactor?.retrieveComments(fromGistId: (view?.datasource?.gistModel.id)!)
     }
 
+    func openFileDetailsView(file: FileModel) {
+        router.presentDetailView(from: view, file: file)
+    }
+
     // MARK: - GistDetailInteractorOutputProtocol
     func didReceived(comments: [GistComment]) {
         if comments.isEmpty {
