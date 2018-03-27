@@ -16,6 +16,12 @@ internal class GistDetailPresenter: GistDetailPresenterProtocol, GistDetailInter
     weak private var view: GistDetailViewProtocol?
     var interactor: GistDetailInteractorInputProtocol?
     private let router: GistDetailWireframeProtocol
+    private var gistId: GistId {
+        if let gistId = view?.datasource?.gistModel.id {
+            return gistId
+        }
+        return ""
+    }
 
     init(interface: GistDetailViewProtocol,
          interactor: GistDetailInteractorInputProtocol?,
@@ -29,7 +35,7 @@ internal class GistDetailPresenter: GistDetailPresenterProtocol, GistDetailInter
 
     func viewDidLoad() {
         view?.loading()
-        interactor?.retrieveComments(fromGistId: (view?.datasource?.gistModel.id)!)
+        interactor?.retrieveComments(fromGistId: gistId)
     }
 
     func openFileDetailsView(file: FileModel) {

@@ -31,7 +31,10 @@ extension UIView {
 
     @IBInspectable var borderColor: UIColor? {
         get {
-            return UIColor(cgColor: layer.borderColor!)
+            if let cgColor = layer.borderColor {
+                return  UIColor(cgColor: cgColor)
+            }
+            return nil
         }
         set {
             layer.borderColor = borderColor?.cgColor

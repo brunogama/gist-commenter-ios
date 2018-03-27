@@ -15,19 +15,13 @@ internal final class GistDetailRouter: GistDetailWireframeProtocol {
     weak var viewController: UIViewController?
 
     static func createModule(gist: GistModel) -> UIViewController {
-
-        guard let url = Bundle.main.url(forResource: "gist", withExtension: "json"),
-            let data = try? Data(contentsOf: url) else {
-                fatalError("Bundle not loaded")
-        }
-
-        let dataSource = GistDetailDatasource(gistModel: GistModel(data: data)!)
-
+        let dataSource = GistDetailDatasource(gistModel: gist)
         let view = GistDetailViewController.instantiate()
         view.datasource = dataSource
 
         let interactor = GistDetailInteractor()
-        let client = Client(provider: MoyaProvider<GistService>())
+        let provider = MoyaProvider<GistService>()
+        let client = Client(provider: provider)
         client?.remoteRequestHandler = interactor
 
         interactor.remoteDataManager = client

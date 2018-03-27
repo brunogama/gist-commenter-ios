@@ -29,7 +29,7 @@ internal class Logger {
         return formatter
     }
 
-    class func e(_ message: String? = nil,
+    class func e(_ message: Any? = nil,
                  fileName: String = #file,
                  line: Int = #line,
                  column: Int = #column,
@@ -42,7 +42,7 @@ internal class Logger {
             funcName: funcName)
     }
 
-    class func i(_ message: String? = nil,
+    class func i(_ message: Any? = nil,
                  fileName: String = #file,
                  line: Int = #line,
                  column: Int = #column,
@@ -55,7 +55,7 @@ internal class Logger {
             funcName: funcName)
     }
 
-    class func d(_ message: String? = nil,
+    class func d(_ message: Any? = nil,
                  fileName: String = #file,
                  line: Int = #line,
                  column: Int = #column,
@@ -68,7 +68,7 @@ internal class Logger {
             funcName: funcName)
     }
 
-    class func v(_ message: String? = nil,
+    class func v(_ message: Any? = nil,
                  fileName: String = #file,
                  line: Int = #line,
                  column: Int = #column,
@@ -81,7 +81,7 @@ internal class Logger {
             funcName: funcName)
     }
 
-    class func w(_ message: String? = nil,
+    class func w(_ message: Any? = nil,
                  fileName: String = #file,
                  line: Int = #line,
                  column: Int = #column,
@@ -94,7 +94,7 @@ internal class Logger {
             funcName: funcName)
     }
 
-    class func log(message: String?,
+    class func log(message: Any?,
                    event: LogEvent,
                    fileName: String = #file,
                    line: Int = #line,

@@ -9,7 +9,6 @@
 import AVFoundation
 @testable import GistCommenter
 import UIKit
-import XCTest
 
 internal final class MockQRCodeReader: NSObject, QRCodeReadable {
     var videoPreview: AVCaptureVideoPreviewLayer?

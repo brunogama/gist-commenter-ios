@@ -12,8 +12,8 @@ import UIKit
 
 // MARK: Wireframe -
 internal protocol QRCodeReaderWireframeProtocol: class {
-    
-    func presentGistInformation(from view:QRCodeReaderViewProtocol?, gist: GistModel)
+
+    func presentGistInformation(from view: QRCodeReaderViewProtocol?, gist: GistModel)
 }
 // MARK: Presenter -
 internal protocol QRCodeReaderPresenterProtocol: class {
