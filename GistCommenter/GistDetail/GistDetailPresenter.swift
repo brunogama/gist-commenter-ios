@@ -42,6 +42,17 @@ internal class GistDetailPresenter: GistDetailPresenterProtocol, GistDetailInter
         router.presentDetailView(from: view, file: file)
     }
 
+    func authenticateWith(username: String, password: String) {
+        interactor?.retrieveCrendetials(username: username,
+                                        password: password)
+        view?.authenticating()
+    }
+
+    func sendMessageFor(gistId: GistId, message: String) {
+        interactor?.sendMessage(forGistId: gistId, message: message)
+        view?.sendingMessage()
+    }
+
     // MARK: - GistDetailInteractorOutputProtocol
     func didReceived(comments: [GistComment]) {
         if comments.isEmpty {
@@ -49,5 +60,29 @@ internal class GistDetailPresenter: GistDetailPresenterProtocol, GistDetailInter
             return
         }
         view?.show(comments: comments)
+    }
+
+    func authenticated() {
+        view?.presentMessageInput()
+    }
+
+    func authenticationFail() {
+        view?.authenticationFail()
+    }
+
+    func onMessageFailure() {
+        view?.messageFail()
+    }
+
+    func onMessageSent(message: GistComment) {
+        view?.messageSent(message: message)
+    }
+
+    @objc func authenticateOrSendMessageAction() {
+        if AppSettings.Keys.hasToken {
+            view?.presentMessageInput()
+            return
+        }
+        view?.requestCredentials()
     }
 }

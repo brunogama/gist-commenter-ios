@@ -20,15 +20,9 @@ internal final class GistDetailInteractor: GistDetailInteractorInputProtocol, Re
         remoteDataManager?.retriveComments(with: fromGistId)
     }
 
-    func requestGistModel(url: URL) {
-    }
-
     func didReceived(comments: [GistComment]) {
         presenter?.didReceived(comments: comments)
     }
-
-    func onGistRetrieved(_ gist: GistModel) {}
-    func onGistRetrievalFailure(_ error: Error) {}
 
     func onCommentsRetrieved(_ comments: [GistComment]) {
         presenter?.didReceived(comments: comments)
@@ -38,4 +32,28 @@ internal final class GistDetailInteractor: GistDetailInteractorInputProtocol, Re
         presenter?.didReceived(comments: [])
     }
 
+    func retrieveCrendetials(username: String, password: String) {
+        remoteDataManager?.retrieveToken(forUsername: username, with: password) { result in
+            switch result {
+            case .success:
+                self.presenter?.authenticated()
+            case .failure:
+                self.presenter?.authenticationFail()
+            }
+        }
+    }
+
+    func sendMessage(forGistId: GistId, message: String) {
+        remoteDataManager?.send(message: message, forGist: forGistId) { result in
+            switch result {
+            case .success(let gistComment):
+                self.presenter?.onMessageSent(message: gistComment)
+            case .failure:
+                self.presenter?.onMessageFailure()
+            }
+        }
+    }
+
+    func onGistRetrieved(_ gist: GistModel) { }
+    func onGistRetrievalFailure(_ error: Error) { }
 }

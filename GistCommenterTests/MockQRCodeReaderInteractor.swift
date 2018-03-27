@@ -12,6 +12,9 @@ import UIKit
 import XCTest
 
 internal class MockQRCodeReaderInteractor: NSObject, QRCodeReaderInteractorInputProtocol {
+    var remoteDataManager: RemoteDataManagerInputProtocol?
+
+    func retrieve(url: URL) {}
 
     weak var presenter: QRCodeReaderInteractorOutputProtocol?
     var codeReader: QRCodeReadable?

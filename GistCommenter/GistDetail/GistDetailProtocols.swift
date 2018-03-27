@@ -24,6 +24,9 @@ internal protocol GistDetailPresenterProtocol: class {
 
     func viewDidLoad()
     func openFileDetailsView(file: FileModel)
+    func authenticateWith(username: String, password: String)
+    func sendMessageFor(gistId: GistId, message: String)
+    func authenticateOrSendMessageAction()
 }
 
 // MARK: Interactor -
@@ -31,6 +34,10 @@ internal protocol GistDetailInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func didReceived(comments: [GistComment])
+    func authenticated()
+    func authenticationFail()
+    func onMessageFailure()
+    func onMessageSent(message: GistComment)
 }
 
 internal protocol GistDetailInteractorInputProtocol: class {
@@ -38,6 +45,8 @@ internal protocol GistDetailInteractorInputProtocol: class {
     var remoteDataManager: RemoteDataManagerInputProtocol? { get set }
 
     func retrieveComments(fromGistId: GistId)
+    func retrieveCrendetials(username: String, password: String)
+    func sendMessage(forGistId: GistId, message: String)
 
     /* Presenter -> Interactor */
 }
@@ -53,4 +62,12 @@ internal protocol GistDetailViewProtocol: class {
     func hideLoading()
     func show(comments: [GistComment])
     func presentEmpty()
+    func requestCredentials()
+    func presentMessageInput()
+    func sendingMessage()
+    func messageSent(message: GistComment)
+    func messageFail()
+    func authenticating()
+    func authenticationFail()
+    func prepareToSendMessage()
 }

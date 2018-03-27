@@ -11,15 +11,16 @@
 import UIKit
 
 internal final class GistDetailViewController: UIViewController, UITableViewDelegate, GistDetailViewProtocol {
-
+    
 	var presenter: GistDetailPresenterProtocol?
     var datasource: (GistDetailDatasourceProtocol & UITableViewDataSource)?
 
     @IBOutlet private weak var tableView: UITableView!
     private var tableHeaderView: GistHeaderView?
+    private var alertController: UIAlertController?
 
     // MARK: - View life cycle
-	override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         title = datasource?.title
@@ -108,6 +109,142 @@ internal final class GistDetailViewController: UIViewController, UITableViewDele
         tableView.reloadData()
     }
 
+    func requestCredentials() {
+        let alert = UIAlertController(title: "Login required",
+                                      message: nil,
+                                      preferredStyle: .alert)
+        let loginAction = UIAlertAction(title: "Log In", style: .default) { _ -> Void in
+
+            guard let login = alert.textFields?[0].text,
+                  let password = alert.textFields?[1].text else {
+                    fatalError("Fields or Texts not found")
+            }
+
+            self.presenter?.authenticateWith(username: login, password: password)
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+
+//        loginAction.isEnabled = false
+
+        alert.addTextField { textField -> Void in
+            textField.placeholder = "Username"
+        }
+
+        alert.addTextField { textField -> Void in
+            textField.placeholder = "Password"
+            textField.isSecureTextEntry = true
+        }
+
+        alert.addAction(loginAction)
+        alert.addAction(cancelAction)
+
+        self.present(alert, animated: true)
+    }
+
+    func presentMessageInput() {
+
+        let alert = UIAlertController(title: "Write your message",
+                                      message: nil,
+                                      preferredStyle: .alert)
+        let submitMessageAction = UIAlertAction(title: L10n.send, style: .default) { _ -> Void in
+
+            guard let message = alert.textFields?[0].text,
+                  let gistId = self.datasource?.gistModel.id else {
+                    fatalError("Fields or Texts not found")
+            }
+            self.presenter?.sendMessageFor(gistId: gistId, message: message)
+        }
+
+        let cancelAction = UIAlertAction(title: L10n.cancel, style: .cancel)
+
+        submitMessageAction.isEnabled = false
+
+        alert.addTextField { textField -> Void in
+            textField.placeholder = L10n.message
+        }
+
+        alert.addAction(submitMessageAction)
+        alert.addAction(cancelAction)
+
+        if self.alertController?.isBeingPresented ?? false {
+            self.alertController?.dismiss(animated: true) {
+                self.present(alert, animated: true)
+            }
+        }
+        else {
+            self.present(alert, animated: true)
+        }
+
+        self.alertController = alert
+    }
+    func messageSent(message: GistComment) {
+        
+        self.datasource?.data.value.append(message)
+
+        let alert = UIAlertController(
+            title: "Success",
+            message: "Message sent",
+            preferredStyle: .alert
+        )
+
+        let action = UIAlertAction(title: L10n.ok, style: .default) { _ in
+            self.tableView.reloadData()
+        }
+
+        alert.addAction(action)
+        self.alertController?.dismiss(animated: true) {
+            self.present(alert, animated: true) {
+                self.alertController = nil
+            }
+        }
+    }
+    func messageFail() {
+        let alert = UIAlertController(
+            title: "Atention",
+            message: "Failed sending message",
+            preferredStyle: .alert
+        )
+
+        alert.addAction(UIAlertAction(title: L10n.ok, style: .default))
+        self.alertController?.dismiss(animated: true) {
+            self.present(alert, animated: true) {
+                self.alertController = nil
+            }
+        }
+    }
+
+    func sendingMessage() {
+        let alert = UIAlertController.loading(L10n.sendingMessage)
+        self.present(alert, animated: true)
+        self.alertController = alert
+    }
+
+    func authenticating() {
+        let alert = UIAlertController.loading(L10n.requestingToken)
+        self.present(alert, animated: true)
+        self.alertController = alert
+    }
+
+    func authenticationFail() {
+        let alert = UIAlertController(
+            title: "Atention",
+            message: L10n.tokenRequestFailed,
+            preferredStyle: .alert
+        )
+
+        alert.addAction(UIAlertAction(title: L10n.ok, style: .default))
+        self.alertController?.dismiss(animated: true) {
+            self.present(alert, animated: true) {
+                self.alertController = nil
+            }
+        }
+    }
+
+    @objc func prepareToSendMessage() {
+        presenter?.authenticateOrSendMessageAction()
+    }
+
     // MARK: Private methods
     fileprivate func setupTableView() {
         tableView.register(cellType: CommentTableViewCell.self)
@@ -123,8 +260,16 @@ internal final class GistDetailViewController: UIViewController, UITableViewDele
     }
 
     fileprivate func setupNavigationBar() {
-        navigationItem.title = title
-        navigationItem.prompt = L10n.gistDetail
+//        navigationItem.title = title
+//        navigationItem.prompt = L10n.gistDetail
+        navigationItem.prompt = title
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: #imageLiteral(resourceName: "message-square"),
+            landscapeImagePhone: nil,
+            style: .plain,
+            target: self,
+            action: #selector(prepareToSendMessage)
+        )
     }
 
     fileprivate func add(visualConstraints: [String], to views: [String: Any]) {

@@ -18,9 +18,16 @@ internal protocol RemoteDataManagerInputProtocol: class {
     var remoteRequestHandler: RemoteDataManagerOutputProtocol? { get set }
 
     func retriveGist(with gistId: GistId)
+
     func retriveComments(with gistId: GistId)
-    func send(message: String, forGist id: GistId, completion: @escaping (GistComment) -> Void)
-    func retrieveToken(forUsername: String, with password: String, completion: @escaping (String) -> Void)
+
+    func send(message: String,
+              forGist id: GistId,
+              completion: @escaping (Result<GistComment, RemoteDataManagerError>) -> Void)
+
+    func retrieveToken(forUsername: String,
+                       with password: String,
+                       completion: @escaping (Result<String, RemoteDataManagerError>) -> Void)
 }
 
 internal protocol RemoteDataManagerOutputProtocol: class {
@@ -70,18 +77,27 @@ internal final class Client: RemoteDataManagerInputProtocol {
         self.provider = provider
     }
 
-    func send(message: String, forGist id: GistId, completion: @escaping (GistComment) -> Void) {
+    func send(message: String,
+              forGist id: GistId,
+              completion: @escaping (Result<GistComment, RemoteDataManagerError>) -> Void
+        ) {
         let target: GistService = .sendComment(gistId: id, message: message)
         self.request(target, success: { data in
-            completion(GistComment(data: data)!)
+            completion(.success(GistComment(data: data)!))
         }, error: { error in
-            Logger.w(error)
+            completion(.failure(error))
         }, failure: { _ in
-            Logger.e("failure")
+            let error = RemoteDataManagerError.other(NSError(domain: "Critical failure sending message", code: -1,
+                                                             userInfo: nil))
+            completion(.failure(error))
         })
     }
 
-    func retrieveToken(forUsername: String, with password: String, completion: @escaping (String) -> Void) {
+    func retrieveToken(
+        forUsername: String,
+        with password: String,
+        completion: @escaping (Result<String, RemoteDataManagerError>) -> Void
+        ) {
         let credentials: GistService.Credentials = (forUsername, password)
         let target: GistService = .createTokenFor(credentials: credentials)
         self.request(target, success: { data in
@@ -90,11 +106,13 @@ internal final class Client: RemoteDataManagerInputProtocol {
                 fatalError("Serialization failed or hashed_token key not present")
             }
             AppSettings.Keys.save(token: hashedToken)
-            completion(hashedToken)
+            completion(.success(hashedToken))
         }, error: { error in
-            Logger.w(error)
+            completion(.failure(error))
         }, failure: { _ in
-            Logger.e("failure")
+            let error = RemoteDataManagerError.other(NSError(domain: "Critical failure retrieving token", code: -1,
+                                                             userInfo: nil))
+            completion(.failure(error))
         })
     }
 
@@ -109,7 +127,6 @@ internal final class Client: RemoteDataManagerInputProtocol {
         }, error: { error in
             self.remoteRequestHandler?.onGistRetrievalFailure(error)
         }, failure: { _ in
-
             let error = RemoteDataManagerError.other(NSError(domain: "Failure onCommentsRetrievalFailure", code: -1,
                                                              userInfo: nil))
             self.remoteRequestHandler?.onGistRetrievalFailure(error)

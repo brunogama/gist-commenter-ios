@@ -13,6 +13,11 @@ import UIKit
 
 internal final class GistDetailRouter: GistDetailWireframeProtocol {
     weak var viewController: UIViewController?
+    #if DEBUG
+    static let isNetworkLoggerEnabled = true
+    #else
+    static let isNetworkLoggerEnabled = false
+    #endif
 
     static func createModule(gist: GistModel) -> UIViewController {
         let dataSource = GistDetailDatasource(gistModel: gist)
@@ -21,10 +26,6 @@ internal final class GistDetailRouter: GistDetailWireframeProtocol {
 
         let interactor = GistDetailInteractor()
 
-        var isNetworkLoggerEnabled = false
-        #if DEBUG
-        isNetworkLoggerEnabled = true
-        #endif
         let provider = MoyaProvider<GistService>(plugins: [NetworkLoggerPlugin(verbose: isNetworkLoggerEnabled)])
         let client = Client(provider: provider)
         client?.remoteRequestHandler = interactor

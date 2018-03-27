@@ -25,7 +25,7 @@ internal final class AppSettings {
             return token != nil ? true : false
         }
 
-        static var token:String? {
+        static var token: String? {
             return Keychain(service: identifier)[string: hashedTokenKey]
         }
 
