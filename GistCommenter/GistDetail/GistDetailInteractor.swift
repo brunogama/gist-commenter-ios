@@ -35,7 +35,7 @@ internal final class GistDetailInteractor: GistDetailInteractorInputProtocol, Re
     }
 
     func onCommentsRetrievalFailure(_ error: Error) {
-        Logger.e("\(error)")
+        presenter?.didReceived(comments: [])
     }
 
 }

@@ -33,6 +33,7 @@ internal protocol RemoteDataManagerOutputProtocol: class {
 }
 
 internal final class Client: RemoteDataManagerInputProtocol {
+
     private(set) var provider: MoyaProvider<GistService>?
     var remoteRequestHandler: RemoteDataManagerOutputProtocol?
     var jsonDecoder: JSONDecoder = {
@@ -40,14 +41,6 @@ internal final class Client: RemoteDataManagerInputProtocol {
         decoder.dateDecodingStrategy = .iso8601
         return decoder
     }()
-
-
-    #if DEBUG
-    private let debugNetwork = true
-    #else
-    private let debugNetwork = false
-    #endif
-    private var networkLogger = NetworkLoggerPlugin(verbose: false)
 
     func request(
         _ target: GistService,
@@ -116,13 +109,16 @@ internal final class Client: RemoteDataManagerInputProtocol {
         }, error: { error in
             self.remoteRequestHandler?.onGistRetrievalFailure(error)
         }, failure: { _ in
-            Logger.e()
+
+            let error = RemoteDataManagerError.other(NSError(domain: "Failure onCommentsRetrievalFailure", code: -1,
+                                                             userInfo: nil))
+            self.remoteRequestHandler?.onGistRetrievalFailure(error)
         })
     }
 
     func retriveComments(with gistId: GistId) {
 
-        self.request(.gist(gistId: gistId), success: { data in
+        self.request(.comments(gistId: gistId), success: { data in
             guard let comments = try? self.jsonDecoder.decode([GistComment].self, from: data) else {
                 self.remoteRequestHandler?.onCommentsRetrievalFailure(RemoteDataManagerError.parseError)
                 return
@@ -134,8 +130,9 @@ internal final class Client: RemoteDataManagerInputProtocol {
                 .onCommentsRetrievalFailure(error)
 
         }, failure: { _ in
-            Logger.e()
-//            self.remoteRequestHandler?.onCommentsRetrievalFailure(error)
+            let error = RemoteDataManagerError.other(NSError(domain: "Failure onCommentsRetrievalFailure", code: -1,
+                                                             userInfo: nil))
+            self.remoteRequestHandler?.onCommentsRetrievalFailure(error)
         })
     }
 }

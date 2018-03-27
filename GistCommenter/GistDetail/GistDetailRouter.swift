@@ -20,7 +20,12 @@ internal final class GistDetailRouter: GistDetailWireframeProtocol {
         view.datasource = dataSource
 
         let interactor = GistDetailInteractor()
-        let provider = MoyaProvider<GistService>()
+
+        var isNetworkLoggerEnabled = false
+        #if DEBUG
+        isNetworkLoggerEnabled = true
+        #endif
+        let provider = MoyaProvider<GistService>(plugins: [NetworkLoggerPlugin(verbose: isNetworkLoggerEnabled)])
         let client = Client(provider: provider)
         client?.remoteRequestHandler = interactor
 
