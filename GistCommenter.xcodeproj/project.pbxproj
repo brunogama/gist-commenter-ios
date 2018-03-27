@@ -107,14 +107,14 @@
 		79B682F92066DE4300E221DD /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79B682F72066DE4300E221DD /* Colors.xcassets */; };
 		79B682FB2066E2B400E221DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79B682FA2066E2B400E221DD /* LaunchScreen.storyboard */; };
 		79B682FC2066E2B400E221DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79B682FA2066E2B400E221DD /* LaunchScreen.storyboard */; };
-		79C4E86B2067053B00636F09 /* FeatherIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C4E86A2067053B00636F09 /* FeatherIcons.xcassets */; };
-		79C4E86C2067053B00636F09 /* FeatherIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C4E86A2067053B00636F09 /* FeatherIcons.xcassets */; };
 		79C4E86F206716AE00636F09 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4E86E206716AE00636F09 /* Client.swift */; };
 		79C4E870206716AE00636F09 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4E86E206716AE00636F09 /* Client.swift */; };
 		79C4E872206721DC00636F09 /* FileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4E871206721DC00636F09 /* FileCell.swift */; };
 		79C4E873206721DC00636F09 /* FileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4E871206721DC00636F09 /* FileCell.swift */; };
 		79C4E875206721E900636F09 /* FileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C4E874206721E900636F09 /* FileCell.xib */; };
 		79C4E876206721E900636F09 /* FileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C4E874206721E900636F09 /* FileCell.xib */; };
+		79DCC28B206B0EEB00AF7574 /* FeatherIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79DCC28A206B0EEA00AF7574 /* FeatherIcons.xcassets */; };
+		79DCC28C206B0EEB00AF7574 /* FeatherIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79DCC28A206B0EEA00AF7574 /* FeatherIcons.xcassets */; };
 		79E729C72062B7FF00EF27E9 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E729C42062B7FF00EF27E9 /* Assets.swift */; };
 		79E729C92062B7FF00EF27E9 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E729C62062B7FF00EF27E9 /* Strings.swift */; };
 		79E72A0C2062CF6A00EF27E9 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E729D32062CD3E00EF27E9 /* Moya.framework */; };
@@ -229,10 +229,10 @@
 		79B682F42066DE1500E221DD /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		79B682F72066DE4300E221DD /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		79B682FA2066E2B400E221DD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		79C4E86A2067053B00636F09 /* FeatherIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = FeatherIcons.xcassets; path = "../../../feather-xcassets/FeatherIcons.xcassets"; sourceTree = "<group>"; };
 		79C4E86E206716AE00636F09 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		79C4E871206721DC00636F09 /* FileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCell.swift; sourceTree = "<group>"; };
 		79C4E874206721E900636F09 /* FileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileCell.xib; sourceTree = "<group>"; };
+		79DCC28A206B0EEA00AF7574 /* FeatherIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FeatherIcons.xcassets; sourceTree = "<group>"; };
 		79E729C42062B7FF00EF27E9 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		79E729C62062B7FF00EF27E9 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		79E729D32062CD3E00EF27E9 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Moya.framework; sourceTree = "<group>"; };
@@ -386,7 +386,7 @@
 				796060BB206593DF00300650 /* SampleData */,
 				79414F292061DEFF00927472 /* Localizable.strings */,
 				79414ED72061CCA000927472 /* Images.xcassets */,
-				79C4E86A2067053B00636F09 /* FeatherIcons.xcassets */,
+				79DCC28A206B0EEA00AF7574 /* FeatherIcons.xcassets */,
 				79B682F12066DDF800E221DD /* Github.clr */,
 				79414EFF2061CD8400927472 /* Storyboards */,
 				79414F002061CD8400927472 /* Settings.bundle */,
@@ -704,8 +704,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				79E72A532063283C00EF27E9 /* Localizable.strings in Resources */,
-				79C4E86B2067053B00636F09 /* FeatherIcons.xcassets in Resources */,
 				79B682F22066DDF800E221DD /* Github.clr in Resources */,
+				79DCC28B206B0EEB00AF7574 /* FeatherIcons.xcassets in Resources */,
 				79414F072061CD8400927472 /* Settings.bundle in Resources */,
 				796060B02065834700300650 /* GistDetailViewController.xib in Resources */,
 				79F517FC20675DEB00E37186 /* GistHeaderView.xib in Resources */,
@@ -724,7 +724,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				798BA32620644DAD00D7F6D1 /* QRCodeReaderViewController.xib in Resources */,
-				79C4E86C2067053B00636F09 /* FeatherIcons.xcassets in Resources */,
 				79B682F92066DE4300E221DD /* Colors.xcassets in Resources */,
 				79414F2C2061DF0000927472 /* Localizable.strings in Resources */,
 				79414F082061CD8400927472 /* Settings.bundle in Resources */,
@@ -732,6 +731,7 @@
 				79B682FC2066E2B400E221DD /* LaunchScreen.storyboard in Resources */,
 				798C3E0B206A140F00D6EDD2 /* GistDetailViewController.xib in Resources */,
 				79C4E876206721E900636F09 /* FileCell.xib in Resources */,
+				79DCC28C206B0EEB00AF7574 /* FeatherIcons.xcassets in Resources */,
 				798C3E05206A140700D6EDD2 /* GistHeaderView.xib in Resources */,
 				796060FB2066021200300650 /* CommentTableViewCell.xib in Resources */,
 				798C3E15206A141D00D6EDD2 /* google-qr.png in Resources */,
