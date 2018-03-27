@@ -27,9 +27,15 @@ This will:
 
 ## Testing ##
 
-Run `bin/test`
+I'll finish writting all tests later... but in a perfect world you would run
+
+`bin/test`
 
 This will run the tests from the command line, and pipe the result through
 [XCPretty][].
 
 [XCPretty]: https://github.com/supermarin/xcpretty
+
+**Note** - You don't have access to the camera in the first controller. So i've wrote a sample mock to test it.
+
+**Note 2:** In the folder SampleData inside Resources you will find qr code images to validate the app.
