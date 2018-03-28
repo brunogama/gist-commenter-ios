@@ -158,8 +158,6 @@ internal final class GistDetailViewController: UIViewController, UITableViewDele
 
         let cancelAction = UIAlertAction(title: L10n.cancel, style: .cancel)
 
-        submitMessageAction.isEnabled = false
-
         alert.addTextField { textField -> Void in
             textField.placeholder = L10n.message
         }
